@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		F9A664A31C720E7B00DC7B59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A664A21C720E7B00DC7B59 /* AppDelegate.swift */; };
-		F9A664A51C720E7B00DC7B59 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A664A41C720E7B00DC7B59 /* ViewController.swift */; };
-		F9A664A81C720E7B00DC7B59 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9A664A61C720E7B00DC7B59 /* Main.storyboard */; };
 		F9A664AA1C720E7B00DC7B59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9A664A91C720E7B00DC7B59 /* Assets.xcassets */; };
 		F9A664AD1C720E7B00DC7B59 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9A664AB1C720E7B00DC7B59 /* LaunchScreen.storyboard */; };
 		F9A664B81C720E7B00DC7B59 /* Standup_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A664B71C720E7B00DC7B59 /* Standup_iosTests.swift */; };
 		F9A664C31C720E7B00DC7B59 /* Standup_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A664C21C720E7B00DC7B59 /* Standup_iosUITests.swift */; };
+		F9A664D91C74AE9C00DC7B59 /* AllTasksViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9A664D71C74AE9C00DC7B59 /* AllTasksViewController.xib */; };
+		F9A664DD1C74C48700DC7B59 /* AllTasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A664DC1C74C48700DC7B59 /* AllTasksViewController.swift */; };
+		F9A664E61C74D0D900DC7B59 /* PersonWithTasksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A664E41C74D0D900DC7B59 /* PersonWithTasksTableViewCell.swift */; };
+		F9A664E71C74D0D900DC7B59 /* PersonWithTasksTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9A664E51C74D0D900DC7B59 /* PersonWithTasksTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,8 +38,6 @@
 /* Begin PBXFileReference section */
 		F9A6649F1C720E7B00DC7B59 /* Standup.ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Standup.ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9A664A21C720E7B00DC7B59 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F9A664A41C720E7B00DC7B59 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F9A664A71C720E7B00DC7B59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F9A664A91C720E7B00DC7B59 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F9A664AC1C720E7B00DC7B59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F9A664AE1C720E7B00DC7B59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,6 +47,10 @@
 		F9A664BE1C720E7B00DC7B59 /* Standup.iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Standup.iosUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9A664C21C720E7B00DC7B59 /* Standup_iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Standup_iosUITests.swift; sourceTree = "<group>"; };
 		F9A664C41C720E7B00DC7B59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F9A664D71C74AE9C00DC7B59 /* AllTasksViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AllTasksViewController.xib; path = ../AllTasksViewController.xib; sourceTree = "<group>"; };
+		F9A664DC1C74C48700DC7B59 /* AllTasksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllTasksViewController.swift; sourceTree = "<group>"; };
+		F9A664E41C74D0D900DC7B59 /* PersonWithTasksTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonWithTasksTableViewCell.swift; sourceTree = "<group>"; };
+		F9A664E51C74D0D900DC7B59 /* PersonWithTasksTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonWithTasksTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,9 +101,9 @@
 		F9A664A11C720E7B00DC7B59 /* Standup.ios */ = {
 			isa = PBXGroup;
 			children = (
+				F9A664DF1C74CB6400DC7B59 /* controllers */,
+				F9A664DE1C74CB5B00DC7B59 /* views */,
 				F9A664A21C720E7B00DC7B59 /* AppDelegate.swift */,
-				F9A664A41C720E7B00DC7B59 /* ViewController.swift */,
-				F9A664A61C720E7B00DC7B59 /* Main.storyboard */,
 				F9A664A91C720E7B00DC7B59 /* Assets.xcassets */,
 				F9A664AB1C720E7B00DC7B59 /* LaunchScreen.storyboard */,
 				F9A664AE1C720E7B00DC7B59 /* Info.plist */,
@@ -123,6 +127,24 @@
 				F9A664C41C720E7B00DC7B59 /* Info.plist */,
 			);
 			path = Standup.iosUITests;
+			sourceTree = "<group>";
+		};
+		F9A664DE1C74CB5B00DC7B59 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				F9A664E41C74D0D900DC7B59 /* PersonWithTasksTableViewCell.swift */,
+				F9A664E51C74D0D900DC7B59 /* PersonWithTasksTableViewCell.xib */,
+			);
+			name = views;
+			sourceTree = "<group>";
+		};
+		F9A664DF1C74CB6400DC7B59 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F9A664DC1C74C48700DC7B59 /* AllTasksViewController.swift */,
+				F9A664D71C74AE9C00DC7B59 /* AllTasksViewController.xib */,
+			);
+			name = controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,8 +252,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9A664AD1C720E7B00DC7B59 /* LaunchScreen.storyboard in Resources */,
+				F9A664D91C74AE9C00DC7B59 /* AllTasksViewController.xib in Resources */,
+				F9A664E71C74D0D900DC7B59 /* PersonWithTasksTableViewCell.xib in Resources */,
 				F9A664AA1C720E7B00DC7B59 /* Assets.xcassets in Resources */,
-				F9A664A81C720E7B00DC7B59 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,8 +279,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F9A664A51C720E7B00DC7B59 /* ViewController.swift in Sources */,
+				F9A664E61C74D0D900DC7B59 /* PersonWithTasksTableViewCell.swift in Sources */,
 				F9A664A31C720E7B00DC7B59 /* AppDelegate.swift in Sources */,
+				F9A664DD1C74C48700DC7B59 /* AllTasksViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,14 +317,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		F9A664A61C720E7B00DC7B59 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F9A664A71C720E7B00DC7B59 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		F9A664AB1C720E7B00DC7B59 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -401,7 +417,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Standup.ios/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Individual.Standup-ios";
+				PRODUCT_BUNDLE_IDENTIFIER = "individual.Standup-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -412,7 +428,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Standup.ios/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Individual.Standup-ios";
+				PRODUCT_BUNDLE_IDENTIFIER = "individual.Standup-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
