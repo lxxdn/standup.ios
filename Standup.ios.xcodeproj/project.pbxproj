@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F901F5E01C79FE49001819AB /* project.swift in Sources */ = {isa = PBXBuildFile; fileRef = F901F5DF1C79FE49001819AB /* project.swift */; };
+		F901F5E21C79FE55001819AB /* employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = F901F5E11C79FE55001819AB /* employee.swift */; };
+		F901F5E41C79FE5D001819AB /* task.swift in Sources */ = {isa = PBXBuildFile; fileRef = F901F5E31C79FE5D001819AB /* task.swift */; };
 		F9A664A31C720E7B00DC7B59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A664A21C720E7B00DC7B59 /* AppDelegate.swift */; };
 		F9A664AA1C720E7B00DC7B59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9A664A91C720E7B00DC7B59 /* Assets.xcassets */; };
 		F9A664AD1C720E7B00DC7B59 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9A664AB1C720E7B00DC7B59 /* LaunchScreen.storyboard */; };
@@ -16,6 +19,7 @@
 		F9A664DD1C74C48700DC7B59 /* AllTasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A664DC1C74C48700DC7B59 /* AllTasksViewController.swift */; };
 		F9A664E61C74D0D900DC7B59 /* PersonWithTasksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A664E41C74D0D900DC7B59 /* PersonWithTasksTableViewCell.swift */; };
 		F9A664E71C74D0D900DC7B59 /* PersonWithTasksTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9A664E51C74D0D900DC7B59 /* PersonWithTasksTableViewCell.xib */; };
+		F9A664E91C760D7E00DC7B59 /* server.rb in Resources */ = {isa = PBXBuildFile; fileRef = F9A664E81C760D7E00DC7B59 /* server.rb */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +40,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F901F5DF1C79FE49001819AB /* project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = project.swift; sourceTree = "<group>"; };
+		F901F5E11C79FE55001819AB /* employee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = employee.swift; sourceTree = "<group>"; };
+		F901F5E31C79FE5D001819AB /* task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = task.swift; sourceTree = "<group>"; };
 		F9A6649F1C720E7B00DC7B59 /* Standup.ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Standup.ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9A664A21C720E7B00DC7B59 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9A664A91C720E7B00DC7B59 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,6 +58,7 @@
 		F9A664DC1C74C48700DC7B59 /* AllTasksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllTasksViewController.swift; sourceTree = "<group>"; };
 		F9A664E41C74D0D900DC7B59 /* PersonWithTasksTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonWithTasksTableViewCell.swift; sourceTree = "<group>"; };
 		F9A664E51C74D0D900DC7B59 /* PersonWithTasksTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonWithTasksTableViewCell.xib; sourceTree = "<group>"; };
+		F9A664E81C760D7E00DC7B59 /* server.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = server.rb; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +109,7 @@
 		F9A664A11C720E7B00DC7B59 /* Standup.ios */ = {
 			isa = PBXGroup;
 			children = (
+				F9A664EA1C79FCFA00DC7B59 /* models */,
 				F9A664DF1C74CB6400DC7B59 /* controllers */,
 				F9A664DE1C74CB5B00DC7B59 /* views */,
 				F9A664A21C720E7B00DC7B59 /* AppDelegate.swift */,
@@ -143,8 +152,19 @@
 			children = (
 				F9A664DC1C74C48700DC7B59 /* AllTasksViewController.swift */,
 				F9A664D71C74AE9C00DC7B59 /* AllTasksViewController.xib */,
+				F9A664E81C760D7E00DC7B59 /* server.rb */,
 			);
 			name = controllers;
+			sourceTree = "<group>";
+		};
+		F9A664EA1C79FCFA00DC7B59 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				F901F5DF1C79FE49001819AB /* project.swift */,
+				F901F5E11C79FE55001819AB /* employee.swift */,
+				F901F5E31C79FE5D001819AB /* task.swift */,
+			);
+			name = models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,6 +271,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9A664E91C760D7E00DC7B59 /* server.rb in Resources */,
 				F9A664AD1C720E7B00DC7B59 /* LaunchScreen.storyboard in Resources */,
 				F9A664D91C74AE9C00DC7B59 /* AllTasksViewController.xib in Resources */,
 				F9A664E71C74D0D900DC7B59 /* PersonWithTasksTableViewCell.xib in Resources */,
@@ -279,9 +300,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F901F5E21C79FE55001819AB /* employee.swift in Sources */,
 				F9A664E61C74D0D900DC7B59 /* PersonWithTasksTableViewCell.swift in Sources */,
 				F9A664A31C720E7B00DC7B59 /* AppDelegate.swift in Sources */,
 				F9A664DD1C74C48700DC7B59 /* AllTasksViewController.swift in Sources */,
+				F901F5E41C79FE5D001819AB /* task.swift in Sources */,
+				F901F5E01C79FE49001819AB /* project.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,6 +524,7 @@
 				F9A664C91C720E7B00DC7B59 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F9A664CA1C720E7B00DC7B59 /* Build configuration list for PBXNativeTarget "Standup.iosTests" */ = {
 			isa = XCConfigurationList;
@@ -508,6 +533,7 @@
 				F9A664CC1C720E7B00DC7B59 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F9A664CD1C720E7B00DC7B59 /* Build configuration list for PBXNativeTarget "Standup.iosUITests" */ = {
 			isa = XCConfigurationList;
@@ -516,6 +542,7 @@
 				F9A664CF1C720E7B00DC7B59 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
