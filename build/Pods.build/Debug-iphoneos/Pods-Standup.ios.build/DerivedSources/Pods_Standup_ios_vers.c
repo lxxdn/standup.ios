@@ -1,0 +1,1 @@
+ const unsigned char Pods_Standup_iosVersionString[] __attribute__ ((used)) = "@(#)PROGRAM:Pods_Standup_ios  PROJECT:Pods-1" "\n"; const double Pods_Standup_iosVersionNumber __attribute__ ((used)) = (double)1.;

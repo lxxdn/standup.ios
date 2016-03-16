@@ -3,17 +3,73 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="personWithTasks" id="KGk-i7-Jjw" customClass="PersonWithTasksTableViewCell" customModule="Standup_ios" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PersonWithTasks" rowHeight="311" id="KGk-i7-Jjw" customClass="PersonWithTasksTableViewCell" customModule="Standup_ios" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="515" height="311"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <rect key="frame" x="0.0" y="0.0" width="515" height="310"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ImM-ih-ja0">
+                        <rect key="frame" x="8" y="8" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="gC1-Jb-xvz"/>
+                            <constraint firstAttribute="width" constant="50" id="jGb-EV-k9J"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aCB-Ar-Ca5">
+                        <rect key="frame" x="93" y="15" width="200" height="35"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="200" id="x0F-xQ-aeS"/>
+                            <constraint firstAttribute="width" constant="200" id="yMU-qE-7fG"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="x0F-xQ-aeS"/>
+                            </mask>
+                        </variation>
+                    </label>
+                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vNx-hD-ffl">
+                        <rect key="frame" x="8" y="66" width="499" height="236"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </tableView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="aCB-Ar-Ca5" firstAttribute="leading" secondItem="ImM-ih-ja0" secondAttribute="trailing" constant="35" id="0qs-lb-TcN"/>
+                    <constraint firstItem="vNx-hD-ffl" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="ADE-GT-nn4"/>
+                    <constraint firstItem="ImM-ih-ja0" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="H4M-Up-obV"/>
+                    <constraint firstItem="aCB-Ar-Ca5" firstAttribute="leading" secondItem="ImM-ih-ja0" secondAttribute="trailing" constant="89" id="Jvr-eR-7Gw"/>
+                    <constraint firstItem="vNx-hD-ffl" firstAttribute="leading" secondItem="ImM-ih-ja0" secondAttribute="leading" id="O6E-JE-3Xg"/>
+                    <constraint firstItem="aCB-Ar-Ca5" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="7" id="Rgv-KY-Ufc"/>
+                    <constraint firstItem="vNx-hD-ffl" firstAttribute="top" secondItem="ImM-ih-ja0" secondAttribute="bottom" constant="8" symbolic="YES" id="Z5w-7z-MLC"/>
+                    <constraint firstItem="vNx-hD-ffl" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="bQx-XR-akq"/>
+                    <constraint firstItem="aCB-Ar-Ca5" firstAttribute="centerY" secondItem="ImM-ih-ja0" secondAttribute="centerY" id="cxn-zT-dvW"/>
+                    <constraint firstItem="aCB-Ar-Ca5" firstAttribute="bottom" secondItem="ImM-ih-ja0" secondAttribute="bottom" constant="12" id="kCS-17-zH1"/>
+                    <constraint firstItem="ImM-ih-ja0" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="mtJ-Ge-C7A"/>
+                    <constraint firstItem="aCB-Ar-Ca5" firstAttribute="top" secondItem="ImM-ih-ja0" secondAttribute="top" constant="-13" id="xwU-Yi-ZMW"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="Jvr-eR-7Gw"/>
+                        <exclude reference="kCS-17-zH1"/>
+                        <exclude reference="xwU-Yi-ZMW"/>
+                    </mask>
+                </variation>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="employeeAvatar" destination="ImM-ih-ja0" id="6Sz-Kb-pgF"/>
+                <outlet property="employeeName" destination="aCB-Ar-Ca5" id="VwY-Os-pdd"/>
+                <outlet property="tasksTable" destination="vNx-hD-ffl" id="UGI-cd-NnO"/>
+            </connections>
+            <point key="canvasLocation" x="408.5" y="329.5"/>
         </tableViewCell>
     </objects>
 </document>

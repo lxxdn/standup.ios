@@ -18,7 +18,17 @@ class Project {
         self.id = id
     }
     
-    func appendEmployee(e: Employee){
-        self.employees.append(e)
+    static func parseJSON(json: AnyObject?) -> Array<Project>{
+        let content = json as! Array<NSDictionary>
+        var result = Array<Project>()
+        for projectContent in content{
+            let projectID = projectContent.objectForKey("project_id") as! String
+            let projectName = projectContent.objectForKey("project_name") as! String
+            let employees = Employee.parseJSON(projectContent.objectForKey("employeesOnProject"))
+            let newProject = Project(project_id: projectID, project_name: projectName)
+            newProject.employees +=  employees
+            result.append(newProject)
+        }
+        return result
     }
 }

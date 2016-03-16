@@ -16,38 +16,53 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="efW-ze-1SQ">
-                    <rect key="frame" x="0.0" y="551" width="600" height="49"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <items>
-                        <tabBarItem systemItem="favorites" id="D2Y-4I-rpM"/>
-                        <tabBarItem systemItem="more" id="SDJ-gl-fKC"/>
-                    </items>
-                </tabBar>
                 <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7e1-SJ-2DQ">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                     <items>
                         <navigationItem title="Standup" id="gjM-ac-sU3"/>
                     </items>
                 </navigationBar>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6BQ-hd-rXX">
-                    <rect key="frame" x="0.0" y="44" width="600" height="507"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="6BQ-hd-rXX">
+                    <rect key="frame" x="0.0" y="44" width="600" height="513"/>
+                    <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                 </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1d7-Gc-lbb">
+                    <rect key="frame" x="261" y="557" width="78" height="43"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="78" id="YpC-Mj-51p"/>
+                        <constraint firstAttribute="height" constant="43" id="Zfd-Vu-N7y"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                    <state key="normal" title="Add"/>
+                    <connections>
+                        <action selector="newTaskPressed:" destination="-1" eventType="touchUpInside" id="jPO-p8-izp"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="1d7-Gc-lbb" firstAttribute="centerX" secondItem="6BQ-hd-rXX" secondAttribute="centerX" id="0uK-QV-LoK"/>
                 <constraint firstItem="6BQ-hd-rXX" firstAttribute="leading" secondItem="7e1-SJ-2DQ" secondAttribute="leading" id="4NF-OO-kvi"/>
+                <constraint firstAttribute="bottom" secondItem="1d7-Gc-lbb" secondAttribute="bottom" id="781-dN-bvG"/>
                 <constraint firstItem="7e1-SJ-2DQ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="9M7-zb-g0Y"/>
-                <constraint firstItem="6BQ-hd-rXX" firstAttribute="bottom" secondItem="efW-ze-1SQ" secondAttribute="top" id="9wA-nX-oyJ"/>
                 <constraint firstItem="6BQ-hd-rXX" firstAttribute="top" secondItem="7e1-SJ-2DQ" secondAttribute="bottom" id="Akf-Tb-Itr"/>
+                <constraint firstItem="1d7-Gc-lbb" firstAttribute="top" secondItem="6BQ-hd-rXX" secondAttribute="bottom" constant="42" id="MeE-GU-whM"/>
+                <constraint firstItem="1d7-Gc-lbb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="257" id="OIP-Zg-sZE"/>
+                <constraint firstItem="1d7-Gc-lbb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="257" id="S8I-Bq-WM4"/>
                 <constraint firstItem="6BQ-hd-rXX" firstAttribute="trailing" secondItem="7e1-SJ-2DQ" secondAttribute="trailing" id="Uc6-OR-fkP"/>
-                <constraint firstItem="efW-ze-1SQ" firstAttribute="leading" secondItem="7e1-SJ-2DQ" secondAttribute="leading" id="g61-l4-gH2"/>
-                <constraint firstAttribute="bottom" secondItem="efW-ze-1SQ" secondAttribute="bottom" id="hse-YN-toB"/>
-                <constraint firstItem="efW-ze-1SQ" firstAttribute="trailing" secondItem="7e1-SJ-2DQ" secondAttribute="trailing" id="qp2-PS-n6o"/>
+                <constraint firstItem="1d7-Gc-lbb" firstAttribute="top" secondItem="6BQ-hd-rXX" secondAttribute="bottom" id="a6b-N2-Iau"/>
+                <constraint firstItem="1d7-Gc-lbb" firstAttribute="top" secondItem="6BQ-hd-rXX" secondAttribute="bottom" constant="55" id="fsx-5b-sMZ"/>
                 <constraint firstAttribute="trailing" secondItem="7e1-SJ-2DQ" secondAttribute="trailing" id="rVC-ao-zvZ"/>
                 <constraint firstItem="7e1-SJ-2DQ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="xOc-2U-Hyj"/>
             </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="MeE-GU-whM"/>
+                    <exclude reference="OIP-Zg-sZE"/>
+                    <exclude reference="S8I-Bq-WM4"/>
+                    <exclude reference="fsx-5b-sMZ"/>
+                </mask>
+            </variation>
         </view>
     </objects>
 </document>

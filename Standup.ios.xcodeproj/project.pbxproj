@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		39BF33F533C5E97D5C5D3EB2 /* Pods_Standup_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C02F8309B2950F21480D11D /* Pods_Standup_ios.framework */; };
 		F901F5E01C79FE49001819AB /* project.swift in Sources */ = {isa = PBXBuildFile; fileRef = F901F5DF1C79FE49001819AB /* project.swift */; };
 		F901F5E21C79FE55001819AB /* employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = F901F5E11C79FE55001819AB /* employee.swift */; };
 		F901F5E41C79FE5D001819AB /* task.swift in Sources */ = {isa = PBXBuildFile; fileRef = F901F5E31C79FE5D001819AB /* task.swift */; };
+		F96CE72E1C96F8470070BA45 /* NewTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96CE72D1C96F8470070BA45 /* NewTaskView.swift */; };
+		F96CE7301C96F8570070BA45 /* NewTaskView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F96CE72F1C96F8570070BA45 /* NewTaskView.xib */; };
 		F9A664A31C720E7B00DC7B59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A664A21C720E7B00DC7B59 /* AppDelegate.swift */; };
 		F9A664AA1C720E7B00DC7B59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9A664A91C720E7B00DC7B59 /* Assets.xcassets */; };
 		F9A664AD1C720E7B00DC7B59 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9A664AB1C720E7B00DC7B59 /* LaunchScreen.storyboard */; };
@@ -17,9 +20,10 @@
 		F9A664C31C720E7B00DC7B59 /* Standup_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A664C21C720E7B00DC7B59 /* Standup_iosUITests.swift */; };
 		F9A664D91C74AE9C00DC7B59 /* AllTasksViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9A664D71C74AE9C00DC7B59 /* AllTasksViewController.xib */; };
 		F9A664DD1C74C48700DC7B59 /* AllTasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A664DC1C74C48700DC7B59 /* AllTasksViewController.swift */; };
-		F9A664E61C74D0D900DC7B59 /* PersonWithTasksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A664E41C74D0D900DC7B59 /* PersonWithTasksTableViewCell.swift */; };
-		F9A664E71C74D0D900DC7B59 /* PersonWithTasksTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9A664E51C74D0D900DC7B59 /* PersonWithTasksTableViewCell.xib */; };
 		F9A664E91C760D7E00DC7B59 /* server.rb in Resources */ = {isa = PBXBuildFile; fileRef = F9A664E81C760D7E00DC7B59 /* server.rb */; };
+		F9ABE7931C7F3BA20040B3FF /* PersonWithTasksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9ABE7911C7F3BA20040B3FF /* PersonWithTasksTableViewCell.swift */; };
+		F9ABE7941C7F3BA20040B3FF /* PersonWithTasksTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9ABE7921C7F3BA20040B3FF /* PersonWithTasksTableViewCell.xib */; };
+		F9FDB1961C9847AD005E6E7C /* UITextView+Placeholder.m in Sources */ = {isa = PBXBuildFile; fileRef = F9FDB1941C9847AD005E6E7C /* UITextView+Placeholder.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,9 +44,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3AB0F7EE841C7E04DA2F27A7 /* Pods-Standup.ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Standup.ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Standup.ios/Pods-Standup.ios.debug.xcconfig"; sourceTree = "<group>"; };
+		84738A9842B7A9E235CD0E47 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C02F8309B2950F21480D11D /* Pods_Standup_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Standup_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F901F5DF1C79FE49001819AB /* project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = project.swift; sourceTree = "<group>"; };
 		F901F5E11C79FE55001819AB /* employee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = employee.swift; sourceTree = "<group>"; };
 		F901F5E31C79FE5D001819AB /* task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = task.swift; sourceTree = "<group>"; };
+		F91682751C9843FB00DF681E /* Standup.ios-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Standup.ios-Bridging-Header.h"; sourceTree = "<group>"; };
+		F96CE72D1C96F8470070BA45 /* NewTaskView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTaskView.swift; sourceTree = "<group>"; };
+		F96CE72F1C96F8570070BA45 /* NewTaskView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewTaskView.xib; sourceTree = "<group>"; };
 		F9A6649F1C720E7B00DC7B59 /* Standup.ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Standup.ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9A664A21C720E7B00DC7B59 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9A664A91C720E7B00DC7B59 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -56,9 +66,12 @@
 		F9A664C41C720E7B00DC7B59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9A664D71C74AE9C00DC7B59 /* AllTasksViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AllTasksViewController.xib; path = ../AllTasksViewController.xib; sourceTree = "<group>"; };
 		F9A664DC1C74C48700DC7B59 /* AllTasksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllTasksViewController.swift; sourceTree = "<group>"; };
-		F9A664E41C74D0D900DC7B59 /* PersonWithTasksTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonWithTasksTableViewCell.swift; sourceTree = "<group>"; };
-		F9A664E51C74D0D900DC7B59 /* PersonWithTasksTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonWithTasksTableViewCell.xib; sourceTree = "<group>"; };
 		F9A664E81C760D7E00DC7B59 /* server.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = server.rb; sourceTree = "<group>"; };
+		F9ABE7911C7F3BA20040B3FF /* PersonWithTasksTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonWithTasksTableViewCell.swift; sourceTree = "<group>"; };
+		F9ABE7921C7F3BA20040B3FF /* PersonWithTasksTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonWithTasksTableViewCell.xib; sourceTree = "<group>"; };
+		F9FDB1941C9847AD005E6E7C /* UITextView+Placeholder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+Placeholder.m"; sourceTree = "<group>"; };
+		F9FDB1951C9847AD005E6E7C /* UITextView+Placeholder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+Placeholder.h"; sourceTree = "<group>"; };
+		FEA571B037D4F7D099582623 /* Pods-Standup.ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Standup.ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-Standup.ios/Pods-Standup.ios.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39BF33F533C5E97D5C5D3EB2 /* Pods_Standup_ios.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +100,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		234D6E13F25F7154BBE6A966 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3AB0F7EE841C7E04DA2F27A7 /* Pods-Standup.ios.debug.xcconfig */,
+				FEA571B037D4F7D099582623 /* Pods-Standup.ios.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		9329A9CDBE66073B587A7F1B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				84738A9842B7A9E235CD0E47 /* Pods.framework */,
+				8C02F8309B2950F21480D11D /* Pods_Standup_ios.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F91682741C98438800DF681E /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				F9FDB1941C9847AD005E6E7C /* UITextView+Placeholder.m */,
+				F9FDB1951C9847AD005E6E7C /* UITextView+Placeholder.h */,
+				F91682751C9843FB00DF681E /* Standup.ios-Bridging-Header.h */,
+			);
+			name = lib;
+			sourceTree = "<group>";
+		};
 		F9A664961C720E7B00DC7B59 = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +135,8 @@
 				F9A664B61C720E7B00DC7B59 /* Standup.iosTests */,
 				F9A664C11C720E7B00DC7B59 /* Standup.iosUITests */,
 				F9A664A01C720E7B00DC7B59 /* Products */,
+				234D6E13F25F7154BBE6A966 /* Pods */,
+				9329A9CDBE66073B587A7F1B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -109,6 +153,7 @@
 		F9A664A11C720E7B00DC7B59 /* Standup.ios */ = {
 			isa = PBXGroup;
 			children = (
+				F91682741C98438800DF681E /* lib */,
 				F9A664EA1C79FCFA00DC7B59 /* models */,
 				F9A664DF1C74CB6400DC7B59 /* controllers */,
 				F9A664DE1C74CB5B00DC7B59 /* views */,
@@ -141,8 +186,10 @@
 		F9A664DE1C74CB5B00DC7B59 /* views */ = {
 			isa = PBXGroup;
 			children = (
-				F9A664E41C74D0D900DC7B59 /* PersonWithTasksTableViewCell.swift */,
-				F9A664E51C74D0D900DC7B59 /* PersonWithTasksTableViewCell.xib */,
+				F9ABE7911C7F3BA20040B3FF /* PersonWithTasksTableViewCell.swift */,
+				F9ABE7921C7F3BA20040B3FF /* PersonWithTasksTableViewCell.xib */,
+				F96CE72D1C96F8470070BA45 /* NewTaskView.swift */,
+				F96CE72F1C96F8570070BA45 /* NewTaskView.xib */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -174,9 +221,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F9A664C71C720E7B00DC7B59 /* Build configuration list for PBXNativeTarget "Standup.ios" */;
 			buildPhases = (
+				C2C47D8F7C0586B0B212279B /* Check Pods Manifest.lock */,
 				F9A6649B1C720E7B00DC7B59 /* Sources */,
 				F9A6649C1C720E7B00DC7B59 /* Frameworks */,
 				F9A6649D1C720E7B00DC7B59 /* Resources */,
+				4781E1071710ABCB5EC77532 /* Embed Pods Frameworks */,
+				873F39E84C677DE5C19E664A /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -273,8 +323,9 @@
 			files = (
 				F9A664E91C760D7E00DC7B59 /* server.rb in Resources */,
 				F9A664AD1C720E7B00DC7B59 /* LaunchScreen.storyboard in Resources */,
+				F96CE7301C96F8570070BA45 /* NewTaskView.xib in Resources */,
 				F9A664D91C74AE9C00DC7B59 /* AllTasksViewController.xib in Resources */,
-				F9A664E71C74D0D900DC7B59 /* PersonWithTasksTableViewCell.xib in Resources */,
+				F9ABE7941C7F3BA20040B3FF /* PersonWithTasksTableViewCell.xib in Resources */,
 				F9A664AA1C720E7B00DC7B59 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -295,17 +346,67 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4781E1071710ABCB5EC77532 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Standup.ios/Pods-Standup.ios-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		873F39E84C677DE5C19E664A /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Standup.ios/Pods-Standup.ios-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C2C47D8F7C0586B0B212279B /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F9A6649B1C720E7B00DC7B59 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				F901F5E21C79FE55001819AB /* employee.swift in Sources */,
-				F9A664E61C74D0D900DC7B59 /* PersonWithTasksTableViewCell.swift in Sources */,
+				F96CE72E1C96F8470070BA45 /* NewTaskView.swift in Sources */,
 				F9A664A31C720E7B00DC7B59 /* AppDelegate.swift in Sources */,
 				F9A664DD1C74C48700DC7B59 /* AllTasksViewController.swift in Sources */,
+				F9ABE7931C7F3BA20040B3FF /* PersonWithTasksTableViewCell.swift in Sources */,
 				F901F5E41C79FE5D001819AB /* task.swift in Sources */,
 				F901F5E01C79FE49001819AB /* project.swift in Sources */,
+				F9FDB1961C9847AD005E6E7C /* UITextView+Placeholder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,6 +500,7 @@
 		};
 		F9A664C61C720E7B00DC7B59 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FEA571B037D4F7D099582623 /* Pods-Standup.ios.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -437,23 +539,30 @@
 		};
 		F9A664C81C720E7B00DC7B59 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3AB0F7EE841C7E04DA2F27A7 /* Pods-Standup.ios.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Standup.ios/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "individual.Standup-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Standup.ios/Standup.ios-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		F9A664C91C720E7B00DC7B59 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FEA571B037D4F7D099582623 /* Pods-Standup.ios.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Standup.ios/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "individual.Standup-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Standup.ios/Standup.ios-Bridging-Header.h";
 			};
 			name = Release;
 		};

@@ -1,5 +1,11 @@
+#! /usr/bin/env ruby
+
 require 'sinatra'
 require 'json'
+require 'mongo'
+
+@connection ||= Mongo::Client.new([ '127.0.0.1:27017'  ], :database => 'standup')
+
 
 get '/' do
   'Hello world!'
@@ -7,8 +13,6 @@ end
 
 
 get '/allTasks' do
-  content_type 'application/json'
-
   a = {
     projects: [
       {
@@ -17,21 +21,21 @@ get '/allTasks' do
         employeesOnProject: [
           {
             employee_name: 'julien',
-            avatar: 'http://',
+            avatar: 'http://img0.imgtn.bdimg.com/it/u=4191831375,138217075&fm=23&gp=0.jpg',
             tasks: [
               {
-                content: 'fix bug',
+                content: 'fix pryo bug',
                 status: 'new'
               },
               {
-                content: 'feedback',
+                content: 'pyro feedback',
                 status: 'done'
               }
             ]
           },
           {
             employee_name: 'maxime',
-            avatar: 'http://',
+            avatar: 'http://img2.imgtn.bdimg.com/it/u=3467797325,3110048149&fm=23&gp=0.jpg',
             tasks: [
               {
                 content: 'sdjklf jlsdf',
@@ -55,28 +59,28 @@ get '/allTasks' do
         employeesOnProject: [
           {
             employee_name: 'alex',
-            avatar: 'http://',
+            avatar: 'http://img0.imgtn.bdimg.com/it/u=1124017760,2858350780&fm=23&gp=0.jpg',
             tasks: [
               {
-                content: 'fix bug',
+                content: 'bug fixes',
                 status: 'new'
               },
               {
-                content: 'feedback',
+                content: 'feedback from client',
                 status: 'done'
               }
             ]
           },
           {
             employee_name: 'xiaoming',
-            avatar: 'http://',
+            avatar: 'http://img0.imgtn.bdimg.com/it/u=2948082143,704569477&fm=23&gp=0.jpg',
             tasks: [
               {
-                content: 'fix bug',
+                content: 'set up the basic env',
                 status: 'new'
               },
               {
-                content: 'feedback',
+                content: 'haha',
                 status: 'done'
               }
             ]

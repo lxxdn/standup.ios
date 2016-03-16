@@ -28,4 +28,19 @@ class Task{
         }
     }
     
+    static func parseJSON(json: AnyObject?) -> Array<Task>{
+        var parsedTasks = Array<Task>()
+        let taskJSON = json as? Array<NSDictionary>
+        if taskJSON != nil {
+            for content in taskJSON!{
+                let taskContent = content.objectForKey("content") as! String
+                let taskStatus = content.objectForKey("status") as! String
+                let newTask = Task(content: taskContent, status: taskStatus)
+                parsedTasks.append(newTask)
+            }
+        }
+        
+        return parsedTasks
+    }
+    
 }
