@@ -22,6 +22,7 @@ class PersonWithTasksTableViewCell: UITableViewCell, UITableViewDataSource {
         super.awakeFromNib()
         // Initialization code
         tasksTable.dataSource = self
+        tasksTable.scrollEnabled = false
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

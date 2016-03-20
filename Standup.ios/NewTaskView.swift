@@ -27,8 +27,22 @@ class NewTaskView: UIView, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var userBtn: UIButton!
     @IBAction func submit() {
         let params = ["content": taskContentInput.text, "project_id": currentProject!["id"]!, "team_id": currentUser!["team_id"]!, "user_id": currentUser!["id"]! ]
-        Alamofire.request(.POST, "http://nuri.ekohe.com:4567/task/create", parameters: params)
+        print(params)
+//        Alamofire.request(.POST, "http://nuri.ekohe.com:4567/task/create", parameters: params, encoding: .JSON)
+        UIView.animateWithDuration(0.5, animations: {
+            self.frame.origin.y += self.frame.height
+            })
+        
+        self.selectView.hidden = true
     }
+    
+    @IBAction func cancel() {
+        UIView.animateWithDuration(0.5, animations: {
+            self.frame.origin.y += self.frame.height
+            })
+        self.selectView.hidden = true
+    }
+    
     var currentUser: NSDictionary?
     var currentProject: NSDictionary?
     var currentDataType = DataType.Project

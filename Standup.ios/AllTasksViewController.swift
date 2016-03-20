@@ -34,11 +34,17 @@ class AllTasksViewController: UIViewController, UITableViewDataSource, UITableVi
         })
     }
     var projects: Array<Project> = []
+    let spinner = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.Gray)
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.initData()
         tasksTableView.dataSource = self
         tasksTableView.delegate = self
+        let screenSize = UIScreen.mainScreen().bounds
+        spinner.frame.origin = CGPoint(x: (screenSize.width - spinner.frame.width)/2, y: (screenSize.height - spinner.frame.height)/2)
+        self.view.addSubview(spinner)
+        
+        spinner.startAnimating()
+        initData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -52,6 +58,7 @@ class AllTasksViewController: UIViewController, UITableViewDataSource, UITableVi
                 case .Success(let json):
                     let tasksJSON = json as! NSDictionary
                     self.projects = Project.parseJSON(tasksJSON.objectForKey("projects"))
+                    self.spinner.stopAnimating()
                     self.tasksTableView.reloadData()
                 case .Failure(let error):
                     NSLog("Failed to get tasks json because \(error)" )
@@ -86,7 +93,6 @@ class AllTasksViewController: UIViewController, UITableViewDataSource, UITableVi
         cell.employeeAvatar.sd_setImageWithURL(NSURL(string: project.employees[indexPath.row].avatar!))
         
         cell.tasks = project.employees[indexPath.row].tasks.map{"\($0.content!)"}
-    
         return cell
     }
     
@@ -95,7 +101,9 @@ class AllTasksViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        let height = 100 + projects[indexPath.section].employees[indexPath.row].tasks.count * 32
+        let defaultCellHeight = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "default")
+        
+        let height = 62 + (CGFloat)(projects[indexPath.section].employees[indexPath.row].tasks.count) * defaultCellHeight.frame.height
         return CGFloat(height)
     }
 }

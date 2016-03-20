@@ -55,10 +55,22 @@
                         <action selector="submit" destination="iN0-l3-epB" eventType="touchUpInside" id="fLK-Ib-T9a"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R4s-oh-cau">
+                    <rect key="frame" x="71" y="326" width="69" height="36"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="69" id="PVr-El-5hg"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <state key="normal" title="Cancel"/>
+                    <connections>
+                        <action selector="cancel" destination="iN0-l3-epB" eventType="touchUpInside" id="XpX-qU-cwY"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="3v9-Vj-K90" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="31n-UU-6Hd"/>
+                <constraint firstItem="R4s-oh-cau" firstAttribute="leading" secondItem="QFS-7X-gk8" secondAttribute="trailing" constant="8" symbolic="YES" id="Mrn-Bi-VNB"/>
                 <constraint firstItem="YYx-Lu-PTR" firstAttribute="top" secondItem="485-ou-y5F" secondAttribute="bottom" id="VSd-Eu-H5b"/>
                 <constraint firstItem="YYx-Lu-PTR" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="eip-XR-Ic7"/>
                 <constraint firstAttribute="trailing" secondItem="3v9-Vj-K90" secondAttribute="trailing" id="etR-iC-eqy"/>
@@ -67,6 +79,7 @@
                 <constraint firstItem="QFS-7X-gk8" firstAttribute="top" secondItem="YYx-Lu-PTR" secondAttribute="bottom" constant="8" symbolic="YES" id="vFh-r3-w58"/>
                 <constraint firstItem="YYx-Lu-PTR" firstAttribute="leading" secondItem="485-ou-y5F" secondAttribute="leading" id="wMd-6R-vJr"/>
                 <constraint firstItem="485-ou-y5F" firstAttribute="top" secondItem="3v9-Vj-K90" secondAttribute="bottom" constant="8" symbolic="YES" id="wyl-gh-FOq"/>
+                <constraint firstItem="R4s-oh-cau" firstAttribute="baseline" secondItem="QFS-7X-gk8" secondAttribute="baseline" id="xel-fU-UEt"/>
             </constraints>
             <connections>
                 <outlet property="projectBtn" destination="485-ou-y5F" id="f9i-yF-2qn"/>
