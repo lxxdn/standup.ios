@@ -28,7 +28,7 @@ class NewTaskView: UIView, UITableViewDataSource, UITableViewDelegate {
     @IBAction func submit() {
         let params = ["content": taskContentInput.text, "project_id": currentProject!["id"]!, "team_id": currentUser!["team_id"]!, "user_id": currentUser!["id"]! ]
         print(params)
-//        Alamofire.request(.POST, "http://nuri.ekohe.com:4567/task/create", parameters: params, encoding: .JSON)
+        Alamofire.request(.POST, "http://nuri.ekohe.com:4567/task/create", parameters: params, encoding: .JSON)
         UIView.animateWithDuration(0.5, animations: {
             self.frame.origin.y += self.frame.height
             })
@@ -52,41 +52,45 @@ class NewTaskView: UIView, UITableViewDataSource, UITableViewDelegate {
             selectView.reloadData()
         }
     }//id and name tuple
+    
     @IBAction func selectProject() {
-       Alamofire.request(.GET, "http://nuri.ekohe.com:4567/allProjects")
-        .responseJSON{ response in
-            switch response.result {
-            case .Success(let json):
-                let projectsJSON = json as! NSDictionary
-                self.data = projectsJSON.objectForKey("projects") as! Array<NSDictionary>
-                self.currentDataType = .Project
-                UIView.animateWithDuration(0.5, animations: {
-                    self.selectView.frame.origin.y = 0
-                })
-                
-            case .Failure(let error):
-                NSLog("Failed to get projects josn becase \(error)")
-            }
+        Alamofire.request(.GET, "http://nuri.ekohe.com:4567/allProjects")
+            .responseJSON{ response in
+                switch response.result {
+                case .Success(let json):
+                    let projectsJSON = json as! NSDictionary
+                    self.data = projectsJSON.objectForKey("projects") as! Array<NSDictionary>
+                    self.currentDataType = .Project
+                    UIView.animateWithDuration(0.5, animations: {
+                        self.selectView.frame.origin.y = 0
+                    })
+                    
+                case .Failure(let error):
+                    NSLog("Failed to get projects josn becase \(error)")
+                }
         }
+
+    }
+
+    @IBAction func selectUser() {
+        Alamofire.request(.GET, "http://nuri.ekohe.com:4567/allUsers")
+            .responseJSON{ response in
+                switch response.result {
+                case .Success(let json):
+                    let usersJSON = json as! NSDictionary
+                    self.data = usersJSON.objectForKey("users") as! Array<NSDictionary>
+                    self.currentDataType = .User
+                    UIView.animateWithDuration(0.5, animations: {
+                        self.selectView.frame.origin.y = 0
+                    })
+                    
+                case .Failure(let error):
+                    NSLog("Failed to get users josn becase \(error)")
+                }
+        }
+
     }
     
-    @IBAction func selectUser() {
-       Alamofire.request(.GET, "http://nuri.ekohe.com:4567/allUsers")
-        .responseJSON{ response in
-            switch response.result {
-            case .Success(let json):
-                let usersJSON = json as! NSDictionary
-                self.data = usersJSON.objectForKey("users") as! Array<NSDictionary>
-                self.currentDataType = .User
-                UIView.animateWithDuration(0.5, animations: {
-                    self.selectView.frame.origin.y = 0
-                })
-                
-            case .Failure(let error):
-                NSLog("Failed to get users josn becase \(error)")
-            }
-        }
-    }
     @IBOutlet weak var taskContentInput: UITextView!
     override func awakeFromNib() {
         super.awakeFromNib()
