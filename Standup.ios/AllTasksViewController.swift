@@ -14,6 +14,7 @@ class AllTasksViewController: UIViewController, UITableViewDataSource, UITableVi
 
     @IBOutlet weak var tasksTableView: UITableView!
     
+    @IBOutlet weak var addBtn: UIButton!
     @IBAction func newTaskPressed(sender: UIButton) {
         print("new Task")
         let newTask = NSBundle.mainBundle().loadNibNamed("NewTaskView", owner: nil, options: nil).first as! NewTaskView
@@ -39,11 +40,20 @@ class AllTasksViewController: UIViewController, UITableViewDataSource, UITableVi
         super.viewDidLoad()
         tasksTableView.dataSource = self
         tasksTableView.delegate = self
+        
+        //set button image
+        let buttonImage = UIImage(named: "add_task_icon")
+        addBtn.setImage(buttonImage, forState: UIControlState.Normal)
+        
+        
+        // set activity indicator
         let screenSize = UIScreen.mainScreen().bounds
         spinner.frame.origin = CGPoint(x: (screenSize.width - spinner.frame.width)/2, y: (screenSize.height - spinner.frame.height)/2)
         self.view.addSubview(spinner)
-        
         spinner.startAnimating()
+        
+        
+        
         initData()
     }
 

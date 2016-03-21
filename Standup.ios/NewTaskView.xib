@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -27,18 +27,6 @@
                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 </textView>
-                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="485-ou-y5F">
-                                    <rect key="frame" x="8" y="252" width="171" height="30"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="30" id="6oW-OI-0lB"/>
-                                        <constraint firstAttribute="width" constant="584" id="7Rg-3y-ccw"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                    <state key="normal" title="Select you project"/>
-                                    <connections>
-                                        <action selector="selectProject" destination="t7A-ge-uqt" eventType="touchUpInside" id="XT2-Kr-2wK"/>
-                                    </connections>
-                                </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QFS-7X-gk8">
                                     <rect key="frame" x="8" y="326" width="55" height="36"/>
                                     <constraints>
@@ -62,14 +50,26 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YYx-Lu-PTR">
-                                    <rect key="frame" x="8" y="282" width="122" height="36"/>
+                                    <rect key="frame" x="8" y="282" width="100" height="36"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="122" id="2Xk-nZ-xtz"/>
+                                        <constraint firstAttribute="width" constant="100" id="2Xk-nZ-xtz"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                     <state key="normal" title="Select user"/>
                                     <connections>
                                         <action selector="selectUser" destination="t7A-ge-uqt" eventType="touchUpInside" id="yxb-iF-ZsY"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="485-ou-y5F">
+                                    <rect key="frame" x="8" y="252" width="165" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="6oW-OI-0lB"/>
+                                        <constraint firstAttribute="width" constant="165" id="7Rg-3y-ccw"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                    <state key="normal" title="Select you project"/>
+                                    <connections>
+                                        <action selector="selectProject" destination="t7A-ge-uqt" eventType="touchUpInside" id="XT2-Kr-2wK"/>
                                     </connections>
                                 </button>
                             </subviews>
@@ -108,6 +108,7 @@
                 <constraint firstItem="RaD-eX-yEa" firstAttribute="leading" secondItem="t7A-ge-uqt" secondAttribute="leading" id="kGb-5x-FbK"/>
             </constraints>
             <connections>
+                <outlet property="mainView" destination="iN0-l3-epB" id="M37-pL-mcZ"/>
                 <outlet property="projectBtn" destination="485-ou-y5F" id="bLi-Gr-cOS"/>
                 <outlet property="taskContentInput" destination="3v9-Vj-K90" id="3dn-qE-NHA"/>
                 <outlet property="userBtn" destination="YYx-Lu-PTR" id="ywZ-VN-Q5b"/>

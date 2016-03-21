@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AllTasksViewController" customModule="Standup_ios" customModuleProvider="target">
             <connections>
+                <outlet property="addBtn" destination="1d7-Gc-lbb" id="J8b-Ow-dPL"/>
                 <outlet property="tasksTableView" destination="6BQ-hd-rXX" id="1Ad-Tz-oH0"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -23,17 +24,19 @@
                     </items>
                 </navigationBar>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="6BQ-hd-rXX">
-                    <rect key="frame" x="0.0" y="44" width="600" height="513"/>
+                    <rect key="frame" x="0.0" y="44" width="600" height="487"/>
                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                 </tableView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1d7-Gc-lbb">
-                    <rect key="frame" x="261" y="557" width="78" height="43"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1d7-Gc-lbb">
+                    <rect key="frame" x="268" y="533" width="65" height="65"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="78" id="YpC-Mj-51p"/>
-                        <constraint firstAttribute="height" constant="43" id="Zfd-Vu-N7y"/>
+                        <constraint firstAttribute="width" constant="65" id="YpC-Mj-51p"/>
+                        <constraint firstAttribute="height" constant="65" id="Zfd-Vu-N7y"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                    <state key="normal" title="Add"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <state key="normal" title="Add">
+                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
                     <connections>
                         <action selector="newTaskPressed:" destination="-1" eventType="touchUpInside" id="jPO-p8-izp"/>
                     </connections>
@@ -43,14 +46,14 @@
             <constraints>
                 <constraint firstItem="1d7-Gc-lbb" firstAttribute="centerX" secondItem="6BQ-hd-rXX" secondAttribute="centerX" id="0uK-QV-LoK"/>
                 <constraint firstItem="6BQ-hd-rXX" firstAttribute="leading" secondItem="7e1-SJ-2DQ" secondAttribute="leading" id="4NF-OO-kvi"/>
-                <constraint firstAttribute="bottom" secondItem="1d7-Gc-lbb" secondAttribute="bottom" id="781-dN-bvG"/>
+                <constraint firstAttribute="bottom" secondItem="1d7-Gc-lbb" secondAttribute="bottom" constant="2" id="781-dN-bvG"/>
                 <constraint firstItem="7e1-SJ-2DQ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="9M7-zb-g0Y"/>
                 <constraint firstItem="6BQ-hd-rXX" firstAttribute="top" secondItem="7e1-SJ-2DQ" secondAttribute="bottom" id="Akf-Tb-Itr"/>
                 <constraint firstItem="1d7-Gc-lbb" firstAttribute="top" secondItem="6BQ-hd-rXX" secondAttribute="bottom" constant="42" id="MeE-GU-whM"/>
                 <constraint firstItem="1d7-Gc-lbb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="257" id="OIP-Zg-sZE"/>
                 <constraint firstItem="1d7-Gc-lbb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="257" id="S8I-Bq-WM4"/>
                 <constraint firstItem="6BQ-hd-rXX" firstAttribute="trailing" secondItem="7e1-SJ-2DQ" secondAttribute="trailing" id="Uc6-OR-fkP"/>
-                <constraint firstItem="1d7-Gc-lbb" firstAttribute="top" secondItem="6BQ-hd-rXX" secondAttribute="bottom" id="a6b-N2-Iau"/>
+                <constraint firstItem="1d7-Gc-lbb" firstAttribute="top" secondItem="6BQ-hd-rXX" secondAttribute="bottom" constant="2" id="a6b-N2-Iau"/>
                 <constraint firstItem="1d7-Gc-lbb" firstAttribute="top" secondItem="6BQ-hd-rXX" secondAttribute="bottom" constant="55" id="fsx-5b-sMZ"/>
                 <constraint firstAttribute="trailing" secondItem="7e1-SJ-2DQ" secondAttribute="trailing" id="rVC-ao-zvZ"/>
                 <constraint firstItem="7e1-SJ-2DQ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="xOc-2U-Hyj"/>

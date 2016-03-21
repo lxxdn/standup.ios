@@ -23,6 +23,7 @@ class NewTaskView: UIView, UITableViewDataSource, UITableViewDelegate {
         case Project
     }
     
+    @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var projectBtn: UIButton!
     @IBOutlet weak var userBtn: UIButton!
     @IBAction func submit() {
@@ -54,6 +55,7 @@ class NewTaskView: UIView, UITableViewDataSource, UITableViewDelegate {
     }//id and name tuple
     
     @IBAction func selectProject() {
+        self.endEditing(true)
         Alamofire.request(.GET, "http://nuri.ekohe.com:4567/allProjects")
             .responseJSON{ response in
                 switch response.result {
@@ -73,6 +75,7 @@ class NewTaskView: UIView, UITableViewDataSource, UITableViewDelegate {
     }
 
     @IBAction func selectUser() {
+        self.endEditing(true)
         Alamofire.request(.GET, "http://nuri.ekohe.com:4567/allUsers")
             .responseJSON{ response in
                 switch response.result {
@@ -96,15 +99,23 @@ class NewTaskView: UIView, UITableViewDataSource, UITableViewDelegate {
         super.awakeFromNib()
         taskContentInput.text = ""
         taskContentInput.placeholder = "Input your content"
+        taskContentInput.becomeFirstResponder()
         
         selectView.dataSource = self
         selectView.delegate = self
         selectView.frame.size = self.frame.size
         selectView.frame.origin.y = self.frame.height
         self.addSubview(selectView)
+        
+        // add gesture recognizer
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: "tapViewAction:")
+        self.mainView.addGestureRecognizer(tapRecognizer)
     }
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
+    }
+    func tapViewAction(recognizer: UITapGestureRecognizer) {
+        self.endEditing(true)
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
