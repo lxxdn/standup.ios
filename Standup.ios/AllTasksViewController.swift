@@ -34,6 +34,15 @@ class AllTasksViewController: UIViewController, UITableViewDataSource, UITableVi
             //newTask.frame =
         })
     }
+    @IBAction func newTaskPressedDown() {
+        var frame = addBtn.frame
+        let center = CGPoint(x: frame.origin.x + frame.width/2 , y: frame.origin.y + frame.height/2)
+        
+        frame.size = CGSize(width: frame.width*3/4, height: frame.height*3/4)
+        frame.origin = CGPoint(x: center.x - frame.size.width/2, y: center.y - frame.size.height/2)
+        
+        addBtn.frame = frame
+    }
     var projects: Array<Project> = []
     let spinner = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.Gray)
     override func viewDidLoad() {
@@ -44,15 +53,13 @@ class AllTasksViewController: UIViewController, UITableViewDataSource, UITableVi
         //set button image
         let buttonImage = UIImage(named: "add_task_icon")
         addBtn.setImage(buttonImage, forState: UIControlState.Normal)
-        
+        addBtn.setImage(buttonImage, forState: UIControlState.Highlighted)
         
         // set activity indicator
         let screenSize = UIScreen.mainScreen().bounds
         spinner.frame.origin = CGPoint(x: (screenSize.width - spinner.frame.width)/2, y: (screenSize.height - spinner.frame.height)/2)
         self.view.addSubview(spinner)
         spinner.startAnimating()
-        
-        
         
         initData()
     }
