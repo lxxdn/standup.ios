@@ -108,7 +108,7 @@ class NewTaskView: UIView, UITableViewDataSource, UITableViewDelegate {
         self.addSubview(selectView)
         
         // add gesture recognizer
-        let tapRecognizer = UITapGestureRecognizer(target: self, action: "tapViewAction:")
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(NewTaskView.tapViewAction(_:)))
         self.mainView.addGestureRecognizer(tapRecognizer)
     }
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {

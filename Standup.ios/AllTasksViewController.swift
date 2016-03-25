@@ -38,7 +38,7 @@ class AllTasksViewController: UIViewController, UITableViewDataSource, UITableVi
         var frame = addBtn.frame
         let center = CGPoint(x: frame.origin.x + frame.width/2 , y: frame.origin.y + frame.height/2)
         
-        frame.size = CGSize(width: frame.width*3/4, height: frame.height*3/4)
+        frame.size = CGSize(width: frame.width*6/7, height: frame.height*6/7)
         frame.origin = CGPoint(x: center.x - frame.size.width/2, y: center.y - frame.size.height/2)
         
         addBtn.frame = frame
@@ -50,6 +50,7 @@ class AllTasksViewController: UIViewController, UITableViewDataSource, UITableVi
         tasksTableView.dataSource = self
         tasksTableView.delegate = self
         
+        self.navigationItem.title = "Standup"
         //set button image
         let buttonImage = UIImage(named: "add_task_icon")
         addBtn.setImage(buttonImage, forState: UIControlState.Normal)
