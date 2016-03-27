@@ -21,6 +21,7 @@
 		F9A664D91C74AE9C00DC7B59 /* AllTasksViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9A664D71C74AE9C00DC7B59 /* AllTasksViewController.xib */; };
 		F9A664DD1C74C48700DC7B59 /* AllTasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A664DC1C74C48700DC7B59 /* AllTasksViewController.swift */; };
 		F9A664E91C760D7E00DC7B59 /* server.rb in Resources */ = {isa = PBXBuildFile; fileRef = F9A664E81C760D7E00DC7B59 /* server.rb */; };
+		F9A704AE1CA5FFFE00934B8E /* ArchivedKeyCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A704AD1CA5FFFE00934B8E /* ArchivedKeyCache.swift */; };
 		F9ABE7931C7F3BA20040B3FF /* PersonWithTasksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9ABE7911C7F3BA20040B3FF /* PersonWithTasksTableViewCell.swift */; };
 		F9ABE7941C7F3BA20040B3FF /* PersonWithTasksTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9ABE7921C7F3BA20040B3FF /* PersonWithTasksTableViewCell.xib */; };
 		F9FDB1961C9847AD005E6E7C /* UITextView+Placeholder.m in Sources */ = {isa = PBXBuildFile; fileRef = F9FDB1941C9847AD005E6E7C /* UITextView+Placeholder.m */; };
@@ -67,6 +68,7 @@
 		F9A664D71C74AE9C00DC7B59 /* AllTasksViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AllTasksViewController.xib; path = ../AllTasksViewController.xib; sourceTree = "<group>"; };
 		F9A664DC1C74C48700DC7B59 /* AllTasksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllTasksViewController.swift; sourceTree = "<group>"; };
 		F9A664E81C760D7E00DC7B59 /* server.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = server.rb; sourceTree = "<group>"; };
+		F9A704AD1CA5FFFE00934B8E /* ArchivedKeyCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArchivedKeyCache.swift; sourceTree = "<group>"; };
 		F9ABE7911C7F3BA20040B3FF /* PersonWithTasksTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonWithTasksTableViewCell.swift; sourceTree = "<group>"; };
 		F9ABE7921C7F3BA20040B3FF /* PersonWithTasksTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonWithTasksTableViewCell.xib; sourceTree = "<group>"; };
 		F9FDB1941C9847AD005E6E7C /* UITextView+Placeholder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+Placeholder.m"; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				F9FDB1941C9847AD005E6E7C /* UITextView+Placeholder.m */,
 				F9FDB1951C9847AD005E6E7C /* UITextView+Placeholder.h */,
 				F91682751C9843FB00DF681E /* Standup.ios-Bridging-Header.h */,
+				F9A704AD1CA5FFFE00934B8E /* ArchivedKeyCache.swift */,
 			);
 			name = lib;
 			sourceTree = "<group>";
@@ -401,6 +404,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F901F5E21C79FE55001819AB /* employee.swift in Sources */,
+				F9A704AE1CA5FFFE00934B8E /* ArchivedKeyCache.swift in Sources */,
 				F96CE72E1C96F8470070BA45 /* NewTaskView.swift in Sources */,
 				F9A664A31C720E7B00DC7B59 /* AppDelegate.swift in Sources */,
 				F9A664DD1C74C48700DC7B59 /* AllTasksViewController.swift in Sources */,

@@ -16,9 +16,9 @@ class AllTasksViewController: UIViewController, UITableViewDataSource, UITableVi
     
     @IBOutlet weak var addBtn: UIButton!
     @IBAction func newTaskPressed(sender: UIButton) {
-        print("new Task")
         let newTask = NSBundle.mainBundle().loadNibNamed("NewTaskView", owner: nil, options: nil).first as! NewTaskView
         newTask.hidden = true
+        newTask.parent = self
         self.view.addSubview(newTask)
         var frame = newTask.frame
         frame.origin.x = self.view.frame.origin.x
@@ -28,10 +28,8 @@ class AllTasksViewController: UIViewController, UITableViewDataSource, UITableVi
         UIView.animateWithDuration(0.5, animations: {
             newTask.hidden = false
             var frame = newTask.frame
-            frame.origin.y -= frame.height
+            frame.origin.y -= self.view.frame.height - (self.navigationController?.navigationBar.frame.height)! - 10
             newTask.frame = frame
-            
-            //newTask.frame =
         })
     }
     @IBAction func newTaskPressedDown() {
@@ -43,7 +41,12 @@ class AllTasksViewController: UIViewController, UITableViewDataSource, UITableVi
         
         addBtn.frame = frame
     }
-    var projects: Array<Project> = []
+    
+    var projects: Array<Project> = []{
+        didSet{
+            self.tasksTableView.reloadData()
+        }
+    }
     let spinner = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.Gray)
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,7 +80,6 @@ class AllTasksViewController: UIViewController, UITableViewDataSource, UITableVi
                     let tasksJSON = json as! NSDictionary
                     self.projects = Project.parseJSON(tasksJSON.objectForKey("projects"))
                     self.spinner.stopAnimating()
-                    self.tasksTableView.reloadData()
                 case .Failure(let error):
                     NSLog("Failed to get tasks json because \(error)" )
                 }

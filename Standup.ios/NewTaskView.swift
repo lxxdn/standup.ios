@@ -26,26 +26,44 @@ class NewTaskView: UIView, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var projectBtn: UIButton!
     @IBOutlet weak var userBtn: UIButton!
+    var parent: AllTasksViewController?
     @IBAction func submit() {
         let params = ["content": taskContentInput.text, "project_id": currentProject!["id"]!, "team_id": currentUser!["team_id"]!, "user_id": currentUser!["id"]! ]
-        print(params)
+
         Alamofire.request(.POST, "http://nuri.ekohe.com:4567/task/create", parameters: params, encoding: .JSON)
         UIView.animateWithDuration(0.5, animations: {
-            self.frame.origin.y += self.frame.height
+            self.frame.origin.y += UIScreen.mainScreen().bounds.height
             })
-        
         self.selectView.hidden = true
+        
+        let userDefault = NSUserDefaults.standardUserDefaults()
+        userDefault.setObject(currentUser, forKey: "current_user")
     }
+    
     
     @IBAction func cancel() {
         UIView.animateWithDuration(0.5, animations: {
             self.frame.origin.y += self.frame.height
+            
+            self.frame.origin.y += UIScreen.mainScreen().bounds.height
             })
         self.selectView.hidden = true
     }
     
-    var currentUser: NSDictionary?
-    var currentProject: NSDictionary?
+    var currentUser: NSDictionary?{
+        didSet{
+            if let name = currentUser?.objectForKey("name") as? String {
+                userBtn.setTitle( name, forState: UIControlState.Normal)
+            }
+        }
+    }
+    var currentProject: NSDictionary?{
+        didSet{
+            if let name = currentProject?.objectForKey("name") as? String {
+                projectBtn.setTitle( name, forState: UIControlState.Normal)
+            }
+        }
+    }
     var currentDataType = DataType.Project
     let selectView = UITableView()
     var data = [NSDictionary](){
@@ -56,42 +74,56 @@ class NewTaskView: UIView, UITableViewDataSource, UITableViewDelegate {
     
     @IBAction func selectProject() {
         self.endEditing(true)
-        Alamofire.request(.GET, "http://nuri.ekohe.com:4567/allProjects")
-            .responseJSON{ response in
-                switch response.result {
-                case .Success(let json):
-                    let projectsJSON = json as! NSDictionary
-                    self.data = projectsJSON.objectForKey("projects") as! Array<NSDictionary>
-                    self.currentDataType = .Project
-                    UIView.animateWithDuration(0.5, animations: {
-                        self.selectView.frame.origin.y = 0
-                    })
-                    
-                case .Failure(let error):
-                    NSLog("Failed to get projects josn becase \(error)")
-                }
+        let cachedData = ArchivedKeyCache.load("project_list")
+        if let projects = cachedData as? Array<NSDictionary>{
+            self.data = projects
+        }else{
+            Alamofire.request(.GET, "http://nuri.ekohe.com:4567/allProjects")
+                .responseJSON{ response in
+                    switch response.result {
+                    case .Success(let json):
+                        let projectsJSON = json as! NSDictionary
+                        if self.data != projectsJSON.objectForKey("projects") as! Array<NSDictionary>{
+                            self.data = projectsJSON.objectForKey("projects") as! Array<NSDictionary>
+                            ArchivedKeyCache.save(self.data, filename: "project_list")
+                        }
+                    case .Failure(let error):
+                        NSLog("Failed to get projects josn becase \(error)")
+                    }
+            }
         }
+        
+        self.currentDataType = .Project
+        UIView.animateWithDuration(0.5, animations: {
+            self.selectView.frame.origin.y = 0
+        })
 
     }
 
     @IBAction func selectUser() {
         self.endEditing(true)
-        Alamofire.request(.GET, "http://nuri.ekohe.com:4567/allUsers")
-            .responseJSON{ response in
-                switch response.result {
-                case .Success(let json):
-                    let usersJSON = json as! NSDictionary
-                    self.data = usersJSON.objectForKey("users") as! Array<NSDictionary>
-                    self.currentDataType = .User
-                    UIView.animateWithDuration(0.5, animations: {
-                        self.selectView.frame.origin.y = 0
-                    })
-                    
-                case .Failure(let error):
-                    NSLog("Failed to get users josn becase \(error)")
-                }
+        let cachedData = ArchivedKeyCache.load("user_list")
+        if let users = cachedData as? Array<NSDictionary>{
+            self.data = users
+        }else{
+            Alamofire.request(.GET, "http://nuri.ekohe.com:4567/allUsers")
+                .responseJSON{ response in
+                    switch response.result {
+                    case .Success(let json):
+                        let usersJSON = json as! NSDictionary
+                        if self.data != usersJSON.objectForKey("users") as! Array<NSDictionary>{
+                            self.data = usersJSON.objectForKey("users") as! Array<NSDictionary>
+                            ArchivedKeyCache.save(self.data, filename: "user_list")
+                        }
+                    case .Failure(let error):
+                        NSLog("Failed to get users josn becase \(error)")
+                    }
+            }
         }
-
+        self.currentDataType = .User
+        UIView.animateWithDuration(0.5, animations: {
+            self.selectView.frame.origin.y = 0
+        })
     }
     
     @IBOutlet weak var taskContentInput: UITextView!
@@ -103,9 +135,15 @@ class NewTaskView: UIView, UITableViewDataSource, UITableViewDelegate {
         
         selectView.dataSource = self
         selectView.delegate = self
-        selectView.frame.size = self.frame.size
-        selectView.frame.origin.y = self.frame.height
+        selectView.frame.size = UIScreen.mainScreen().bounds.size
+        selectView.frame.origin.y = UIScreen.mainScreen().bounds.height
         self.addSubview(selectView)
+        
+        //set current user
+        let userDefault = NSUserDefaults.standardUserDefaults()
+        if let savedCurrentUser = (userDefault.objectForKey("current_user") as? NSDictionary){
+            self.currentUser = savedCurrentUser
+        }
         
         // add gesture recognizer
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(NewTaskView.tapViewAction(_:)))
@@ -134,12 +172,8 @@ class NewTaskView: UIView, UITableViewDataSource, UITableViewDelegate {
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if self.currentDataType == .User{
             currentUser = data[indexPath.row]
-            let name = currentUser?.objectForKey("name") as? String
-            userBtn.setTitle( name, forState: UIControlState.Normal)
         }else{
             currentProject = data[indexPath.row]
-            let name = currentProject?.objectForKey("name") as? String
-            projectBtn.setTitle(name, forState: UIControlState.Normal)
         }
         UIView.animateWithDuration(0.5, animations: {
             self.selectView.frame.origin.y = self.frame.height

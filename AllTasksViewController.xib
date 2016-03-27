@@ -36,6 +36,12 @@
                         <action selector="newTaskPressedDown" destination="-1" eventType="touchDown" id="nSN-Wf-ooc"/>
                     </connections>
                 </button>
+                <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7e1-SJ-2DQ">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                    <items>
+                        <navigationItem title="Standup" id="gjM-ac-sU3"/>
+                    </items>
+                </navigationBar>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
