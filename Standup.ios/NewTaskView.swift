@@ -31,6 +31,10 @@ class NewTaskView: UIView, UITableViewDataSource, UITableViewDelegate {
         let params = ["content": taskContentInput.text, "project_id": currentProject!["id"]!, "team_id": currentUser!["team_id"]!, "user_id": currentUser!["id"]! ]
 
         Alamofire.request(.POST, "http://nuri.ekohe.com:4567/task/create", parameters: params, encoding: .JSON)
+            .validate(statusCode: 200..<300)
+            .response{  response in
+                self.parent?.refresh()
+            }
         UIView.animateWithDuration(0.5, animations: {
             self.frame.origin.y += UIScreen.mainScreen().bounds.height
             })

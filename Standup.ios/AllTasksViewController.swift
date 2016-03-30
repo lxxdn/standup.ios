@@ -10,10 +10,10 @@ import UIKit
 import Alamofire
 import SDWebImage
 
-class AllTasksViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
+class AllTasksViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate{
 
     @IBOutlet weak var tasksTableView: UITableView!
-    
+
     @IBOutlet weak var addBtn: UIButton!
     @IBAction func newTaskPressed(sender: UIButton) {
         let newTask = NSBundle.mainBundle().loadNibNamed("NewTaskView", owner: nil, options: nil).first as! NewTaskView
@@ -63,16 +63,29 @@ class AllTasksViewController: UIViewController, UITableViewDataSource, UITableVi
         let screenSize = UIScreen.mainScreen().bounds
         spinner.frame.origin = CGPoint(x: (screenSize.width - spinner.frame.width)/2, y: (screenSize.height - spinner.frame.height)/2)
         self.view.addSubview(spinner)
-        spinner.startAnimating()
         
-        initData()
+        // refresh control
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refresh(_:)), forControlEvents: .ValueChanged)
+        tasksTableView.addSubview(refreshControl)
+        
+        spinner.hidden = true
+        spinner.startAnimating()
+        self.refresh()
     }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    func initData(){
+    func refresh(refreshControl: UIRefreshControl) {
+        // Do your job, when done:
+        refresh()
+        refreshControl.endRefreshing()
+    }
+
+    
+    func refresh(){
+
         Alamofire.request(.GET, "http://nuri.ekohe.com:4567/allTasks")
             .responseJSON{ response in
                 switch response.result{
@@ -80,6 +93,7 @@ class AllTasksViewController: UIViewController, UITableViewDataSource, UITableVi
                     let tasksJSON = json as! NSDictionary
                     self.projects = Project.parseJSON(tasksJSON.objectForKey("projects"))
                     self.spinner.stopAnimating()
+                    self.spinner.hidden = true
                 case .Failure(let error):
                     NSLog("Failed to get tasks json because \(error)" )
                 }
@@ -126,4 +140,5 @@ class AllTasksViewController: UIViewController, UITableViewDataSource, UITableVi
         let height = 62 + (CGFloat)(projects[indexPath.section].employees[indexPath.row].tasks.count) * defaultCellHeight.frame.height
         return CGFloat(height)
     }
+    
 }
