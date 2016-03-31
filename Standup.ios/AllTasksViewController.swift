@@ -54,6 +54,9 @@ class AllTasksViewController: UIViewController, UITableViewDataSource, UITableVi
         tasksTableView.delegate = self
         
         self.navigationItem.title = "Standup"
+        
+        self.navigationController?.pushViewController(LogInControllerViewController(), animated: true)
+        
         //set button image
         let buttonImage = UIImage(named: "add_task_icon")
         addBtn.setImage(buttonImage, forState: UIControlState.Normal)
