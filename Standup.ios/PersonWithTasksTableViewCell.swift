@@ -42,6 +42,9 @@ class PersonWithTasksTableViewCell: UITableViewCell, UITableViewDataSource {
         
         if tableCell == nil {
             tableCell = UITableViewCell.init(style: UITableViewCellStyle.Default, reuseIdentifier: "taskCell")
+            let checkbox = M13Checkbox()
+            checkbox.frame.origin.x = 0
+            tableCell?.addSubview(checkbox)
             
             //tableCell!.accessoryType = UITableViewCellAccessoryType.Checkmark
             tableCell!.selectionStyle = UITableViewCellSelectionStyle.None

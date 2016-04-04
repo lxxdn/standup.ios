@@ -4,4 +4,4 @@
 
 #import "UITextView+Placeholder.h"
 #import "NSString+FontAwesome.h"
-#import "M13Checkbox"
+#import "M13Checkbox.h"
