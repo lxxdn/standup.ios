@@ -20,6 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navigationController = UINavigationController(rootViewController: AllTasksViewController())
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
+        
+        ArchivedKeyCache.prepareForDefaultValue()
         return true
     }
 

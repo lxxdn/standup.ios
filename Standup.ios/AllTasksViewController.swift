@@ -48,6 +48,7 @@ class AllTasksViewController: UIViewController, UITableViewDataSource, UITableVi
         }
     }
     let spinner = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.Gray)
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         tasksTableView.dataSource = self
@@ -55,7 +56,10 @@ class AllTasksViewController: UIViewController, UITableViewDataSource, UITableVi
         
         self.navigationItem.title = "Standup"
         
-        self.navigationController?.pushViewController(LogInControllerViewController(), animated: true)
+        
+        if !Login.isLoggedIn(){
+            self.navigationController?.pushViewController(LogInControllerViewController(), animated: false)
+        }
         
         //set button image
         let buttonImage = UIImage(named: "add_task_icon")

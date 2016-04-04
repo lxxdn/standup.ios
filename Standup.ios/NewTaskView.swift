@@ -23,6 +23,8 @@ class NewTaskView: UIView, UITableViewDataSource, UITableViewDelegate {
         case Project
     }
     
+    @IBOutlet weak var projectLabel: UILabel!
+    @IBOutlet weak var userLabel: UILabel!
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var projectBtn: UIButton!
     @IBOutlet weak var userBtn: UIButton!
@@ -39,9 +41,7 @@ class NewTaskView: UIView, UITableViewDataSource, UITableViewDelegate {
             self.frame.origin.y += UIScreen.mainScreen().bounds.height
             })
         self.selectView.hidden = true
-        
-        let userDefault = NSUserDefaults.standardUserDefaults()
-        userDefault.setObject(currentUser, forKey: "current_user")
+        self.endEditing(true)
     }
     
     
@@ -52,6 +52,7 @@ class NewTaskView: UIView, UITableViewDataSource, UITableViewDelegate {
             self.frame.origin.y += UIScreen.mainScreen().bounds.height
             })
         self.selectView.hidden = true
+        self.endEditing(true)
     }
     
     var currentUser: NSDictionary?{
@@ -81,27 +82,26 @@ class NewTaskView: UIView, UITableViewDataSource, UITableViewDelegate {
         let cachedData = ArchivedKeyCache.load("project_list")
         if let projects = cachedData as? Array<NSDictionary>{
             self.data = projects
-        }else{
-            Alamofire.request(.GET, "http://nuri.ekohe.com:4567/allProjects")
-                .responseJSON{ response in
-                    switch response.result {
-                    case .Success(let json):
-                        let projectsJSON = json as! NSDictionary
-                        if self.data != projectsJSON.objectForKey("projects") as! Array<NSDictionary>{
-                            self.data = projectsJSON.objectForKey("projects") as! Array<NSDictionary>
-                            ArchivedKeyCache.save(self.data, filename: "project_list")
-                        }
-                    case .Failure(let error):
-                        NSLog("Failed to get projects josn becase \(error)")
-                    }
-            }
         }
+        Alamofire.request(.GET, "http://nuri.ekohe.com:4567/allProjects")
+            .responseJSON{ response in
+                switch response.result {
+                case .Success(let json):
+                    let projectsJSON = json as! NSDictionary
+                    if self.data != projectsJSON.objectForKey("projects") as! Array<NSDictionary>{
+                        self.data = projectsJSON.objectForKey("projects") as! Array<NSDictionary>
+                        ArchivedKeyCache.save(self.data, filename: "project_list")
+                    }
+                case .Failure(let error):
+                    NSLog("Failed to get projects josn becase \(error)")
+                }
+        }
+        
         
         self.currentDataType = .Project
         UIView.animateWithDuration(0.5, animations: {
             self.selectView.frame.origin.y = 0
         })
-
     }
 
     @IBAction func selectUser() {
@@ -109,21 +109,21 @@ class NewTaskView: UIView, UITableViewDataSource, UITableViewDelegate {
         let cachedData = ArchivedKeyCache.load("user_list")
         if let users = cachedData as? Array<NSDictionary>{
             self.data = users
-        }else{
-            Alamofire.request(.GET, "http://nuri.ekohe.com:4567/allUsers")
-                .responseJSON{ response in
-                    switch response.result {
-                    case .Success(let json):
-                        let usersJSON = json as! NSDictionary
-                        if self.data != usersJSON.objectForKey("users") as! Array<NSDictionary>{
-                            self.data = usersJSON.objectForKey("users") as! Array<NSDictionary>
-                            ArchivedKeyCache.save(self.data, filename: "user_list")
-                        }
-                    case .Failure(let error):
-                        NSLog("Failed to get users josn becase \(error)")
-                    }
-            }
         }
+        Alamofire.request(.GET, "http://nuri.ekohe.com:4567/allUsers")
+            .responseJSON{ response in
+                switch response.result {
+                case .Success(let json):
+                    let usersJSON = json as! NSDictionary
+                    if self.data != usersJSON.objectForKey("users") as! Array<NSDictionary>{
+                        self.data = usersJSON.objectForKey("users") as! Array<NSDictionary>
+                        ArchivedKeyCache.save(self.data, filename: "user_list")
+                    }
+                case .Failure(let error):
+                    NSLog("Failed to get users josn becase \(error)")
+                }
+        }
+        
         self.currentDataType = .User
         UIView.animateWithDuration(0.5, animations: {
             self.selectView.frame.origin.y = 0
@@ -148,6 +148,14 @@ class NewTaskView: UIView, UITableViewDataSource, UITableViewDelegate {
         if let savedCurrentUser = (userDefault.objectForKey("current_user") as? NSDictionary){
             self.currentUser = savedCurrentUser
         }
+        
+        // set font icon
+        let fa = UIFont(name: kFontAwesomeFamilyName, size: 20)
+        projectLabel.font = fa
+        projectLabel.text = NSString.fontAwesomeIconStringForEnum(.FACog)
+        userLabel.font = fa
+        userLabel.text = NSString.fontAwesomeIconStringForEnum(.FAUser)
+        
         
         // add gesture recognizer
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(NewTaskView.tapViewAction(_:)))

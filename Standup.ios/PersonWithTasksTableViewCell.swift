@@ -42,6 +42,7 @@ class PersonWithTasksTableViewCell: UITableViewCell, UITableViewDataSource {
         
         if tableCell == nil {
             tableCell = UITableViewCell.init(style: UITableViewCellStyle.Default, reuseIdentifier: "taskCell")
+            
             //tableCell!.accessoryType = UITableViewCellAccessoryType.Checkmark
             tableCell!.selectionStyle = UITableViewCellSelectionStyle.None
         }

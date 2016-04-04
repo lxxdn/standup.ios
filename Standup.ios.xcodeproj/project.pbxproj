@@ -11,6 +11,8 @@
 		F901F5E01C79FE49001819AB /* project.swift in Sources */ = {isa = PBXBuildFile; fileRef = F901F5DF1C79FE49001819AB /* project.swift */; };
 		F901F5E21C79FE55001819AB /* employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = F901F5E11C79FE55001819AB /* employee.swift */; };
 		F901F5E41C79FE5D001819AB /* task.swift in Sources */ = {isa = PBXBuildFile; fileRef = F901F5E31C79FE5D001819AB /* task.swift */; };
+		F96593101CB2956C0031495E /* FontAwesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = F965930F1CB2956C0031495E /* FontAwesome.otf */; };
+		F96593151CB2AF340031495E /* M13Checkbox.m in Sources */ = {isa = PBXBuildFile; fileRef = F96593141CB2AF340031495E /* M13Checkbox.m */; };
 		F96CE72E1C96F8470070BA45 /* NewTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96CE72D1C96F8470070BA45 /* NewTaskView.swift */; };
 		F96CE7301C96F8570070BA45 /* NewTaskView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F96CE72F1C96F8570070BA45 /* NewTaskView.xib */; };
 		F9A664A31C720E7B00DC7B59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A664A21C720E7B00DC7B59 /* AppDelegate.swift */; };
@@ -24,6 +26,8 @@
 		F9A704AE1CA5FFFE00934B8E /* ArchivedKeyCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A704AD1CA5FFFE00934B8E /* ArchivedKeyCache.swift */; };
 		F9A704B11CAD6F2300934B8E /* LogInControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A704AF1CAD6F2300934B8E /* LogInControllerViewController.swift */; };
 		F9A704B21CAD6F2300934B8E /* LogInControllerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9A704B01CAD6F2300934B8E /* LogInControllerViewController.xib */; };
+		F9A704B41CAF8C9B00934B8E /* login.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A704B31CAF8C9B00934B8E /* login.swift */; };
+		F9A704BA1CB283B100934B8E /* NSString+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = F9A704B81CB283B100934B8E /* NSString+FontAwesome.m */; };
 		F9ABE7931C7F3BA20040B3FF /* PersonWithTasksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9ABE7911C7F3BA20040B3FF /* PersonWithTasksTableViewCell.swift */; };
 		F9ABE7941C7F3BA20040B3FF /* PersonWithTasksTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9ABE7921C7F3BA20040B3FF /* PersonWithTasksTableViewCell.xib */; };
 		F9FDB1961C9847AD005E6E7C /* UITextView+Placeholder.m in Sources */ = {isa = PBXBuildFile; fileRef = F9FDB1941C9847AD005E6E7C /* UITextView+Placeholder.m */; };
@@ -54,6 +58,9 @@
 		F901F5E11C79FE55001819AB /* employee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = employee.swift; sourceTree = "<group>"; };
 		F901F5E31C79FE5D001819AB /* task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = task.swift; sourceTree = "<group>"; };
 		F91682751C9843FB00DF681E /* Standup.ios-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Standup.ios-Bridging-Header.h"; sourceTree = "<group>"; };
+		F965930F1CB2956C0031495E /* FontAwesome.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.otf; sourceTree = "<group>"; };
+		F96593131CB2AF340031495E /* M13Checkbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M13Checkbox.h; sourceTree = "<group>"; };
+		F96593141CB2AF340031495E /* M13Checkbox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M13Checkbox.m; sourceTree = "<group>"; };
 		F96CE72D1C96F8470070BA45 /* NewTaskView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTaskView.swift; sourceTree = "<group>"; };
 		F96CE72F1C96F8570070BA45 /* NewTaskView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewTaskView.xib; sourceTree = "<group>"; };
 		F9A6649F1C720E7B00DC7B59 /* Standup.ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Standup.ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,6 +80,9 @@
 		F9A704AD1CA5FFFE00934B8E /* ArchivedKeyCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArchivedKeyCache.swift; sourceTree = "<group>"; };
 		F9A704AF1CAD6F2300934B8E /* LogInControllerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInControllerViewController.swift; sourceTree = "<group>"; };
 		F9A704B01CAD6F2300934B8E /* LogInControllerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LogInControllerViewController.xib; sourceTree = "<group>"; };
+		F9A704B31CAF8C9B00934B8E /* login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = login.swift; sourceTree = "<group>"; };
+		F9A704B81CB283B100934B8E /* NSString+FontAwesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+FontAwesome.m"; sourceTree = "<group>"; };
+		F9A704B91CB283B100934B8E /* NSString+FontAwesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FontAwesome.h"; sourceTree = "<group>"; };
 		F9ABE7911C7F3BA20040B3FF /* PersonWithTasksTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonWithTasksTableViewCell.swift; sourceTree = "<group>"; };
 		F9ABE7921C7F3BA20040B3FF /* PersonWithTasksTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonWithTasksTableViewCell.xib; sourceTree = "<group>"; };
 		F9FDB1941C9847AD005E6E7C /* UITextView+Placeholder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+Placeholder.m"; sourceTree = "<group>"; };
@@ -127,6 +137,10 @@
 		F91682741C98438800DF681E /* lib */ = {
 			isa = PBXGroup;
 			children = (
+				F96593131CB2AF340031495E /* M13Checkbox.h */,
+				F96593141CB2AF340031495E /* M13Checkbox.m */,
+				F9A704B81CB283B100934B8E /* NSString+FontAwesome.m */,
+				F9A704B91CB283B100934B8E /* NSString+FontAwesome.h */,
 				F9FDB1941C9847AD005E6E7C /* UITextView+Placeholder.m */,
 				F9FDB1951C9847AD005E6E7C /* UITextView+Placeholder.h */,
 				F91682751C9843FB00DF681E /* Standup.ios-Bridging-Header.h */,
@@ -160,6 +174,7 @@
 		F9A664A11C720E7B00DC7B59 /* Standup.ios */ = {
 			isa = PBXGroup;
 			children = (
+				F9A704B51CB2762200934B8E /* resources */,
 				F91682741C98438800DF681E /* lib */,
 				F9A664EA1C79FCFA00DC7B59 /* models */,
 				F9A664DF1C74CB6400DC7B59 /* controllers */,
@@ -219,8 +234,17 @@
 				F901F5DF1C79FE49001819AB /* project.swift */,
 				F901F5E11C79FE55001819AB /* employee.swift */,
 				F901F5E31C79FE5D001819AB /* task.swift */,
+				F9A704B31CAF8C9B00934B8E /* login.swift */,
 			);
 			name = models;
+			sourceTree = "<group>";
+		};
+		F9A704B51CB2762200934B8E /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				F965930F1CB2956C0031495E /* FontAwesome.otf */,
+			);
+			name = resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -337,6 +361,7 @@
 				F9A704B21CAD6F2300934B8E /* LogInControllerViewController.xib in Resources */,
 				F9A664D91C74AE9C00DC7B59 /* AllTasksViewController.xib in Resources */,
 				F9ABE7941C7F3BA20040B3FF /* PersonWithTasksTableViewCell.xib in Resources */,
+				F96593101CB2956C0031495E /* FontAwesome.otf in Resources */,
 				F9A664AA1C720E7B00DC7B59 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -413,11 +438,14 @@
 				F901F5E21C79FE55001819AB /* employee.swift in Sources */,
 				F9A704AE1CA5FFFE00934B8E /* ArchivedKeyCache.swift in Sources */,
 				F96CE72E1C96F8470070BA45 /* NewTaskView.swift in Sources */,
+				F9A704B41CAF8C9B00934B8E /* login.swift in Sources */,
 				F9A664A31C720E7B00DC7B59 /* AppDelegate.swift in Sources */,
 				F9A704B11CAD6F2300934B8E /* LogInControllerViewController.swift in Sources */,
 				F9A664DD1C74C48700DC7B59 /* AllTasksViewController.swift in Sources */,
 				F9ABE7931C7F3BA20040B3FF /* PersonWithTasksTableViewCell.swift in Sources */,
+				F9A704BA1CB283B100934B8E /* NSString+FontAwesome.m in Sources */,
 				F901F5E41C79FE5D001819AB /* task.swift in Sources */,
+				F96593151CB2AF340031495E /* M13Checkbox.m in Sources */,
 				F901F5E01C79FE49001819AB /* project.swift in Sources */,
 				F9FDB1961C9847AD005E6E7C /* UITextView+Placeholder.m in Sources */,
 			);

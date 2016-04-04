@@ -8,6 +8,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LogInControllerViewController" customModule="Standup_ios" customModuleProvider="target">
             <connections>
+                <outlet property="emailInput" destination="LfX-hp-Ka5" id="yaS-Br-Xld"/>
+                <outlet property="passwdInput" destination="VYo-Wj-mu0" id="aMe-WP-LWr"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -23,27 +25,35 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZR3-oA-94X">
-                    <rect key="frame" x="8" y="183" width="67" height="30"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                    <rect key="frame" x="8" y="183" width="54" height="24"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8C7-tI-UdX">
-                    <rect key="frame" x="8" y="253" width="115" height="30"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                    <rect key="frame" x="8" y="247" width="92" height="24"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VYo-Wj-mu0">
-                    <rect key="frame" x="131" y="253" width="449" height="30"/>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Input your email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LfX-hp-Ka5">
+                    <rect key="frame" x="108" y="178" width="472" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                 </textField>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LfX-hp-Ka5">
-                    <rect key="frame" x="131" y="183" width="449" height="30"/>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Input your password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VYo-Wj-mu0">
+                    <rect key="frame" x="108" y="242" width="472" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
                 </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="raV-DE-KbF">
+                    <rect key="frame" x="50" y="357" width="500" height="42"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                    <state key="normal" title="Log in"/>
+                    <connections>
+                        <action selector="login" destination="-1" eventType="touchUpInside" id="DDH-oe-T9Z"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -61,13 +71,16 @@
                 <constraint firstItem="ZR3-oA-94X" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="184" id="bMr-x4-c5e"/>
                 <constraint firstItem="2m5-8Z-ISz" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="50" id="ewB-AN-dgo"/>
                 <constraint firstAttribute="trailing" secondItem="VYo-Wj-mu0" secondAttribute="trailing" constant="20" symbolic="YES" id="fba-By-uZS"/>
+                <constraint firstItem="raV-DE-KbF" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="50" id="lHa-HI-pZ2"/>
                 <constraint firstAttribute="trailing" secondItem="LfX-hp-Ka5" secondAttribute="trailing" constant="20" symbolic="YES" id="lwl-TQ-Kaq"/>
+                <constraint firstItem="raV-DE-KbF" firstAttribute="top" secondItem="VYo-Wj-mu0" secondAttribute="bottom" constant="85" id="lxO-jf-toM"/>
                 <constraint firstItem="LfX-hp-Ka5" firstAttribute="leading" secondItem="ZR3-oA-94X" secondAttribute="trailing" constant="8" symbolic="YES" id="ruL-j3-lbo"/>
                 <constraint firstItem="LfX-hp-Ka5" firstAttribute="width" secondItem="VYo-Wj-mu0" secondAttribute="width" id="tIg-hd-0Ol"/>
                 <constraint firstItem="LfX-hp-Ka5" firstAttribute="leading" secondItem="ZR3-oA-94X" secondAttribute="trailing" constant="74" id="uO9-j6-ztJ"/>
                 <constraint firstItem="ZR3-oA-94X" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" id="uow-IW-64Y"/>
                 <constraint firstItem="8C7-tI-UdX" firstAttribute="top" secondItem="ZR3-oA-94X" secondAttribute="bottom" constant="40" id="vAa-dt-9Oo"/>
                 <constraint firstItem="LfX-hp-Ka5" firstAttribute="top" secondItem="2m5-8Z-ISz" secondAttribute="bottom" constant="83" id="wBG-1T-EeQ"/>
+                <constraint firstAttribute="trailing" secondItem="raV-DE-KbF" secondAttribute="trailing" constant="50" id="xME-Ya-lZK"/>
                 <constraint firstAttribute="right" secondItem="VYo-Wj-mu0" secondAttribute="right" id="xU2-ns-l2Q"/>
                 <constraint firstItem="8C7-tI-UdX" firstAttribute="baseline" secondItem="VYo-Wj-mu0" secondAttribute="baseline" id="xaf-ld-aZt"/>
                 <constraint firstItem="ZR3-oA-94X" firstAttribute="baseline" secondItem="LfX-hp-Ka5" secondAttribute="baseline" id="yKr-6M-xua"/>
