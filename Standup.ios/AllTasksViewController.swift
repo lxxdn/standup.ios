@@ -133,7 +133,7 @@ class AllTasksViewController: UIViewController, UITableViewDataSource, UITableVi
         cell.employeeName.text = project.employees[indexPath.row].name?.capitalizedString
         cell.employeeAvatar.sd_setImageWithURL(NSURL(string: project.employees[indexPath.row].avatar!))
         
-        cell.tasks = project.employees[indexPath.row].tasks.map{"\($0.content!)"}
+        cell.tasks = project.employees[indexPath.row].tasks
         return cell
     }
     
@@ -143,8 +143,7 @@ class AllTasksViewController: UIViewController, UITableViewDataSource, UITableVi
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         let defaultCellHeight = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "default")
-        
-        let height = 62 + (CGFloat)(projects[indexPath.section].employees[indexPath.row].tasks.count) * defaultCellHeight.frame.height
+        let height = 70 + (CGFloat)(projects[indexPath.section].employees[indexPath.row].tasks.count) * defaultCellHeight.frame.height
         return CGFloat(height)
     }
     

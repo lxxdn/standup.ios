@@ -30,6 +30,7 @@
 		F9A704BA1CB283B100934B8E /* NSString+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = F9A704B81CB283B100934B8E /* NSString+FontAwesome.m */; };
 		F9ABE7931C7F3BA20040B3FF /* PersonWithTasksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9ABE7911C7F3BA20040B3FF /* PersonWithTasksTableViewCell.swift */; };
 		F9ABE7941C7F3BA20040B3FF /* PersonWithTasksTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9ABE7921C7F3BA20040B3FF /* PersonWithTasksTableViewCell.xib */; };
+		F9E5BEA71CB3FAA500C7A062 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E5BEA61CB3FAA500C7A062 /* TaskTableViewCell.swift */; };
 		F9FDB1961C9847AD005E6E7C /* UITextView+Placeholder.m in Sources */ = {isa = PBXBuildFile; fileRef = F9FDB1941C9847AD005E6E7C /* UITextView+Placeholder.m */; };
 /* End PBXBuildFile section */
 
@@ -85,6 +86,7 @@
 		F9A704B91CB283B100934B8E /* NSString+FontAwesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FontAwesome.h"; sourceTree = "<group>"; };
 		F9ABE7911C7F3BA20040B3FF /* PersonWithTasksTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonWithTasksTableViewCell.swift; sourceTree = "<group>"; };
 		F9ABE7921C7F3BA20040B3FF /* PersonWithTasksTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonWithTasksTableViewCell.xib; sourceTree = "<group>"; };
+		F9E5BEA61CB3FAA500C7A062 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 		F9FDB1941C9847AD005E6E7C /* UITextView+Placeholder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+Placeholder.m"; sourceTree = "<group>"; };
 		F9FDB1951C9847AD005E6E7C /* UITextView+Placeholder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+Placeholder.h"; sourceTree = "<group>"; };
 		FEA571B037D4F7D099582623 /* Pods-Standup.ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Standup.ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-Standup.ios/Pods-Standup.ios.release.xcconfig"; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 				F9ABE7921C7F3BA20040B3FF /* PersonWithTasksTableViewCell.xib */,
 				F96CE72D1C96F8470070BA45 /* NewTaskView.swift */,
 				F96CE72F1C96F8570070BA45 /* NewTaskView.xib */,
+				F9E5BEA61CB3FAA500C7A062 /* TaskTableViewCell.swift */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -435,6 +438,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9E5BEA71CB3FAA500C7A062 /* TaskTableViewCell.swift in Sources */,
 				F901F5E21C79FE55001819AB /* employee.swift in Sources */,
 				F9A704AE1CA5FFFE00934B8E /* ArchivedKeyCache.swift in Sources */,
 				F96CE72E1C96F8470070BA45 /* NewTaskView.swift in Sources */,
