@@ -13,10 +13,12 @@ class Task{
         case New
         case Done
     }
+    var id: String?
     var content: String?
     var status: Status?
     
-    init(content c: String, status s: String){
+    
+    init(id: String, content c: String, status s: String){
         self.content = c
         switch s{
         case "new":
@@ -33,9 +35,11 @@ class Task{
         let taskJSON = json as? Array<NSDictionary>
         if taskJSON != nil {
             for content in taskJSON!{
+                let taskID = content.objectForKey("id") as! String
                 let taskContent = content.objectForKey("content") as! String
                 let taskStatus = content.objectForKey("status") as! String
-                let newTask = Task(content: taskContent, status: taskStatus)
+                
+                let newTask = Task(id: taskID, content: taskContent, status: taskStatus)
                 parsedTasks.append(newTask)
             }
         }

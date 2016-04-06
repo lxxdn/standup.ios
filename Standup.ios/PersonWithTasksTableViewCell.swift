@@ -38,15 +38,12 @@ class PersonWithTasksTableViewCell: UITableViewCell, UITableViewDataSource {
         return tasks.count
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var tableCell = tasksTable.dequeueReusableCellWithIdentifier("taskCell")
+        var tableCell = tasksTable.dequeueReusableCellWithIdentifier("taskCell") as?  TaskTableViewCell
         
         if tableCell == nil {
             tableCell = TaskTableViewCell.init(style: UITableViewCellStyle.Default, reuseIdentifier: "taskCell")
-            let checkbox = M13Checkbox()
-            checkbox.frame.origin.y = (tableCell!.frame.height - checkbox.frame.height)/2
-            checkbox.addTarget(self, action: #selector(checkChangedValue(_:)), forControlEvents: .ValueChanged)
-            tableCell?.addSubview(checkbox)
-            
+            tableCell?.checkbox = M13Checkbox()
+                        
             //tableCell!.accessoryType = UITableViewCellAccessoryType.Checkmark
             tableCell!.selectionStyle = .None
         }
@@ -54,7 +51,9 @@ class PersonWithTasksTableViewCell: UITableViewCell, UITableViewDataSource {
         if tasks.count > 0 {
             let task = tasks[indexPath.row] as Task
             let attributeString =  NSMutableAttributedString(string: task.content!)
+            tableCell!.id = task.id
             if task.status == .Done{
+                tableCell!.checkbox?.checkState = .Checked
                 attributeString.addAttribute(NSStrikethroughStyleAttributeName, value: 1, range: NSMakeRange(0, attributeString.length))
                 attributeString.addAttribute(NSForegroundColorAttributeName, value: UIColor.grayColor(), range: NSMakeRange(0, attributeString.length))
             }
@@ -65,21 +64,5 @@ class PersonWithTasksTableViewCell: UITableViewCell, UITableViewDataSource {
         return tableCell!
     }
     
-    func checkChangedValue(sender: M13Checkbox){
-        let tableCell = sender.superview as! TaskTableViewCell
-        let attributeString =  NSMutableAttributedString(string: tableCell.textLabel!.text!)
-        if sender.checkState == .Checked{
-            attributeString.addAttribute(NSStrikethroughStyleAttributeName, value: 1, range: NSMakeRange(0, attributeString.length))
-            attributeString.addAttribute(NSForegroundColorAttributeName, value: UIColor.grayColor(), range: NSMakeRange(0, attributeString.length))
-        }else if sender.checkState == .Unchecked{
-            attributeString.removeAttribute(NSStrikethroughStyleAttributeName, range: NSMakeRange(0, attributeString.length))
-        }
-        //alamofire send api request to update status
         
-        //update self data strucutre
-        
-        
-        tableCell.textLabel!.attributedText = attributeString
-    }
-    
 }
