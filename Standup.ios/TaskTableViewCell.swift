@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class TaskTableViewCell: UITableViewCell {
 
@@ -37,12 +38,25 @@ class TaskTableViewCell: UITableViewCell {
     func checkChangedValue(sender: M13Checkbox){
         let tableCell = sender.superview as! TaskTableViewCell
         let attributeString =  NSMutableAttributedString(string: tableCell.textLabel!.text!)
+        // from unchecked to checked
+        
+        var status = "done"
         if sender.checkState == .Checked{
             attributeString.addAttribute(NSStrikethroughStyleAttributeName, value: 1, range: NSMakeRange(0, attributeString.length))
             attributeString.addAttribute(NSForegroundColorAttributeName, value: UIColor.grayColor(), range: NSMakeRange(0, attributeString.length))
-        }else if sender.checkState == .Unchecked{
+        }else if sender.checkState == .Unchecked{ // from check to unchecked
             attributeString.removeAttribute(NSStrikethroughStyleAttributeName, range: NSMakeRange(0, attributeString.length))
+            status = "new"
         }
+        
+        if let givenID = id {
+            Alamofire.request(.PUT, "http://nuri.ekohe.com:4567/updateTaskStatus/\(givenID)", parameters: ["status": status], encoding: .JSON)
+                .validate(statusCode: 200..<300)
+                .response { response in
+                    print(response)
+            }
+        }
+        
         //alamofire send api request to update status
         
         //update self data strucutre

@@ -11,6 +11,7 @@
 		F901F5E01C79FE49001819AB /* project.swift in Sources */ = {isa = PBXBuildFile; fileRef = F901F5DF1C79FE49001819AB /* project.swift */; };
 		F901F5E21C79FE55001819AB /* employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = F901F5E11C79FE55001819AB /* employee.swift */; };
 		F901F5E41C79FE5D001819AB /* task.swift in Sources */ = {isa = PBXBuildFile; fileRef = F901F5E31C79FE5D001819AB /* task.swift */; };
+		F94E5F6B1CB9D96C00A3BF0D /* TaskUpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94E5F6A1CB9D96C00A3BF0D /* TaskUpdateViewController.swift */; };
 		F96593101CB2956C0031495E /* FontAwesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = F965930F1CB2956C0031495E /* FontAwesome.otf */; };
 		F96593151CB2AF340031495E /* M13Checkbox.m in Sources */ = {isa = PBXBuildFile; fileRef = F96593141CB2AF340031495E /* M13Checkbox.m */; };
 		F96CE72E1C96F8470070BA45 /* NewTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96CE72D1C96F8470070BA45 /* NewTaskView.swift */; };
@@ -59,6 +60,7 @@
 		F901F5E11C79FE55001819AB /* employee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = employee.swift; sourceTree = "<group>"; };
 		F901F5E31C79FE5D001819AB /* task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = task.swift; sourceTree = "<group>"; };
 		F91682751C9843FB00DF681E /* Standup.ios-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Standup.ios-Bridging-Header.h"; sourceTree = "<group>"; };
+		F94E5F6A1CB9D96C00A3BF0D /* TaskUpdateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskUpdateViewController.swift; sourceTree = "<group>"; };
 		F965930F1CB2956C0031495E /* FontAwesome.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.otf; sourceTree = "<group>"; };
 		F96593131CB2AF340031495E /* M13Checkbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M13Checkbox.h; sourceTree = "<group>"; };
 		F96593141CB2AF340031495E /* M13Checkbox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M13Checkbox.m; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 				F9A664E81C760D7E00DC7B59 /* server.rb */,
 				F9A704AF1CAD6F2300934B8E /* LogInControllerViewController.swift */,
 				F9A704B01CAD6F2300934B8E /* LogInControllerViewController.xib */,
+				F94E5F6A1CB9D96C00A3BF0D /* TaskUpdateViewController.swift */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -439,6 +442,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9E5BEA71CB3FAA500C7A062 /* TaskTableViewCell.swift in Sources */,
+				F94E5F6B1CB9D96C00A3BF0D /* TaskUpdateViewController.swift in Sources */,
 				F901F5E21C79FE55001819AB /* employee.swift in Sources */,
 				F9A704AE1CA5FFFE00934B8E /* ArchivedKeyCache.swift in Sources */,
 				F96CE72E1C96F8470070BA45 /* NewTaskView.swift in Sources */,
