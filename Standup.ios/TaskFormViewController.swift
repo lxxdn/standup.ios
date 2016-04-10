@@ -17,8 +17,16 @@ class TaskFormViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     //MARK: property
     weak var taskForm: TaskFormView!
-    var projects: [Project] = []
-    var users: [Employee] = []
+    var projects: [Project] = []{
+        didSet{
+            taskForm.selectView.reloadData()
+        }
+    }
+    var users: [Employee] = [] {
+        didSet{
+            taskForm.selectView.reloadData()
+        }
+    }
     var currentUser: Employee? = nil {
         didSet{
             taskForm.userBtn.setTitle( currentUser!.name, forState: UIControlState.Normal)
@@ -37,12 +45,12 @@ class TaskFormViewController: UIViewController, UITableViewDataSource, UITableVi
             case .Project:
                 result = projects.map({
                     project in
-                    ["id": project.id, "name": project.name]
+                    ["project_id": project.id, "project_name": project.name]
                 })
             case .User:
                 result = users.map({
                     user in
-                    ["id": user.id, "name": user.name]
+                    ["employee_id": user.id, "employee_name": user.name, "avatar": user.avatar, "team_id": user.team_id]
                 })
             }
            return result
@@ -116,10 +124,10 @@ class TaskFormViewController: UIViewController, UITableViewDataSource, UITableVi
             .responseJSON{ [unowned self]response in
                 switch response.result {
                 case .Success(let json):
-                    if let projectsJSON = json as? [Dictionary<String, String>]{
-                        let projectObjs = Project.parseJSON(projectsJSON)
-                        self.projects = projectObjs
-                        ArchivedKeyCache.save(projectsJSON, filename: "project_list")
+                    if let projectsJSON = json as? NSDictionary{
+                        let projectsData = projectsJSON.objectForKey("projects") as! [Dictionary<String, String>]
+                        self.projects = Project.parseJSON(projectsData)
+                        ArchivedKeyCache.save(projectsData, filename: "project_list")
                     }
                 case .Failure(let error):
                     NSLog("Failed to get projects josn becase \(error)")
@@ -142,10 +150,10 @@ class TaskFormViewController: UIViewController, UITableViewDataSource, UITableVi
             .responseJSON{ [unowned self] response in
                 switch response.result {
                 case .Success(let json):
-                    if let usersJSON = json as? [Dictionary<String, String>]{
-                        let userObjs = Employee.parseJSON(usersJSON)
-                        self.users = userObjs
-                        ArchivedKeyCache.save(usersJSON, filename: "user_list")
+                    if let usersJSON = json as? NSDictionary{
+                        let usersData = usersJSON.objectForKey("users") as! [Dictionary<String, String>]
+                        self.users = Employee.parseJSON(usersData)
+                        ArchivedKeyCache.save(usersData, filename: "user_list")
                     }
                 case .Failure(let error):
                     NSLog("Failed to get projects josn becase \(error)")
@@ -171,7 +179,12 @@ class TaskFormViewController: UIViewController, UITableViewDataSource, UITableVi
             cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: taskForm.tableCellIdentifier)
         }
         
-        cell.textLabel?.text = self.data[indexPath.row]["name"]
+        if currentDataType == .User{
+            cell.textLabel?.text = self.data[indexPath.row]["employee_name"]
+        }else{
+             cell.textLabel?.text = self.data[indexPath.row]["project_name"]
+        }
+       
         return cell
     }
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -184,13 +197,20 @@ class TaskFormViewController: UIViewController, UITableViewDataSource, UITableVi
                 currentProject = project
             }
         }
+        hideTableView()
     }
     
     // MARK: other functions
     func showTableView(){
         taskForm.selectView.reloadData()
         UIView.animateWithDuration(0.5, animations: {[unowned self] in
-            self.taskForm.selectView.frame.origin.y = (self.navigationController?.navigationBar.frame.height)!
+            self.taskForm.selectView.frame.origin.y -= (self.taskForm.frame.size.height - (self.navigationController?.navigationBar.frame.size.height)! - 20) // todo replace 20 by a more meaningful stuff
+        })
+    }
+    
+    func hideTableView(){
+        UIView.animateWithDuration(0.5, animations: { [unowned self] in
+            self.taskForm.selectView.frame.origin.y = self.taskForm.frame.height
         })
     }
     
