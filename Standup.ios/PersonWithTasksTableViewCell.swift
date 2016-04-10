@@ -23,6 +23,7 @@ class PersonWithTasksTableViewCell: UITableViewCell, UITableViewDataSource {
         // Initialization code
         tasksTable.dataSource = self
         tasksTable.scrollEnabled = false
+        
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -45,9 +46,10 @@ class PersonWithTasksTableViewCell: UITableViewCell, UITableViewDataSource {
             tableCell?.checkbox = M13Checkbox()
                         
             //tableCell!.accessoryType = UITableViewCellAccessoryType.Checkmark
-            tableCell!.selectionStyle = .None
+            tableCell!.selectionStyle = .Gray
         }
         
+        // add attributed string if it's done
         if tasks.count > 0 {
             let task = tasks[indexPath.row] as Task
             let attributeString =  NSMutableAttributedString(string: task.content!)
@@ -59,10 +61,10 @@ class PersonWithTasksTableViewCell: UITableViewCell, UITableViewDataSource {
             }
             tableCell!.textLabel?.attributedText = attributeString
         }
-        
-        
         return tableCell!
     }
+
+    
     
         
 }

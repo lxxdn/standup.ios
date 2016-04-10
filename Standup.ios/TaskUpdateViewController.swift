@@ -9,7 +9,13 @@
 import UIKit
 
 class TaskUpdateViewController: UIViewController {
+    weak var taskUpdateView: TaskFormView!
     
+    override func loadView() {
+        super.loadView()
+        self.view = NSBundle.mainBundle().loadNibNamed("TaskFormView", owner: nil, options: nil).first as! TaskFormView
+
+    }
     override func viewDidLoad() {
         
         super.viewDidLoad()

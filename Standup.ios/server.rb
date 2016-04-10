@@ -88,7 +88,7 @@ put '/updateTaskStatus/:id' do
     status = data['status']
 
     client = get_connection
-    client['tasks'].find({id: task_id}).first.update_one({"$set" => {status: status}})
+    client['tasks'].update_one({_id: task_id}, {"$set" => {status: status}})
   ensure
     client.close
   end

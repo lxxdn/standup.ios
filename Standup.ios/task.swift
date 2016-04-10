@@ -13,12 +13,13 @@ class Task{
         case New
         case Done
     }
-    var id: String?
-    var content: String?
+    var id: String!
+    var content: String!
     var status: Status?
     
     
     init(id: String, content c: String, status s: String){
+        self.id = id
         self.content = c
         switch s{
         case "new":

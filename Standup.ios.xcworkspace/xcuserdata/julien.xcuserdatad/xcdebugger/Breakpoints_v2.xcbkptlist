@@ -106,11 +106,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Standup.ios/task.swift"
-            timestampString = "481675654.037011"
+            timestampString = "481947564.349663"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
             landmarkName = "parseJSON(_:)"
             landmarkType = "5">
          </BreakpointContent>

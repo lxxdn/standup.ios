@@ -16,7 +16,7 @@ class AllTasksViewController: UIViewController, UITableViewDataSource, UITableVi
 
     @IBOutlet weak var addBtn: UIButton!
     @IBAction func newTaskPressed(sender: UIButton) {
-        let newTask = NSBundle.mainBundle().loadNibNamed("NewTaskView", owner: nil, options: nil).first as! NewTaskView
+        let newTask = NSBundle.mainBundle().loadNibNamed("TaskFormView", owner: nil, options: nil).first as! TaskFormView
         newTask.hidden = true
         newTask.parent = self
         self.view.addSubview(newTask)
@@ -128,6 +128,7 @@ class AllTasksViewController: UIViewController, UITableViewDataSource, UITableVi
         }else{
             cell = NSBundle.mainBundle().loadNibNamed("PersonWithTasksTableViewCell", owner: nil, options: nil).first as! PersonWithTasksTableViewCell
         }
+        cell.tasksTable.delegate = self
         let project = self.projects[indexPath.section]
         
         cell.employeeName.text = project.employees[indexPath.row].name?.capitalizedString
@@ -142,9 +143,23 @@ class AllTasksViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        let defaultCellHeight = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "default")
-        let height = 70 + (CGFloat)(projects[indexPath.section].employees[indexPath.row].tasks.count) * defaultCellHeight.frame.height
-        return CGFloat(height)
+        if tasksTableView == tableView{
+            let defaultCellHeight = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "default")
+            let height = 70 + (CGFloat)(projects[indexPath.section].employees[indexPath.row].tasks.count) * defaultCellHeight.frame.height
+            return CGFloat(height)
+        }
+        return UITableViewCell().frame.height
+        
     }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if tableView != tasksTableView {
+            let cellContentView = tableView.superview
+            let cell = cellContentView?.superview as! PersonWithTasksTableViewCell
+            self.navigationController?.pushViewController(TaskUpdateViewController(), animated: true)
+            
+        }
+    }
+    
     
 }

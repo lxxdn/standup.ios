@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class NewTaskView: UIView, UITableViewDataSource, UITableViewDelegate {
+class TaskFormView: UIView, UITableViewDataSource, UITableViewDelegate {
 
     /*
     // Only override drawRect: if you perform custom drawing.
@@ -158,7 +158,7 @@ class NewTaskView: UIView, UITableViewDataSource, UITableViewDelegate {
         
         
         // add gesture recognizer
-        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(NewTaskView.tapViewAction(_:)))
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(TaskFormView.tapViewAction(_:)))
         self.mainView.addGestureRecognizer(tapRecognizer)
     }
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
