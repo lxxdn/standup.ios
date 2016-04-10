@@ -16,21 +16,8 @@ class AllTasksViewController: UIViewController, UITableViewDataSource, UITableVi
 
     @IBOutlet weak var addBtn: UIButton!
     @IBAction func newTaskPressed(sender: UIButton) {
-        let newTask = NSBundle.mainBundle().loadNibNamed("TaskFormView", owner: nil, options: nil).first as! TaskFormView
-        newTask.hidden = true
-        newTask.parent = self
-        self.view.addSubview(newTask)
-        var frame = newTask.frame
-        frame.origin.x = self.view.frame.origin.x
-        frame.origin.y = self.view.frame.height
-        newTask.frame = frame
-        
-        UIView.animateWithDuration(0.5, animations: {
-            newTask.hidden = false
-            var frame = newTask.frame
-            frame.origin.y -= self.view.frame.height - (self.navigationController?.navigationBar.frame.height)! - 10
-            newTask.frame = frame
-        })
+        let addTaskViewController = AddTaskViewController(nibName: nil, bundle: nil)
+        self.navigationController?.pushViewController(addTaskViewController, animated: true)
     }
     @IBAction func newTaskPressedDown() {
         var frame = addBtn.frame
@@ -131,8 +118,8 @@ class AllTasksViewController: UIViewController, UITableViewDataSource, UITableVi
         cell.tasksTable.delegate = self
         let project = self.projects[indexPath.section]
         
-        cell.employeeName.text = project.employees[indexPath.row].name?.capitalizedString
-        cell.employeeAvatar.sd_setImageWithURL(NSURL(string: project.employees[indexPath.row].avatar!))
+        cell.employeeName.text = project.employees[indexPath.row].name.capitalizedString
+        cell.employeeAvatar.sd_setImageWithURL(NSURL(string: project.employees[indexPath.row].avatar))
         
         cell.tasks = project.employees[indexPath.row].tasks
         return cell
@@ -155,8 +142,8 @@ class AllTasksViewController: UIViewController, UITableViewDataSource, UITableVi
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if tableView != tasksTableView {
             let cellContentView = tableView.superview
-            let cell = cellContentView?.superview as! PersonWithTasksTableViewCell
-            self.navigationController?.pushViewController(TaskUpdateViewController(), animated: true)
+//            let cell = cellContentView?.superview as! PersonWithTasksTableViewCell
+//            self.navigationController?.pushViewController(UpdateTaskViewController(), animated: true)
             
         }
     }

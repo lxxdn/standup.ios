@@ -9,13 +9,19 @@
 import Foundation
 
 class Project {
-    var id:String?
-    var name:String?
+    var id:String
+    var name:String
     var employees = [Employee]()
     
-    init(project_id id: String, project_name name: String){
-        self.name = name
-        self.id = id
+    init?(project_id id: String?, project_name name: String?){
+        if id == nil || name == nil{return nil}
+        self.name = name!
+        self.id = id!
+    }
+    convenience init?(data: Dictionary<String, String>){
+        let id = data["project_id"]
+        let name = data["project_name"]
+        self.init(project_id: id!, project_name: name!)
     }
     
     static func parseJSON(json: AnyObject?) -> Array<Project>{
@@ -24,10 +30,13 @@ class Project {
         for projectContent in content{
             let projectID = projectContent.objectForKey("project_id") as! String
             let projectName = projectContent.objectForKey("project_name") as! String
-            let employees = Employee.parseJSON(projectContent.objectForKey("employeesOnProject"))
-            let newProject = Project(project_id: projectID, project_name: projectName)
-            newProject.employees +=  employees
-            result.append(newProject)
+            if let project = Project(project_id: projectID, project_name: projectName){
+                if let employeeJSON = projectContent.objectForKey("employeesOnProject"){
+                    let employees = Employee.parseJSON(employeeJSON)
+                    project.employees +=  employees
+                }
+                result.append(project)
+            }
         }
         return result
     }

@@ -11,11 +11,12 @@
 		F901F5E01C79FE49001819AB /* project.swift in Sources */ = {isa = PBXBuildFile; fileRef = F901F5DF1C79FE49001819AB /* project.swift */; };
 		F901F5E21C79FE55001819AB /* employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = F901F5E11C79FE55001819AB /* employee.swift */; };
 		F901F5E41C79FE5D001819AB /* task.swift in Sources */ = {isa = PBXBuildFile; fileRef = F901F5E31C79FE5D001819AB /* task.swift */; };
-		F94E5F6B1CB9D96C00A3BF0D /* TaskUpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94E5F6A1CB9D96C00A3BF0D /* TaskUpdateViewController.swift */; };
+		F94E5F6B1CB9D96C00A3BF0D /* UpdateTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94E5F6A1CB9D96C00A3BF0D /* UpdateTaskViewController.swift */; };
 		F96593101CB2956C0031495E /* FontAwesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = F965930F1CB2956C0031495E /* FontAwesome.otf */; };
 		F96593151CB2AF340031495E /* M13Checkbox.m in Sources */ = {isa = PBXBuildFile; fileRef = F96593141CB2AF340031495E /* M13Checkbox.m */; };
 		F96CE72E1C96F8470070BA45 /* TaskFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96CE72D1C96F8470070BA45 /* TaskFormView.swift */; };
 		F96CE7301C96F8570070BA45 /* TaskFormView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F96CE72F1C96F8570070BA45 /* TaskFormView.xib */; };
+		F9A198531CBA110A00E61AFD /* TaskFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A198521CBA110A00E61AFD /* TaskFormViewController.swift */; };
 		F9A664A31C720E7B00DC7B59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A664A21C720E7B00DC7B59 /* AppDelegate.swift */; };
 		F9A664AA1C720E7B00DC7B59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9A664A91C720E7B00DC7B59 /* Assets.xcassets */; };
 		F9A664AD1C720E7B00DC7B59 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9A664AB1C720E7B00DC7B59 /* LaunchScreen.storyboard */; };
@@ -31,6 +32,7 @@
 		F9A704BA1CB283B100934B8E /* NSString+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = F9A704B81CB283B100934B8E /* NSString+FontAwesome.m */; };
 		F9ABE7931C7F3BA20040B3FF /* PersonWithTasksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9ABE7911C7F3BA20040B3FF /* PersonWithTasksTableViewCell.swift */; };
 		F9ABE7941C7F3BA20040B3FF /* PersonWithTasksTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9ABE7921C7F3BA20040B3FF /* PersonWithTasksTableViewCell.xib */; };
+		F9E2B5F81CB9FC4100DAE7D2 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E2B5F71CB9FC4100DAE7D2 /* AddTaskViewController.swift */; };
 		F9E5BEA71CB3FAA500C7A062 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E5BEA61CB3FAA500C7A062 /* TaskTableViewCell.swift */; };
 		F9FDB1961C9847AD005E6E7C /* UITextView+Placeholder.m in Sources */ = {isa = PBXBuildFile; fileRef = F9FDB1941C9847AD005E6E7C /* UITextView+Placeholder.m */; };
 /* End PBXBuildFile section */
@@ -60,12 +62,13 @@
 		F901F5E11C79FE55001819AB /* employee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = employee.swift; sourceTree = "<group>"; };
 		F901F5E31C79FE5D001819AB /* task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = task.swift; sourceTree = "<group>"; };
 		F91682751C9843FB00DF681E /* Standup.ios-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Standup.ios-Bridging-Header.h"; sourceTree = "<group>"; };
-		F94E5F6A1CB9D96C00A3BF0D /* TaskUpdateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskUpdateViewController.swift; sourceTree = "<group>"; };
+		F94E5F6A1CB9D96C00A3BF0D /* UpdateTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateTaskViewController.swift; sourceTree = "<group>"; };
 		F965930F1CB2956C0031495E /* FontAwesome.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.otf; sourceTree = "<group>"; };
 		F96593131CB2AF340031495E /* M13Checkbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M13Checkbox.h; sourceTree = "<group>"; };
 		F96593141CB2AF340031495E /* M13Checkbox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M13Checkbox.m; sourceTree = "<group>"; };
 		F96CE72D1C96F8470070BA45 /* TaskFormView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskFormView.swift; sourceTree = "<group>"; };
 		F96CE72F1C96F8570070BA45 /* TaskFormView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskFormView.xib; sourceTree = "<group>"; };
+		F9A198521CBA110A00E61AFD /* TaskFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskFormViewController.swift; sourceTree = "<group>"; };
 		F9A6649F1C720E7B00DC7B59 /* Standup.ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Standup.ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9A664A21C720E7B00DC7B59 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9A664A91C720E7B00DC7B59 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -88,6 +91,7 @@
 		F9A704B91CB283B100934B8E /* NSString+FontAwesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FontAwesome.h"; sourceTree = "<group>"; };
 		F9ABE7911C7F3BA20040B3FF /* PersonWithTasksTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonWithTasksTableViewCell.swift; sourceTree = "<group>"; };
 		F9ABE7921C7F3BA20040B3FF /* PersonWithTasksTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonWithTasksTableViewCell.xib; sourceTree = "<group>"; };
+		F9E2B5F71CB9FC4100DAE7D2 /* AddTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
 		F9E5BEA61CB3FAA500C7A062 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 		F9FDB1941C9847AD005E6E7C /* UITextView+Placeholder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+Placeholder.m"; sourceTree = "<group>"; };
 		F9FDB1951C9847AD005E6E7C /* UITextView+Placeholder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+Placeholder.h"; sourceTree = "<group>"; };
@@ -229,7 +233,9 @@
 				F9A664E81C760D7E00DC7B59 /* server.rb */,
 				F9A704AF1CAD6F2300934B8E /* LogInControllerViewController.swift */,
 				F9A704B01CAD6F2300934B8E /* LogInControllerViewController.xib */,
-				F94E5F6A1CB9D96C00A3BF0D /* TaskUpdateViewController.swift */,
+				F94E5F6A1CB9D96C00A3BF0D /* UpdateTaskViewController.swift */,
+				F9E2B5F71CB9FC4100DAE7D2 /* AddTaskViewController.swift */,
+				F9A198521CBA110A00E61AFD /* TaskFormViewController.swift */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -442,9 +448,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9E5BEA71CB3FAA500C7A062 /* TaskTableViewCell.swift in Sources */,
-				F94E5F6B1CB9D96C00A3BF0D /* TaskUpdateViewController.swift in Sources */,
+				F9E2B5F81CB9FC4100DAE7D2 /* AddTaskViewController.swift in Sources */,
+				F94E5F6B1CB9D96C00A3BF0D /* UpdateTaskViewController.swift in Sources */,
 				F901F5E21C79FE55001819AB /* employee.swift in Sources */,
 				F9A704AE1CA5FFFE00934B8E /* ArchivedKeyCache.swift in Sources */,
+				F9A198531CBA110A00E61AFD /* TaskFormViewController.swift in Sources */,
 				F96CE72E1C96F8470070BA45 /* TaskFormView.swift in Sources */,
 				F9A704B41CAF8C9B00934B8E /* login.swift in Sources */,
 				F9A664A31C720E7B00DC7B59 /* AppDelegate.swift in Sources */,

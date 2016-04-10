@@ -34,9 +34,6 @@
                                             <exclude reference="f1V-j1-BtR"/>
                                         </mask>
                                     </variation>
-                                    <connections>
-                                        <action selector="submit" destination="t7A-ge-uqt" eventType="touchUpInside" id="czY-xF-aaz"/>
-                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R4s-oh-cau">
                                     <rect key="frame" x="83" y="326" width="69" height="36"/>
@@ -51,9 +48,6 @@
                                             <exclude reference="f1N-ca-Sde"/>
                                         </mask>
                                     </variation>
-                                    <connections>
-                                        <action selector="cancel" destination="t7A-ge-uqt" eventType="touchUpInside" id="abO-uC-m8y"/>
-                                    </connections>
                                 </button>
                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" text="textview" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3v9-Vj-K90">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="240"/>
@@ -107,9 +101,6 @@
                                             <exclude reference="2Xk-nZ-xtz"/>
                                         </mask>
                                     </variation>
-                                    <connections>
-                                        <action selector="selectUser" destination="t7A-ge-uqt" eventType="touchUpInside" id="yxb-iF-ZsY"/>
-                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="485-ou-y5F">
                                     <rect key="frame" x="48" y="248" width="165" height="20"/>
@@ -118,9 +109,6 @@
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                     <state key="normal" title="Select you project"/>
-                                    <connections>
-                                        <action selector="selectProject" destination="t7A-ge-uqt" eventType="touchUpInside" id="XT2-Kr-2wK"/>
-                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -263,9 +251,11 @@
                 <constraint firstItem="RaD-eX-yEa" firstAttribute="leading" secondItem="t7A-ge-uqt" secondAttribute="leading" id="kGb-5x-FbK"/>
             </constraints>
             <connections>
+                <outlet property="cancelBtn" destination="R4s-oh-cau" id="SYV-l7-Mhy"/>
                 <outlet property="mainView" destination="iN0-l3-epB" id="M37-pL-mcZ"/>
                 <outlet property="projectBtn" destination="485-ou-y5F" id="bLi-Gr-cOS"/>
                 <outlet property="projectLabel" destination="zgV-4E-SSE" id="rPI-bo-G0Q"/>
+                <outlet property="submitBtn" destination="QFS-7X-gk8" id="YfN-yM-VDy"/>
                 <outlet property="taskContentInput" destination="3v9-Vj-K90" id="3dn-qE-NHA"/>
                 <outlet property="userBtn" destination="YYx-Lu-PTR" id="ywZ-VN-Q5b"/>
                 <outlet property="userLabel" destination="EAx-5E-xES" id="BPL-rz-bb2"/>

@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class TaskFormView: UIView, UITableViewDataSource, UITableViewDelegate {
+class TaskFormView: UIView {
 
     /*
     // Only override drawRect: if you perform custom drawing.
@@ -18,136 +18,39 @@ class TaskFormView: UIView, UITableViewDataSource, UITableViewDelegate {
         // Drawing code
     }
     */
-    enum DataType {
-        case User
-        case Project
-    }
+    
     
     @IBOutlet weak var projectLabel: UILabel!
     @IBOutlet weak var userLabel: UILabel!
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var projectBtn: UIButton!
     @IBOutlet weak var userBtn: UIButton!
-    var parent: AllTasksViewController?
-    @IBAction func submit() {
-        let params = ["content": taskContentInput.text, "project_id": currentProject!["id"]!, "team_id": currentUser!["team_id"]!, "user_id": currentUser!["id"]! ]
-
-        Alamofire.request(.POST, "http://nuri.ekohe.com:4567/task/create", parameters: params, encoding: .JSON)
-            .validate(statusCode: 200..<300)
-            .response{  response in
-                self.parent?.refresh()
-            }
-        UIView.animateWithDuration(0.5, animations: {
-            self.frame.origin.y += UIScreen.mainScreen().bounds.height
-            })
-        self.selectView.hidden = true
-        self.endEditing(true)
-    }
-    
-    
-    @IBAction func cancel() {
-        UIView.animateWithDuration(0.5, animations: {
-            self.frame.origin.y += self.frame.height
-            
-            self.frame.origin.y += UIScreen.mainScreen().bounds.height
-            })
-        self.selectView.hidden = true
-        self.endEditing(true)
-    }
-    
-    var currentUser: NSDictionary?{
-        didSet{
-            if let name = currentUser?.objectForKey("name") as? String {
-                userBtn.setTitle( name, forState: UIControlState.Normal)
-            }
-        }
-    }
-    var currentProject: NSDictionary?{
-        didSet{
-            if let name = currentProject?.objectForKey("name") as? String {
-                projectBtn.setTitle( name, forState: UIControlState.Normal)
-            }
-        }
-    }
-    var currentDataType = DataType.Project
+    @IBOutlet weak var cancelBtn: UIButton!
+    @IBOutlet weak var submitBtn: UIButton!
+    @IBOutlet weak var taskContentInput: UITextView!
     let selectView = UITableView()
+    let tableCellIdentifier = "selectCell"
+    
     var data = [NSDictionary](){
         didSet{
             selectView.reloadData()
         }
     }//id and name tuple
     
-    @IBAction func selectProject() {
-        self.endEditing(true)
-        let cachedData = ArchivedKeyCache.load("project_list")
-        if let projects = cachedData as? Array<NSDictionary>{
-            self.data = projects
-        }
-        Alamofire.request(.GET, "http://nuri.ekohe.com:4567/allProjects")
-            .responseJSON{ response in
-                switch response.result {
-                case .Success(let json):
-                    let projectsJSON = json as! NSDictionary
-                    if self.data != projectsJSON.objectForKey("projects") as! Array<NSDictionary>{
-                        self.data = projectsJSON.objectForKey("projects") as! Array<NSDictionary>
-                        ArchivedKeyCache.save(self.data, filename: "project_list")
-                    }
-                case .Failure(let error):
-                    NSLog("Failed to get projects josn becase \(error)")
-                }
-        }
-        
-        
-        self.currentDataType = .Project
-        UIView.animateWithDuration(0.5, animations: {
-            self.selectView.frame.origin.y = 0
-        })
-    }
 
-    @IBAction func selectUser() {
-        self.endEditing(true)
-        let cachedData = ArchivedKeyCache.load("user_list")
-        if let users = cachedData as? Array<NSDictionary>{
-            self.data = users
-        }
-        Alamofire.request(.GET, "http://nuri.ekohe.com:4567/allUsers")
-            .responseJSON{ response in
-                switch response.result {
-                case .Success(let json):
-                    let usersJSON = json as! NSDictionary
-                    if self.data != usersJSON.objectForKey("users") as! Array<NSDictionary>{
-                        self.data = usersJSON.objectForKey("users") as! Array<NSDictionary>
-                        ArchivedKeyCache.save(self.data, filename: "user_list")
-                    }
-                case .Failure(let error):
-                    NSLog("Failed to get users josn becase \(error)")
-                }
-        }
-        
-        self.currentDataType = .User
-        UIView.animateWithDuration(0.5, animations: {
-            self.selectView.frame.origin.y = 0
-        })
-    }
     
-    @IBOutlet weak var taskContentInput: UITextView!
+    func tapViewAction(recognizer: UITapGestureRecognizer) {
+        self.endEditing(true)
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         taskContentInput.text = ""
         taskContentInput.placeholder = "Input your content"
         taskContentInput.becomeFirstResponder()
         
-        selectView.dataSource = self
-        selectView.delegate = self
         selectView.frame.size = UIScreen.mainScreen().bounds.size
         selectView.frame.origin.y = UIScreen.mainScreen().bounds.height
         self.addSubview(selectView)
-        
-        //set current user
-        let userDefault = NSUserDefaults.standardUserDefaults()
-        if let savedCurrentUser = (userDefault.objectForKey("current_user") as? NSDictionary){
-            self.currentUser = savedCurrentUser
-        }
         
         // set font icon
         let fa = UIFont(name: kFontAwesomeFamilyName, size: 20)
@@ -156,40 +59,9 @@ class TaskFormView: UIView, UITableViewDataSource, UITableViewDelegate {
         userLabel.font = fa
         userLabel.text = NSString.fontAwesomeIconStringForEnum(.FAUser)
         
-        
         // add gesture recognizer
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(TaskFormView.tapViewAction(_:)))
         self.mainView.addGestureRecognizer(tapRecognizer)
     }
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
-    }
-    func tapViewAction(recognizer: UITapGestureRecognizer) {
-        self.endEditing(true)
-    }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
-    }
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var tableCell = selectView.dequeueReusableCellWithIdentifier("selectCell")
-        if tableCell == nil{
-           tableCell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "selectCell")
-        }
-        let cell = tableCell!
-        
-        cell.textLabel?.text = self.data[indexPath.row].objectForKey("name") as? String
-        return cell
-    }
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if self.currentDataType == .User{
-            currentUser = data[indexPath.row]
-        }else{
-            currentProject = data[indexPath.row]
-        }
-        UIView.animateWithDuration(0.5, animations: {
-            self.selectView.frame.origin.y = self.frame.height
-        })
-        
-    }
 }

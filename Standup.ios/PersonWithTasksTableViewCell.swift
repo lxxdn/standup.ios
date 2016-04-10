@@ -23,7 +23,6 @@ class PersonWithTasksTableViewCell: UITableViewCell, UITableViewDataSource {
         // Initialization code
         tasksTable.dataSource = self
         tasksTable.scrollEnabled = false
-        
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -52,7 +51,7 @@ class PersonWithTasksTableViewCell: UITableViewCell, UITableViewDataSource {
         // add attributed string if it's done
         if tasks.count > 0 {
             let task = tasks[indexPath.row] as Task
-            let attributeString =  NSMutableAttributedString(string: task.content!)
+            let attributeString =  NSMutableAttributedString(string: task.content)
             tableCell!.id = task.id
             if task.status == .Done{
                 tableCell!.checkbox?.checkState = .Checked
