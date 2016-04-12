@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class AddTaskViewController: TaskFormViewController {
     
@@ -25,7 +26,19 @@ class AddTaskViewController: TaskFormViewController {
         print("subclass")
         super.cancel(btn)
     }
+    override func submit() {
+        let params = ["content": taskForm.taskContentInput.text, "project_id": currentProject?.id, "team_id": currentUser?.team_id, "user_id": currentUser?.id ]
 
+        Alamofire.request(.POST, "http://nuri.ekohe.com:4567/task/create", parameters: params, encoding: .JSON)
+            .validate(statusCode: 200..<300)
+            .response{  response in
+                print(response)
+                //                self.parent?.refresh()
+        }
+        taskForm.endEditing(true)
+        self.navigationController?.popViewControllerAnimated(true)
+    }
+    
     /*
     // MARK: - Navigation
 

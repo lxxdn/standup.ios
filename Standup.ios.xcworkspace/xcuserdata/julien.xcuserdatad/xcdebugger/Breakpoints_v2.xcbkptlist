@@ -218,19 +218,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Standup.ios/TaskFormViewController.swift"
-<<<<<<< d9f1639b7c3a6703cd50d459c61126fc344d9979
             timestampString = "482163282.00281"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "115"
             endingLineNumber = "115"
-=======
-            timestampString = "481993269.296867"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "128"
-            endingLineNumber = "128"
->>>>>>> bug fixes
             landmarkName = "selectProject(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -258,19 +250,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Standup.ios/TaskFormViewController.swift"
-<<<<<<< d9f1639b7c3a6703cd50d459c61126fc344d9979
             timestampString = "482163282.00281"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "114"
             endingLineNumber = "114"
-=======
-            timestampString = "481992266.331196"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "127"
-            endingLineNumber = "127"
->>>>>>> bug fixes
             landmarkName = "selectProject(_:)"
             landmarkType = "5">
             <Locations>
@@ -314,19 +298,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Standup.ios/TaskFormViewController.swift"
-<<<<<<< d9f1639b7c3a6703cd50d459c61126fc344d9979
             timestampString = "482163282.00281"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "179"
             endingLineNumber = "179"
-=======
-            timestampString = "481995814.054107"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "192"
-            endingLineNumber = "192"
->>>>>>> bug fixes
             landmarkName = "tableView(_:didSelectRowAtIndexPath:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -338,19 +314,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Standup.ios/TaskFormViewController.swift"
-<<<<<<< d9f1639b7c3a6703cd50d459c61126fc344d9979
             timestampString = "482163282.00281"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "183"
             endingLineNumber = "183"
-=======
-            timestampString = "481995814.054107"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "196"
-            endingLineNumber = "196"
->>>>>>> bug fixes
             landmarkName = "tableView(_:didSelectRowAtIndexPath:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -362,7 +330,6 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Standup.ios/TaskFormViewController.swift"
-<<<<<<< d9f1639b7c3a6703cd50d459c61126fc344d9979
             timestampString = "482163282.00281"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -464,93 +431,6 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "123"
             endingLineNumber = "123"
-=======
-            timestampString = "481994418.848313"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "118"
-            endingLineNumber = "118"
-            landmarkName = "selectProject(_:)"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Standup_ios.TaskFormViewController.selectProject (__ObjC.UIButton) -&gt; ()"
-                  moduleName = "Standup.ios"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/julien/Documents/Standup.ios/Standup.ios/TaskFormViewController.swift"
-                  timestampString = "481994573.0657"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "118"
-                  endingLineNumber = "118"
-                  offsetFromSymbolStart = "229">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Standup_ios.TaskFormViewController.selectProject (__ObjC.UIButton) -&gt; ()"
-                  moduleName = "Standup.ios"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/julien/Documents/Standup.ios/Standup.ios/TaskFormViewController.swift"
-                  timestampString = "481994573.065938"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "118"
-                  endingLineNumber = "118"
-                  offsetFromSymbolStart = "441">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Standup.ios/TaskFormViewController.swift"
-            timestampString = "481995454.875682"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
-            landmarkName = "TaskFormViewController"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Standup.ios/TaskFormViewController.swift"
-            timestampString = "481995562.989738"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
-            landmarkName = "TaskFormViewController"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Standup.ios/TaskFormViewController.swift"
-            timestampString = "481995588.02146"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "174"
-            endingLineNumber = "174"
->>>>>>> bug fixes
             landmarkName = "tableView(_:cellForRowAtIndexPath:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -562,21 +442,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Standup.ios/AllTasksViewController.swift"
-<<<<<<< d9f1639b7c3a6703cd50d459c61126fc344d9979
             timestampString = "482164213.666668"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "103"
             endingLineNumber = "103"
-            landmarkName = "tableView(_:numberOfRowsInSection:)"
-=======
-            timestampString = "481996387.435317"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
             landmarkName = "tableView(_:cellForRowAtIndexPath:)"
->>>>>>> bug fixes
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -592,8 +463,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "127"
             endingLineNumber = "127"
-            landmarkName = "AllTasksViewController"
-            landmarkType = "3">
+            landmarkName = "tableView(_:cellForRowAtIndexPath:)"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -623,7 +494,9 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "173"
-            endingLineNumber = "173">
+            endingLineNumber = "173"
+            landmarkName = "tableView(_:didSelectRowAtIndexPath:)"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

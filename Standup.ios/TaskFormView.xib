@@ -59,7 +59,7 @@
                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 </textView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="a" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zgV-4E-SSE">
-                                    <rect key="frame" x="20" y="248" width="20" height="20"/>
+                                    <rect key="frame" x="20" y="248" width="20" height="36"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="24" id="4Ox-se-IBX"/>
                                         <constraint firstAttribute="width" constant="20" id="JRO-88-5EF"/>
@@ -74,7 +74,7 @@
                                     </variation>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="b" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EAx-5E-xES">
-                                    <rect key="frame" x="20" y="276" width="20" height="20"/>
+                                    <rect key="frame" x="20" y="292" width="20" height="36"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="49" id="7gN-py-dtm"/>
                                         <constraint firstAttribute="height" constant="24" id="RjE-rj-We0"/>
@@ -90,7 +90,7 @@
                                     </variation>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YYx-Lu-PTR">
-                                    <rect key="frame" x="48" y="276" width="100" height="36"/>
+                                    <rect key="frame" x="48" y="292" width="100" height="36"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="100" id="2Xk-nZ-xtz"/>
                                     </constraints>
@@ -103,7 +103,7 @@
                                     </variation>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="485-ou-y5F">
-                                    <rect key="frame" x="48" y="248" width="165" height="20"/>
+                                    <rect key="frame" x="48" y="248" width="165" height="36"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="165" id="VSk-xF-xud"/>
                                     </constraints>
@@ -113,6 +113,7 @@
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             <constraints>
+                                <constraint firstItem="EAx-5E-xES" firstAttribute="bottom" secondItem="YYx-Lu-PTR" secondAttribute="bottom" id="096-ep-K35"/>
                                 <constraint firstItem="EAx-5E-xES" firstAttribute="top" secondItem="zgV-4E-SSE" secondAttribute="bottom" constant="8" symbolic="YES" id="1z1-g5-wFE"/>
                                 <constraint firstItem="3v9-Vj-K90" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="31n-UU-6Hd"/>
                                 <constraint firstAttribute="bottom" secondItem="QFS-7X-gk8" secondAttribute="bottom" constant="238" id="34J-ou-TpL"/>
@@ -202,6 +203,8 @@
                                     <exclude reference="tq1-v0-pQr"/>
                                     <exclude reference="wyl-gh-FOq"/>
                                     <exclude reference="zQC-Tt-b1E"/>
+                                    <exclude reference="1z1-g5-wFE"/>
+                                    <exclude reference="8mN-Hv-00P"/>
                                     <exclude reference="4IT-PF-64x"/>
                                     <exclude reference="Fb5-qT-W8T"/>
                                     <exclude reference="LvD-vP-rsy"/>
@@ -215,11 +218,11 @@
                                     <exclude reference="lyw-sW-9zP"/>
                                     <exclude reference="wMd-6R-vJr"/>
                                     <exclude reference="xpg-Ua-XAt"/>
-                                    <exclude reference="1z1-g5-wFE"/>
                                     <exclude reference="Jcx-4s-79J"/>
                                     <exclude reference="S6H-9b-YfB"/>
                                     <exclude reference="dre-N4-IyU"/>
                                     <exclude reference="fF7-qq-yjG"/>
+                                    <exclude reference="rRI-fG-WgX"/>
                                     <exclude reference="tlf-9b-dye"/>
                                     <exclude reference="uzr-mo-7zd"/>
                                     <exclude reference="vFh-r3-w58"/>

@@ -95,19 +95,6 @@ class TaskFormViewController: UIViewController, UITableViewDataSource, UITableVi
         self.navigationController?.popViewControllerAnimated(true)
     }
     func submit() {
-//        let params = ["content": taskForm.taskContentInput.text, "project_id": currentProject.id, "team_id": currentUser.!, "user_id": currentUser!["id"]! ]
-//        
-//        Alamofire.request(.POST, "http://nuri.ekohe.com:4567/task/create", parameters: params, encoding: .JSON)
-//            .validate(statusCode: 200..<300)
-//            .response{  response in
-//                print(response)
-//                //                self.parent?.refresh()
-//        }
-//        UIView.animateWithDuration(0.5, animations: {
-//            self.frame.origin.y += UIScreen.mainScreen().bounds.height
-//        })
-//        self.selectView.hidden = true
-//        self.endEditing(true)
     }
 
     func selectProject(btn: UIButton){

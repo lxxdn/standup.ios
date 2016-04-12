@@ -11,10 +11,22 @@ import Alamofire
 import SDWebImage
 
 class AllTasksViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate{
-
+    
+    //MARK: property
     @IBOutlet weak var tasksTableView: UITableView!
-
     @IBOutlet weak var addBtn: UIButton!
+    let spinner = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.Gray)
+
+    var projects: Array<Project> = []{
+        didSet{
+            self.tasksTableView.reloadData()
+        }
+    }
+    private struct StaticData{
+        static let tableCellResuseIdentifier = "PersonWithTask"
+    }
+    
+    //MARK: actions
     @IBAction func newTaskPressed(sender: UIButton) {
         let addTaskViewController = AddTaskViewController(nibName: nil, bundle: nil)
         self.navigationController?.pushViewController(addTaskViewController, animated: true)
@@ -29,13 +41,8 @@ class AllTasksViewController: UIViewController, UITableViewDataSource, UITableVi
         addBtn.frame = frame
     }
     
-    var projects: Array<Project> = []{
-        didSet{
-            self.tasksTableView.reloadData()
-        }
-    }
-    let spinner = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.Gray)
-        
+    
+    //MARK: life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         tasksTableView.dataSource = self
@@ -71,62 +78,83 @@ class AllTasksViewController: UIViewController, UITableViewDataSource, UITableVi
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    func refresh(refreshControl: UIRefreshControl) {
-        // Do your job, when done:
-        refresh()
-        refreshControl.endRefreshing()
-    }
-
     
-    func refresh(){
-
-        Alamofire.request(.GET, "http://nuri.ekohe.com:4567/allTasks")
-            .responseJSON{ response in
-                switch response.result{
-                case .Success(let json):
-                    let tasksJSON = json as! NSDictionary
-                    self.projects = Project.parseJSON(tasksJSON.objectForKey("projects"))
-                    self.spinner.stopAnimating()
-                    self.spinner.hidden = true
-                case .Failure(let error):
-                    NSLog("Failed to get tasks json because \(error)" )
-                }
-        }
-    }
-    
+    //MARK: tableview datasource and delegate
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return projects.count
+        var result = 1
+        if tableView == tasksTableView {
+            result = projects.count
+        }
+        return result
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return projects[section].employees.count
-    }
-    
-    private struct StaticData{
-       static let tableCellResuseIdentifier = "PersonWithTask"
-    }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let tableCell = tableView.dequeueReusableCellWithIdentifier(StaticData.tableCellResuseIdentifier)
-        
-        var cell: PersonWithTasksTableViewCell
-        if (tableCell != nil){
-            cell = tableCell as! PersonWithTasksTableViewCell
+        var result: Int
+        if tableView == tasksTableView{
+            result = projects[section].employees.count
         }else{
-            cell = NSBundle.mainBundle().loadNibNamed("PersonWithTasksTableViewCell", owner: nil, options: nil).first as! PersonWithTasksTableViewCell
+            let cell = tableView.superview?.superview as! PersonWithTasksTableViewCell
+            result = cell.tasks.count
         }
-        cell.tasksTable.delegate = self
-        let project = self.projects[indexPath.section]
+        return result
+    }
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        var cell = UITableViewCell()
+        if tableView == tasksTableView{
+            let tableCell = tableView.dequeueReusableCellWithIdentifier(StaticData.tableCellResuseIdentifier)
+            
+            var project2TasksCell: PersonWithTasksTableViewCell
+            if (tableCell != nil){
+                project2TasksCell = tableCell as! PersonWithTasksTableViewCell
+            }else{
+                project2TasksCell = NSBundle.mainBundle().loadNibNamed("PersonWithTasksTableViewCell", owner: nil, options: nil).first as! PersonWithTasksTableViewCell
+            }
+            project2TasksCell.tasksTable.dataSource = self
+            project2TasksCell.tasksTable.delegate = self
+            let project = self.projects[indexPath.section]
+            
+            project2TasksCell.employeeName.text = project.employees[indexPath.row].name.capitalizedString
+            project2TasksCell.employeeAvatar.sd_setImageWithURL(NSURL(string: project.employees[indexPath.row].avatar))
+            
+            project2TasksCell.tasks = project.employees[indexPath.row].tasks
+            cell = project2TasksCell
+        }else if let personWithTasksCell =  tableView.superview?.superview as? PersonWithTasksTableViewCell{
+            
+            var tableCell = personWithTasksCell.tasksTable.dequeueReusableCellWithIdentifier("taskCell") as? TaskTableViewCell
+            
+            if tableCell == nil {
+                tableCell = TaskTableViewCell.init(style: UITableViewCellStyle.Default, reuseIdentifier: "taskCell")
+                tableCell!.checkbox.addTarget(self, action: #selector(checkChangedValue(_:)), forControlEvents: .ValueChanged)
+                
+                //tableCell!.accessoryType = UITableViewCellAccessoryType.Checkmark
+                tableCell!.selectionStyle = .Gray
+            }
+            
+            // add attributed string if it's done
+            let tasks = personWithTasksCell.tasks
+            if tasks.count > 0 {
+                let task = tasks[indexPath.row] as Task
+                let attributeString =  NSMutableAttributedString(string: task.content)
+                tableCell!.id = task.id
+                if task.status == .Done{
+                    tableCell!.checkbox?.checkState = .Checked
+                    attributeString.addAttribute(NSStrikethroughStyleAttributeName, value: 1, range: NSMakeRange(0, attributeString.length))
+                    attributeString.addAttribute(NSForegroundColorAttributeName, value: UIColor.grayColor(), range: NSMakeRange(0, attributeString.length))
+                }
+                tableCell!.textLabel?.attributedText = attributeString
+            }
+            cell = tableCell!
+        }
         
-        cell.employeeName.text = project.employees[indexPath.row].name.capitalizedString
-        cell.employeeAvatar.sd_setImageWithURL(NSURL(string: project.employees[indexPath.row].avatar))
-        
-        cell.tasks = project.employees[indexPath.row].tasks
         return cell
     }
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return projects[section].name
+        if tableView == tasksTableView{
+            return projects[section].name
+
+        }
+        return nil
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -140,13 +168,66 @@ class AllTasksViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
         if tableView != tasksTableView {
             let cellContentView = tableView.superview
-//            let cell = cellContentView?.superview as! PersonWithTasksTableViewCell
-//            self.navigationController?.pushViewController(UpdateTaskViewController(), animated: true)
-            
+            let cell = cellContentView?.superview as! PersonWithTasksTableViewCell
+            let task = cell.tasks[indexPath.row]
+            print(task.content)
+            self.navigationController?.pushViewController(UpdateTaskViewController(), animated: true)
         }
     }
     
+    //MARK: self-defined functions
+    func refresh(refreshControl: UIRefreshControl) {
+        // Do your job, when done:
+        refresh()
+        refreshControl.endRefreshing()
+    }
+    
+    func refresh(){
+        Alamofire.request(.GET, "http://nuri.ekohe.com:4567/allTasks")
+            .responseJSON{ response in
+                switch response.result{
+                case .Success(let json):
+                    let tasksJSON = json as! NSDictionary
+                    self.projects = Project.parseJSON(tasksJSON.objectForKey("projects"))
+                    self.spinner.stopAnimating()
+                    self.spinner.hidden = true
+                case .Failure(let error):
+                    NSLog("Failed to get tasks json because \(error)" )
+                }
+        }
+    }
+    func checkChangedValue(sender: M13Checkbox){
+        let tableCell = sender.superview as! TaskTableViewCell
+        let attributeString =  NSMutableAttributedString(string: tableCell.textLabel!.text!)
+        // from unchecked to checked
+        
+        var status = "done"
+        if sender.checkState == .Checked{
+            attributeString.addAttribute(NSStrikethroughStyleAttributeName, value: 1, range: NSMakeRange(0, attributeString.length))
+            attributeString.addAttribute(NSForegroundColorAttributeName, value: UIColor.grayColor(), range: NSMakeRange(0, attributeString.length))
+        }else if sender.checkState == .Unchecked{ // from check to unchecked
+            attributeString.removeAttribute(NSStrikethroughStyleAttributeName, range: NSMakeRange(0, attributeString.length))
+            status = "new"
+        }
+        
+        if let givenID = tableCell.id {
+            Alamofire.request(.PUT, "http://nuri.ekohe.com:4567/updateTaskStatus/\(givenID)", parameters: ["status": status], encoding: .JSON)
+                .validate(statusCode: 200..<300)
+                .response { response in
+                    print(response)
+            }
+        }
+        
+        //alamofire send api request to update status
+        
+        //update self data strucutre
+        
+        
+        tableCell.textLabel!.attributedText = attributeString
+    }
+
     
 }

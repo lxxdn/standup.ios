@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PersonWithTasksTableViewCell: UITableViewCell, UITableViewDataSource {
+class PersonWithTasksTableViewCell: UITableViewCell {
     @IBOutlet weak var employeeAvatar: UIImageView!
     @IBOutlet weak var employeeName: UILabel!
     @IBOutlet weak var tasksTable: UITableView!
@@ -21,7 +21,6 @@ class PersonWithTasksTableViewCell: UITableViewCell, UITableViewDataSource {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        tasksTable.dataSource = self
         tasksTable.scrollEnabled = false
     }
 
@@ -30,40 +29,4 @@ class PersonWithTasksTableViewCell: UITableViewCell, UITableViewDataSource {
 
         // Configure the view for the selected state
     }
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tasks.count
-    }
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var tableCell = tasksTable.dequeueReusableCellWithIdentifier("taskCell") as?  TaskTableViewCell
-        
-        if tableCell == nil {
-            tableCell = TaskTableViewCell.init(style: UITableViewCellStyle.Default, reuseIdentifier: "taskCell")
-            tableCell?.checkbox = M13Checkbox()
-                        
-            //tableCell!.accessoryType = UITableViewCellAccessoryType.Checkmark
-            tableCell!.selectionStyle = .Gray
-        }
-        
-        // add attributed string if it's done
-        if tasks.count > 0 {
-            let task = tasks[indexPath.row] as Task
-            let attributeString =  NSMutableAttributedString(string: task.content)
-            tableCell!.id = task.id
-            if task.status == .Done{
-                tableCell!.checkbox?.checkState = .Checked
-                attributeString.addAttribute(NSStrikethroughStyleAttributeName, value: 1, range: NSMakeRange(0, attributeString.length))
-                attributeString.addAttribute(NSForegroundColorAttributeName, value: UIColor.grayColor(), range: NSMakeRange(0, attributeString.length))
-            }
-            tableCell!.textLabel?.attributedText = attributeString
-        }
-        return tableCell!
-    }
-
-    
-    
-        
 }
