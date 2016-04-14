@@ -17,7 +17,6 @@ class Task{
     var content: String
     var status: Status
     
-    
     init?(id: String?, content c: String?, status s: String?){
         if id == nil || c == nil || s == nil {return nil}
         

@@ -113,10 +113,12 @@ class AllTasksViewController: UIViewController, UITableViewDataSource, UITableVi
             project2TasksCell.tasksTable.delegate = self
             let project = self.projects[indexPath.section]
             
+            project2TasksCell.user = project.employees[indexPath.row]
             project2TasksCell.employeeName.text = project.employees[indexPath.row].name.capitalizedString
             project2TasksCell.employeeAvatar.sd_setImageWithURL(NSURL(string: project.employees[indexPath.row].avatar))
-            
+            project2TasksCell.project = project
             project2TasksCell.tasks = project.employees[indexPath.row].tasks
+
             cell = project2TasksCell
         }else if let personWithTasksCell =  tableView.superview?.superview as? PersonWithTasksTableViewCell{
             
@@ -173,8 +175,15 @@ class AllTasksViewController: UIViewController, UITableViewDataSource, UITableVi
             let cellContentView = tableView.superview
             let cell = cellContentView?.superview as! PersonWithTasksTableViewCell
             let task = cell.tasks[indexPath.row]
-            print(task.content)
-            self.navigationController?.pushViewController(UpdateTaskViewController(), animated: true)
+            let updateTaskController = UpdateTaskViewController()
+            updateTaskController.task = task
+            if let p = cell.project{
+                updateTaskController.project = p
+            }
+            if let u = cell.user{
+                updateTaskController.user = u
+            }
+            self.navigationController?.pushViewController(updateTaskController, animated: true)
         }
     }
     
@@ -199,6 +208,34 @@ class AllTasksViewController: UIViewController, UITableViewDataSource, UITableVi
                 }
         }
     }
+    
+    func deleteLocalTask(project_id: String, employee_id: String, task:Task){
+        findTask(project_id, employee_id: employee_id, method: { employee in
+            let taskIndex = employee.tasks.indexOf { $0.id == task.id }
+            if let i = taskIndex {
+                employee.tasks.removeAtIndex(i)
+            }
+        })
+        tasksTableView.reloadData()
+        
+    }
+    
+    func addLocalTask(project_id: String, employee_id: String, task: Task){
+        findTask(project_id, employee_id: employee_id, method: { employee in
+            employee.tasks.append(task)
+        })
+        tasksTableView.reloadData()
+    }
+    func findTask(project_id: String, employee_id: String ,method: (employee: Employee)->()){
+        let projectIndex = projects.indexOf{ $0.id == project_id }
+        if let i = projectIndex {
+            let employees = projects[i].employees.filter{ $0.id == employee_id }
+            if employees.count > 0{
+                method(employee: employees[0])
+            }
+        }
+    }
+    
     func checkChangedValue(sender: M13Checkbox){
         let tableCell = sender.superview as! TaskTableViewCell
         let attributeString =  NSMutableAttributedString(string: tableCell.textLabel!.text!)

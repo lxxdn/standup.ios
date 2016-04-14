@@ -56,7 +56,6 @@ class TaskFormViewController: UIViewController, UITableViewDataSource, UITableVi
            return result
         }
     }
-    
 
     //MARK: life cycle
     override func loadView() {

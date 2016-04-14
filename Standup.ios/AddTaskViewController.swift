@@ -11,6 +11,7 @@ import Alamofire
 
 class AddTaskViewController: TaskFormViewController {
     
+    var addTaskOnLocal : ((String, String, Task) -> ())?
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,9 +32,19 @@ class AddTaskViewController: TaskFormViewController {
 
         Alamofire.request(.POST, "http://nuri.ekohe.com:4567/task/create", parameters: params, encoding: .JSON)
             .validate(statusCode: 200..<300)
-            .response{  response in
-                print(response)
-                //                self.parent?.refresh()
+            .responseJSON{  response in
+                switch response.result{
+                case .Success(let task):
+                    if let taskJSON = task as? Dictionary<String, String>{
+                        let newTask = Task(id: taskJSON["_id"], content: taskJSON["content"], status: "new")
+                        if self.addTaskOnLocal != nil{
+                            self.addTaskOnLocal!(self.currentProject!.id, self.currentUser!.id, newTask!)
+                        }
+                    }
+                case .Failure(let error):
+                    NSLog("Failed to create a task because \(error)" )
+                }
+                                //                self.parent?.refresh()
         }
         taskForm.endEditing(true)
         self.navigationController?.popViewControllerAnimated(true)

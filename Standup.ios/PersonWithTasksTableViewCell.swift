@@ -13,11 +13,15 @@ class PersonWithTasksTableViewCell: UITableViewCell {
     @IBOutlet weak var employeeName: UILabel!
     @IBOutlet weak var tasksTable: UITableView!
     
+    var user: Employee?
+    var project: Project?
+    
     var tasks = [Task](){
         didSet{
             tasksTable.reloadData()
         }
     }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

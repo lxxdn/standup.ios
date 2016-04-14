@@ -40,8 +40,8 @@ get '/allProjects' do
     projects = client[:projects].find()
     data = projects.map do |p|
       {
-        id: p['_id'],
-        name: p['name'],
+        project_id: p['_id'],
+        project_name: p['name'],
         team_id:  p['teamId']
       }
     end
@@ -64,8 +64,8 @@ get '/allUsers' do
 
     data = users.map do |u|
       {
-        id: u['_id'],
-        name: u['profile']['name'].split(' ')[0].capitalize,
+        employee_id: u['_id'],
+        employee_name: u['profile']['name'].split(' ')[0].capitalize,
         email: u['services']['google']['email'],
         avatar: DOMAIN + u['avatar'],
         team_id:  u['teamId']
@@ -94,6 +94,41 @@ put '/updateTaskStatus/:id' do
   end
   status 200
 end
+
+
+put '/tasks/:id' do
+  begin
+    task_id = params['id']
+    data = JSON.parse request.body.read
+    status = data['status']
+    content = data['content']
+    project_id = data['project_id']
+    user_id = data['user_id']
+
+
+    client = get_connection
+    project = client['project'].find({_id: project_id}).first
+    user = client['user'].find({_id: user_id}).first
+
+    client['tasks'].update_one({_id: task_id}, {"$set" => {
+      status: status,
+      content: content,
+      project: {
+        id: project._id.to_str,
+        name: project.name
+      },
+      user: {
+        id: user._id.to_str
+      },
+      createdBy: user
+    }})
+
+  ensure
+    client.close
+  end
+  status 200
+end
+
 
 post '/task/create' do
   client = get_connection
@@ -153,8 +188,10 @@ def transform(tasks, users)
     user_info = users.select{|u| u['_id'] == task['createdBy']['id']}[0]
 
     project_obj[:employeesOnProject][user_info['_id']] = {
+      employee_id: user_info['_id'].to_s,
       employee_name: user_info['profile']['name'].split(' ')[0],
       avatar: DOMAIN + user_info['avatar'],
+      team_id: user_info['teamId'],
       tasks: []
     } if project_obj[:employeesOnProject][user_info['_id']].nil?
 
