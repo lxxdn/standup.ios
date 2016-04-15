@@ -44,7 +44,9 @@ class UpdateTaskViewController: TaskFormViewController {
                     self.deleteTaskOnLocal!(self.project!.id, self.user!.id, self.task!)
                     self.addTaskOnLocal!(self.currentProject!.id, self.currentUser!.id, self.task!)
                 }
-                
+                if self.refreshFn != nil{
+                    self.refreshFn!()
+                }
                 //                self.parent?.refresh()
         }
         taskForm.endEditing(true)

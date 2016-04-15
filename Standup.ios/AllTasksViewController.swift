@@ -29,6 +29,7 @@ class AllTasksViewController: UIViewController, UITableViewDataSource, UITableVi
     //MARK: actions
     @IBAction func newTaskPressed(sender: UIButton) {
         let addTaskViewController = AddTaskViewController(nibName: nil, bundle: nil)
+        addTaskViewController.refreshFn = refresh
         self.navigationController?.pushViewController(addTaskViewController, animated: true)
     }
     @IBAction func newTaskPressedDown() {
@@ -177,6 +178,7 @@ class AllTasksViewController: UIViewController, UITableViewDataSource, UITableVi
             let task = cell.tasks[indexPath.row]
             let updateTaskController = UpdateTaskViewController()
             updateTaskController.task = task
+            updateTaskController.refreshFn = refresh
             if let p = cell.project{
                 updateTaskController.project = p
             }
@@ -195,7 +197,11 @@ class AllTasksViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func refresh(){
-        Alamofire.request(.GET, "http://nuri.ekohe.com:4567/allTasks")
+        let date = NSDate()
+        let dateFomatter = NSDateFormatter()
+        dateFomatter.dateFormat = "yyyy-MM-dd"
+        let today = dateFomatter.stringFromDate(date)
+        Alamofire.request(.GET, "http://nuri.ekohe.com:4567/allTasks?date=\(today)")
             .responseJSON{ response in
                 switch response.result{
                 case .Success(let json):

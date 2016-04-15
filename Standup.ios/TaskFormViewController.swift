@@ -17,6 +17,7 @@ class TaskFormViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     //MARK: property
     weak var taskForm: TaskFormView!
+    var refreshFn: (()->())?
     var projects: [Project] = []{
         didSet{
             taskForm.selectView.reloadData()

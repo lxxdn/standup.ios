@@ -28,7 +28,10 @@ class AddTaskViewController: TaskFormViewController {
         super.cancel(btn)
     }
     override func submit() {
-        let params = ["content": taskForm.taskContentInput.text, "project_id": currentProject?.id, "team_id": currentUser?.team_id, "user_id": currentUser?.id ]
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let date = dateFormatter.stringFromDate(NSDate())
+        let params = ["content": taskForm.taskContentInput.text, "project_id": currentProject?.id, "team_id": currentUser?.team_id, "user_id": currentUser?.id, "date": date]
 
         Alamofire.request(.POST, "http://nuri.ekohe.com:4567/task/create", parameters: params, encoding: .JSON)
             .validate(statusCode: 200..<300)
@@ -39,6 +42,9 @@ class AddTaskViewController: TaskFormViewController {
                         let newTask = Task(id: taskJSON["_id"], content: taskJSON["content"], status: "new")
                         if self.addTaskOnLocal != nil{
                             self.addTaskOnLocal!(self.currentProject!.id, self.currentUser!.id, newTask!)
+                        }
+                        if self.refreshFn != nil{
+                            self.refreshFn!()
                         }
                     }
                 case .Failure(let error):
