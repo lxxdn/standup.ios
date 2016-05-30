@@ -260,7 +260,8 @@ class AllTasksViewController: UIViewController, UITableViewDataSource, UITableVi
             Alamofire.request(.PUT, "http://nuri.ekohe.com:4567/updateTaskStatus/\(givenID)", parameters: ["status": status], encoding: .JSON)
                 .validate(statusCode: 200..<300)
                 .response { response in
-                    print(response)
+                    print(response.3)
+                
             }
         }
         

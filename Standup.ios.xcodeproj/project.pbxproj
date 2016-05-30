@@ -11,7 +11,15 @@
 		F901F5E01C79FE49001819AB /* project.swift in Sources */ = {isa = PBXBuildFile; fileRef = F901F5DF1C79FE49001819AB /* project.swift */; };
 		F901F5E21C79FE55001819AB /* employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = F901F5E11C79FE55001819AB /* employee.swift */; };
 		F901F5E41C79FE5D001819AB /* task.swift in Sources */ = {isa = PBXBuildFile; fileRef = F901F5E31C79FE5D001819AB /* task.swift */; };
+		F923BC5B1CF139B70051F1D3 /* StandUpModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F923BC591CF139B70051F1D3 /* StandUpModel.xcdatamodeld */; };
+		F923BC611CF13A860051F1D3 /* SubscriptionLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F923BC601CF13A860051F1D3 /* SubscriptionLoader.swift */; };
+		F923BC631CF13AA70051F1D3 /* DDP.swift in Sources */ = {isa = PBXBuildFile; fileRef = F923BC621CF13AA70051F1D3 /* DDP.swift */; };
 		F94E5F6B1CB9D96C00A3BF0D /* UpdateTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94E5F6A1CB9D96C00A3BF0D /* UpdateTaskViewController.swift */; };
+		F95D429A1CF13BD200B3B9AB /* FunctionalAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95D42991CF13BD200B3B9AB /* FunctionalAdditions.swift */; };
+		F95D429D1CF1749900B3B9AB /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95D429B1CF1749900B3B9AB /* User+CoreDataProperties.swift */; };
+		F95D429E1CF1749900B3B9AB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95D429C1CF1749900B3B9AB /* User.swift */; };
+		F95D42A11CF1F46B00B3B9AB /* Image+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95D429F1CF1F46B00B3B9AB /* Image+CoreDataProperties.swift */; };
+		F95D42A21CF1F46B00B3B9AB /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95D42A01CF1F46B00B3B9AB /* Image.swift */; };
 		F96593101CB2956C0031495E /* FontAwesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = F965930F1CB2956C0031495E /* FontAwesome.otf */; };
 		F96593151CB2AF340031495E /* M13Checkbox.m in Sources */ = {isa = PBXBuildFile; fileRef = F96593141CB2AF340031495E /* M13Checkbox.m */; };
 		F96CE72E1C96F8470070BA45 /* TaskFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96CE72D1C96F8470070BA45 /* TaskFormView.swift */; };
@@ -62,7 +70,15 @@
 		F901F5E11C79FE55001819AB /* employee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = employee.swift; sourceTree = "<group>"; };
 		F901F5E31C79FE5D001819AB /* task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = task.swift; sourceTree = "<group>"; };
 		F91682751C9843FB00DF681E /* Standup.ios-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Standup.ios-Bridging-Header.h"; sourceTree = "<group>"; };
+		F923BC5A1CF139B70051F1D3 /* StandUpModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StandUpModel.xcdatamodel; sourceTree = "<group>"; };
+		F923BC601CF13A860051F1D3 /* SubscriptionLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriptionLoader.swift; sourceTree = "<group>"; };
+		F923BC621CF13AA70051F1D3 /* DDP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DDP.swift; sourceTree = "<group>"; };
 		F94E5F6A1CB9D96C00A3BF0D /* UpdateTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateTaskViewController.swift; sourceTree = "<group>"; };
+		F95D42991CF13BD200B3B9AB /* FunctionalAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunctionalAdditions.swift; sourceTree = "<group>"; };
+		F95D429B1CF1749900B3B9AB /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F95D429C1CF1749900B3B9AB /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		F95D429F1CF1F46B00B3B9AB /* Image+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Image+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F95D42A01CF1F46B00B3B9AB /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		F965930F1CB2956C0031495E /* FontAwesome.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.otf; sourceTree = "<group>"; };
 		F96593131CB2AF340031495E /* M13Checkbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M13Checkbox.h; sourceTree = "<group>"; };
 		F96593141CB2AF340031495E /* M13Checkbox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M13Checkbox.m; sourceTree = "<group>"; };
@@ -157,6 +173,21 @@
 			name = lib;
 			sourceTree = "<group>";
 		};
+		F923BC581CF139960051F1D3 /* coreData */ = {
+			isa = PBXGroup;
+			children = (
+				F923BC591CF139B70051F1D3 /* StandUpModel.xcdatamodeld */,
+				F95D429F1CF1F46B00B3B9AB /* Image+CoreDataProperties.swift */,
+				F95D42A01CF1F46B00B3B9AB /* Image.swift */,
+				F95D429B1CF1749900B3B9AB /* User+CoreDataProperties.swift */,
+				F95D429C1CF1749900B3B9AB /* User.swift */,
+				F923BC601CF13A860051F1D3 /* SubscriptionLoader.swift */,
+				F923BC621CF13AA70051F1D3 /* DDP.swift */,
+				F95D42991CF13BD200B3B9AB /* FunctionalAdditions.swift */,
+			);
+			name = coreData;
+			sourceTree = "<group>";
+		};
 		F9A664961C720E7B00DC7B59 = {
 			isa = PBXGroup;
 			children = (
@@ -182,6 +213,7 @@
 		F9A664A11C720E7B00DC7B59 /* Standup.ios */ = {
 			isa = PBXGroup;
 			children = (
+				F923BC581CF139960051F1D3 /* coreData */,
 				F9A704B51CB2762200934B8E /* resources */,
 				F91682741C98438800DF681E /* lib */,
 				F9A664EA1C79FCFA00DC7B59 /* models */,
@@ -449,21 +481,29 @@
 			files = (
 				F9E5BEA71CB3FAA500C7A062 /* TaskTableViewCell.swift in Sources */,
 				F9E2B5F81CB9FC4100DAE7D2 /* AddTaskViewController.swift in Sources */,
+				F923BC611CF13A860051F1D3 /* SubscriptionLoader.swift in Sources */,
 				F94E5F6B1CB9D96C00A3BF0D /* UpdateTaskViewController.swift in Sources */,
+				F923BC631CF13AA70051F1D3 /* DDP.swift in Sources */,
 				F901F5E21C79FE55001819AB /* employee.swift in Sources */,
 				F9A704AE1CA5FFFE00934B8E /* ArchivedKeyCache.swift in Sources */,
 				F9A198531CBA110A00E61AFD /* TaskFormViewController.swift in Sources */,
 				F96CE72E1C96F8470070BA45 /* TaskFormView.swift in Sources */,
+				F923BC5B1CF139B70051F1D3 /* StandUpModel.xcdatamodeld in Sources */,
 				F9A704B41CAF8C9B00934B8E /* login.swift in Sources */,
 				F9A664A31C720E7B00DC7B59 /* AppDelegate.swift in Sources */,
 				F9A704B11CAD6F2300934B8E /* LogInControllerViewController.swift in Sources */,
 				F9A664DD1C74C48700DC7B59 /* AllTasksViewController.swift in Sources */,
 				F9ABE7931C7F3BA20040B3FF /* PersonWithTasksTableViewCell.swift in Sources */,
+				F95D42A11CF1F46B00B3B9AB /* Image+CoreDataProperties.swift in Sources */,
+				F95D429A1CF13BD200B3B9AB /* FunctionalAdditions.swift in Sources */,
 				F9A704BA1CB283B100934B8E /* NSString+FontAwesome.m in Sources */,
 				F901F5E41C79FE5D001819AB /* task.swift in Sources */,
+				F95D429D1CF1749900B3B9AB /* User+CoreDataProperties.swift in Sources */,
 				F96593151CB2AF340031495E /* M13Checkbox.m in Sources */,
 				F901F5E01C79FE49001819AB /* project.swift in Sources */,
 				F9FDB1961C9847AD005E6E7C /* UITextView+Placeholder.m in Sources */,
+				F95D429E1CF1749900B3B9AB /* User.swift in Sources */,
+				F95D42A21CF1F46B00B3B9AB /* Image.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -719,6 +759,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F923BC591CF139B70051F1D3 /* StandUpModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F923BC5A1CF139B70051F1D3 /* StandUpModel.xcdatamodel */,
+			);
+			currentVersion = F923BC5A1CF139B70051F1D3 /* StandUpModel.xcdatamodel */;
+			path = StandUpModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = F9A664971C720E7B00DC7B59 /* Project object */;
 }

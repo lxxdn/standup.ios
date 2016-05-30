@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,6 +21,67 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navigationController = UINavigationController(rootViewController: AllTasksViewController())
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
+        
+        Meteor.connect()
+//        let subscription = Meteor.addSubscriptionWithName("allUserData", parameters: [["_id": "pmEn8uixQEtccsztz"]])
+//        
+//        subscription.whenDone {(error) -> Void in
+//            if let error = error{
+//                print(error)
+//            }
+//            let request = NSFetchRequest(entityName: "User")
+//            request.sortDescriptors = [NSSortDescriptor(key: "avatar", ascending: true)]
+//            do{
+//                let users = try Meteor.mainQueueManagedObjectContext.executeFetchRequest(request)
+//                let firstUser = users[0] as! User
+//                print(firstUser)
+//            }catch{
+//                // do nothing
+//            }
+//         }
+//        ********************************************************************************************************************
+//        let subscriptionLoader = SubscriptionLoader()
+//        subscriptionLoader.addSubscriptionWithName("allUserData", parameters: [["_id": "pmEn8uixQEtccsztz"]])
+//        
+//        subscriptionLoader.whenReady({
+//            let request = NSFetchRequest(entityName: "User")
+//            request.sortDescriptors = [NSSortDescriptor(key: "avatar", ascending: true)]
+//            let fetchedResultController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: Meteor.mainQueueManagedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
+//            do {
+//                try fetchedResultController.performFetch()
+//                let users = fetchedResultController.fetchedObjects
+//                print(fetchedResultController.sections?.count)
+//                
+//                print(users!.count)
+//            }catch{
+//                // do nothing
+//            }
+//        })
+        
+        
+        let subscription = Meteor.addSubscriptionWithName("allUserData", parameters: [["_id": "pmEn8uixQEtccsztz"]])
+        
+        subscription.whenDone {(error) -> Void in
+            if let error = error{
+                print(error)
+            }
+            let request = NSFetchRequest(entityName: "User")
+            request.sortDescriptors = [NSSortDescriptor(key: "avatar", ascending: true)]
+            let fetchedResultController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: Meteor.mainQueueManagedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
+            do {
+                try fetchedResultController.performFetch()
+                let users = fetchedResultController.fetchedObjects
+                let firstUser = users?[0] as! User
+                let profile = firstUser.profile as! Dictionary<String, String>
+                print(fetchedResultController.sections?.count)
+
+                print(users!.count)
+            }catch{
+                // do nothing
+            }
+            
+         }
+
         
         ArchivedKeyCache.prepareForDefaultValue()
         return true
