@@ -1,5 +1,5 @@
 //
-//  Project.swift
+//  User.swift
 //  Standup.ios
 //
 //  Created by julien on 5/31/16.
@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 
 
-class Project: NSManagedObject {
+class User: NSManagedObject {
 
 // Insert code here to add functionality to your managed object subclass
 

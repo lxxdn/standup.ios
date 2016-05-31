@@ -9,12 +9,42 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>InflectorKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Meteor.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>PocketSocket.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Standup.ios.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-Standup.iosTests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Standup.iosUITests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SDWebImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SimpleKeychain.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -27,12 +57,52 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>3FC04E21C6CFEF1BAAE87FBB72AC6C6F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>41387574AE607F2740A4016461CBCF84</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>432ECC54282C84882B482CCB4CF227FC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>4461240DB8A0957B24ACD73BAA52FF9A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>7290AE10A2414C91BB532DEA9C2001D9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7BA05939FC94A99D8D0D63B8C05F24EA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>93D0FE597B79201861AED6E22A409C20</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>967D21300826099490923ABA272A760D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A169247096593147DF612601FF2CC2BA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A5E9521BAE25054BE03FAB7D8C921FA1</key>
 		<dict>
 			<key>primary</key>
 			<true/>

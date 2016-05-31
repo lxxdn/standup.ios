@@ -1,15 +1,37 @@
 PODS:
   - Alamofire (3.1.5)
+  - InflectorKit (0.0.1)
+  - Meteor (0.2.1):
+    - InflectorKit
+    - PocketSocket
+    - SimpleKeychain
+  - PocketSocket (1.0.1):
+    - PocketSocket/Client (= 1.0.1)
+    - PocketSocket/Core (= 1.0.1)
+    - PocketSocket/Server (= 1.0.1)
+  - PocketSocket/Client (1.0.1):
+    - PocketSocket/Core
+  - PocketSocket/Core (1.0.1)
+  - PocketSocket/Server (1.0.1):
+    - PocketSocket/Client
   - SDWebImage (3.7.5):
     - SDWebImage/Core (= 3.7.5)
   - SDWebImage/Core (3.7.5)
+  - SimpleKeychain (0.7.0)
 
 DEPENDENCIES:
   - Alamofire (~> 3.0)
+  - Meteor
   - SDWebImage (~> 3.7)
 
 SPEC CHECKSUMS:
   Alamofire: 5f730ba29fd113b7ddd71c1e65d0c630acf5d7b0
+  InflectorKit: 64497199e6764f4d8337cab7f700a77b13d76a73
+  Meteor: c7158a73a5b4af79f75bff0e8c29fcd6a525e3f3
+  PocketSocket: 9c6867d66fb4f962af96b9b07f4b45bb561b2c2a
   SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
+  SimpleKeychain: b50cef3b87939d480ea1143425c00f5b4b70fe21
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: d0729815f9fc5b25a2ef900a6f58dfc746002b1c
+
+COCOAPODS: 1.0.0

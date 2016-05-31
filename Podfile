@@ -7,6 +7,7 @@ workspace 'Standup.ios'
 target 'Standup.ios' do
   pod 'Alamofire', '~> 3.0'
   pod 'SDWebImage', '~>3.7'
+  pod 'Meteor'
 end
 
 target 'Standup.iosTests' do

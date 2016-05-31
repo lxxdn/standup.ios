@@ -7,21 +7,22 @@
 //
 
 import UIKit
+import Meteor
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        let navigationController = UINavigationController(rootViewController: AllTasksViewController())
+        let navigationController = UINavigationController(rootViewController: UIViewController())
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         
-        ArchivedKeyCache.prepareForDefaultValue()
+        DataLayer.initDataLayer()
         return true
     }
 
