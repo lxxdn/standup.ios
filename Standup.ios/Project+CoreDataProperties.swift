@@ -2,7 +2,7 @@
 //  Project+CoreDataProperties.swift
 //  Standup.ios
 //
-//  Created by julien on 5/31/16.
+//  Created by julien on 6/6/16.
 //  Copyright © 2016 julien. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -17,6 +17,5 @@ extension Project {
     @NSManaged var id: String?
     @NSManaged var name: String?
     @NSManaged var teamId: String?
-    @NSManaged var tasks: NSManagedObject?
 
 }

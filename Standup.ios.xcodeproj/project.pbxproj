@@ -10,6 +10,7 @@
 		0C39DFA0E84862CC60FFC553 /* Pods_Standup_iosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1969D71F7870DE3D341A6669 /* Pods_Standup_iosTests.framework */; };
 		AD210501CA3259ADFA997F91 /* Pods_Standup_iosUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F389E3D2EEFC45E648ED934D /* Pods_Standup_iosUITests.framework */; };
 		DB914DDA04CFDD9B39D2E35D /* Pods_Standup_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 681090AC32F2ED6FC9E9EF05 /* Pods_Standup_ios.framework */; };
+		F91A6E3B1D032DDC003FA436 /* DataLayer+FetchDataFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91A6E3A1D032DDC003FA436 /* DataLayer+FetchDataFunctions.swift */; };
 		F96593101CB2956C0031495E /* FontAwesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = F965930F1CB2956C0031495E /* FontAwesome.otf */; };
 		F96593151CB2AF340031495E /* M13Checkbox.m in Sources */ = {isa = PBXBuildFile; fileRef = F96593141CB2AF340031495E /* M13Checkbox.m */; };
 		F9678B051CFDE0EB0071AF24 /* Standup.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F9678B031CFDE0EB0071AF24 /* Standup.xcdatamodeld */; };
@@ -57,6 +58,7 @@
 		86B897F5B5FFE21AFC06F79F /* Pods-Standup.iosUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Standup.iosUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Standup.iosUITests/Pods-Standup.iosUITests.release.xcconfig"; sourceTree = "<group>"; };
 		F389E3D2EEFC45E648ED934D /* Pods_Standup_iosUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Standup_iosUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F91682751C9843FB00DF681E /* Standup.ios-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Standup.ios-Bridging-Header.h"; sourceTree = "<group>"; };
+		F91A6E3A1D032DDC003FA436 /* DataLayer+FetchDataFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataLayer+FetchDataFunctions.swift"; sourceTree = "<group>"; };
 		F965930F1CB2956C0031495E /* FontAwesome.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.otf; sourceTree = "<group>"; };
 		F96593131CB2AF340031495E /* M13Checkbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M13Checkbox.h; sourceTree = "<group>"; };
 		F96593141CB2AF340031495E /* M13Checkbox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M13Checkbox.m; sourceTree = "<group>"; };
@@ -150,6 +152,14 @@
 			name = lib;
 			sourceTree = "<group>";
 		};
+		F91A6E391D032D9D003FA436 /* DDP */ = {
+			isa = PBXGroup;
+			children = (
+				F91A6E3A1D032DDC003FA436 /* DataLayer+FetchDataFunctions.swift */,
+			);
+			name = DDP;
+			sourceTree = "<group>";
+		};
 		F9A664961C720E7B00DC7B59 = {
 			isa = PBXGroup;
 			children = (
@@ -175,6 +185,7 @@
 		F9A664A11C720E7B00DC7B59 /* Standup.ios */ = {
 			isa = PBXGroup;
 			children = (
+				F91A6E391D032D9D003FA436 /* DDP */,
 				F9A704B51CB2762200934B8E /* resources */,
 				F91682741C98438800DF681E /* lib */,
 				F9A664EA1C79FCFA00DC7B59 /* models */,
@@ -226,10 +237,10 @@
 				F9678B061CFDE9660071AF24 /* User+CoreDataProperties.swift */,
 				F9678B071CFDE9660071AF24 /* User.swift */,
 				F9678B081CFDE9660071AF24 /* Project+CoreDataProperties.swift */,
+				F9678B121CFDE98F0071AF24 /* DataLayer.swift */,
 				F9678B091CFDE9660071AF24 /* Project.swift */,
 				F9678B0A1CFDE9660071AF24 /* Task+CoreDataProperties.swift */,
 				F9678B0B1CFDE9660071AF24 /* Task.swift */,
-				F9678B121CFDE98F0071AF24 /* DataLayer.swift */,
 			);
 			name = models;
 			sourceTree = "<group>";
@@ -516,6 +527,7 @@
 				F9678B0D1CFDE9660071AF24 /* User.swift in Sources */,
 				F9678B101CFDE9660071AF24 /* Task+CoreDataProperties.swift in Sources */,
 				F9678B0F1CFDE9660071AF24 /* Project.swift in Sources */,
+				F91A6E3B1D032DDC003FA436 /* DataLayer+FetchDataFunctions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -651,6 +663,7 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Standup.ios/Standup.ios-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -668,6 +681,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Standup.ios/Standup.ios-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

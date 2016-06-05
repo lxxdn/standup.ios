@@ -22,7 +22,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         
-        DataLayer.initDataLayer()
+        let dl = DataLayer.getInstance()
+        dl.initDataLayer()
+        dl.fetchTasks(UIViewController(), callbackFn: { vc, data in
+            print(data.count)
+        })
+        
+        
         return true
     }
 

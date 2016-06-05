@@ -17,12 +17,12 @@
 		<key>Meteor.xcscheme</key>
 		<dict>
 			<key>isShown</key>
-			<false/>
+			<true/>
 		</dict>
 		<key>PocketSocket.xcscheme</key>
 		<dict>
 			<key>isShown</key>
-			<false/>
+			<true/>
 		</dict>
 		<key>Pods-Standup.ios.xcscheme</key>
 		<dict>
