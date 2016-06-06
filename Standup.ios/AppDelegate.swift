@@ -16,18 +16,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        DataLayer.getInstance().initDataLayer()
+        
         // Override point for customization after application launch.
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        let navigationController = UINavigationController(rootViewController: UIViewController())
+
+        let navigationController = UINavigationController(rootViewController: TasksViewController())
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
-        
-        let dl = DataLayer.getInstance()
-        dl.initDataLayer()
-        dl.fetchTasks(UIViewController(), callbackFn: { vc, data in
-            print(data.count)
-        })
-        
         
         return true
     }

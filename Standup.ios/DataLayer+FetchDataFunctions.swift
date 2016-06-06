@@ -24,10 +24,6 @@ extension DataLayer{
             request.sortDescriptors = [NSSortDescriptor(key: "createdAt", ascending: false)]
             let tasks = self.fetchObjects(request) as? [Task]
             if let tasks = tasks{
-                let firstTask = tasks[0]
-                
-                let theProject = firstTask.project as! Dictionary<String, String>
-                let theUser = firstTask.createdBy as! Dictionary<String, String>
                 callbackFn(viewController, tasks)
             }
         }
