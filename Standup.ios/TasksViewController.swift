@@ -10,9 +10,13 @@ import UIKit
 
 class TasksViewController: UIViewController {
 
+    @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "Standup"
+        
+        tableView.frame = UIScreen.mainScreen().bounds
+        tableView.dataSource =
         // Do any additional setup after loading the view.
     }
 
