@@ -9,8 +9,15 @@
 import Foundation
 import CoreData
 
+
+struct ParsedProject{
+    let project_id: String
+    let project_name: String
+    var tasks: [Task]
+}
+
 extension DataLayer{
-    func fetchTasks(viewController: UIViewController, callbackFn: (UIViewController, [Task]) -> Void){
+    func fetchTasks(viewController: UIViewController, callbackFn: (UIViewController, [ParsedProject]) -> Void){
         let formatter = NSDateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
         let date = formatter.stringFromDate(NSDate())
@@ -24,8 +31,30 @@ extension DataLayer{
             request.sortDescriptors = [NSSortDescriptor(key: "createdAt", ascending: false)]
             let tasks = self.fetchObjects(request) as? [Task]
             if let tasks = tasks{
-                callbackFn(viewController, tasks)
+                let parsedData = self.parseTasksData(tasks)
+                callbackFn(viewController, parsedData)
             }
         }
+    }
+    
+    func parseTasksData(tasks: [Task]) -> [ParsedProject]{
+        var result:[ParsedProject] = []
+        for task in tasks{
+            let currentProject = task.project as! Dictionary<String, String>
+            var projectExists = false
+            
+            for index in 0..<result.count{
+                let existedProject = result[index]
+                if existedProject.project_name == currentProject["name"]{
+                    projectExists = true
+                    result[index].tasks.append(task)
+                }
+            }
+            if !projectExists{
+                let newProject = ParsedProject(project_id: currentProject["id"]!, project_name: currentProject["name"]!, tasks: [task])
+                result.append(newProject)
+            }
+        }
+        return result
     }
 }

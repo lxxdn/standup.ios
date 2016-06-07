@@ -17,6 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         DataLayer.getInstance().initDataLayer()
+        DataLayer.getInstance().fetchTasks(UIViewController(), callbackFn: { vc, data in
+            
+            
+        })
         
         // Override point for customization after application launch.
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
