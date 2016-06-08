@@ -33,8 +33,6 @@ class DataLayer{
         do {
             try fetchedResultController.performFetch()
             objects = fetchedResultController.fetchedObjects
-            let task = objects![0] as! Task
-            print(task.content)
         }catch let error as NSError{
             print(error)
             // do nothing

@@ -9,15 +9,23 @@
 import UIKit
 
 class TasksViewController: UIViewController {
-
-    @IBOutlet weak var tableView: UITableView!
+    private weak var tableView: UITableView?
+    private var taskDataSource: TaskDataSource?
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "Standup"
         
-        tableView.frame = UIScreen.mainScreen().bounds
-        tableView.dataSource =
-        // Do any additional setup after loading the view.
+        tableView = UITableView(frame: UIScreen.mainScreen().bounds, style: UITableViewStyle.Grouped)
+        taskDataSource = TaskDataSource(tableView: tableView!)
+        tableView!.dataSource = taskDataSource
+        
+        self.view.addSubview(tableView!)
+        
+        DataLayer.getInstance().fetchTasks({ [unowned self] data in
+            if let dataSource = self.taskDataSource{
+                dataSource.data = data
+            }
+        })
     }
 
     override func didReceiveMemoryWarning() {

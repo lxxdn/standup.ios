@@ -1,16 +1,16 @@
 //
-//  TaskDataSource.swift
+//  ProjectDataSource.swift
 //  Standup.ios
 //
-//  Created by julien on 6/7/16.
+//  Created by julien on 6/8/16.
 //  Copyright © 2016 julien. All rights reserved.
 //
 
 import Foundation
 
-class TaskDataSource: NSObject, UITableViewDataSource{
+class ProjectDataSource: NSObject, UITableViewDataSource{
     private let tableView: UITableView
-
+    
     var data: [ParsedTask]? = nil {
         didSet{
             self.tableView.reloadData()
@@ -31,11 +31,6 @@ class TaskDataSource: NSObject, UITableViewDataSource{
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
-        var cell: UserTasksCellTableViewCell? = tableView.dequeueReusableCellWithIdentifier("UserTaskCell") as? UserTasksCellTableViewCell
-        if cell == nil{
-            cell = NSBundle.mainBundle().loadNibNamed("UserTasksCellTableViewCell", owner: nil, options: nil)[0] as? UserTasksCellTableViewCell
-        }
-        cell?.configWithData(data![indexPath.row])
-        return cell!
+        
     }
 }

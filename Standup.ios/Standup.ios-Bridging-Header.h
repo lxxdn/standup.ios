@@ -5,3 +5,4 @@
 #import "UITextView+Placeholder.h"
 #import "NSString+FontAwesome.h"
 #import "M13Checkbox.h"
+#import "SDWebImage/UIImageView+WebCache.h"

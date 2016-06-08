@@ -10,9 +10,11 @@
 		0C39DFA0E84862CC60FFC553 /* Pods_Standup_iosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1969D71F7870DE3D341A6669 /* Pods_Standup_iosTests.framework */; };
 		AD210501CA3259ADFA997F91 /* Pods_Standup_iosUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F389E3D2EEFC45E648ED934D /* Pods_Standup_iosUITests.framework */; };
 		DB914DDA04CFDD9B39D2E35D /* Pods_Standup_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 681090AC32F2ED6FC9E9EF05 /* Pods_Standup_ios.framework */; };
+		F90B18871D07C12C0007706B /* UserTasksCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90B18851D07C12C0007706B /* UserTasksCellTableViewCell.swift */; };
+		F90B18881D07C12C0007706B /* UserTasksCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F90B18861D07C12C0007706B /* UserTasksCellTableViewCell.xib */; };
+		F90B188A1D082B350007706B /* ProjectDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90B18891D082B350007706B /* ProjectDataSource.swift */; };
 		F91A6E3B1D032DDC003FA436 /* DataLayer+FetchDataFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91A6E3A1D032DDC003FA436 /* DataLayer+FetchDataFunctions.swift */; };
 		F92A75151D05BC6300AC8A74 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92A75131D05BC6300AC8A74 /* TasksViewController.swift */; };
-		F92A75161D05BC6300AC8A74 /* TasksViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F92A75141D05BC6300AC8A74 /* TasksViewController.xib */; };
 		F92A75191D0714E500AC8A74 /* TaskDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92A75181D0714E500AC8A74 /* TaskDataSource.swift */; };
 		F96593101CB2956C0031495E /* FontAwesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = F965930F1CB2956C0031495E /* FontAwesome.otf */; };
 		F96593151CB2AF340031495E /* M13Checkbox.m in Sources */ = {isa = PBXBuildFile; fileRef = F96593141CB2AF340031495E /* M13Checkbox.m */; };
@@ -60,10 +62,12 @@
 		84738A9842B7A9E235CD0E47 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		86B897F5B5FFE21AFC06F79F /* Pods-Standup.iosUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Standup.iosUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Standup.iosUITests/Pods-Standup.iosUITests.release.xcconfig"; sourceTree = "<group>"; };
 		F389E3D2EEFC45E648ED934D /* Pods_Standup_iosUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Standup_iosUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F90B18851D07C12C0007706B /* UserTasksCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTasksCellTableViewCell.swift; sourceTree = "<group>"; };
+		F90B18861D07C12C0007706B /* UserTasksCellTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserTasksCellTableViewCell.xib; sourceTree = "<group>"; };
+		F90B18891D082B350007706B /* ProjectDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectDataSource.swift; sourceTree = "<group>"; };
 		F91682751C9843FB00DF681E /* Standup.ios-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Standup.ios-Bridging-Header.h"; sourceTree = "<group>"; };
 		F91A6E3A1D032DDC003FA436 /* DataLayer+FetchDataFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataLayer+FetchDataFunctions.swift"; sourceTree = "<group>"; };
 		F92A75131D05BC6300AC8A74 /* TasksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
-		F92A75141D05BC6300AC8A74 /* TasksViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TasksViewController.xib; sourceTree = "<group>"; };
 		F92A75181D0714E500AC8A74 /* TaskDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDataSource.swift; sourceTree = "<group>"; };
 		F965930F1CB2956C0031495E /* FontAwesome.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.otf; sourceTree = "<group>"; };
 		F96593131CB2AF340031495E /* M13Checkbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M13Checkbox.h; sourceTree = "<group>"; };
@@ -171,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				F92A75181D0714E500AC8A74 /* TaskDataSource.swift */,
+				F90B18891D082B350007706B /* ProjectDataSource.swift */,
 			);
 			name = datas_source;
 			sourceTree = "<group>";
@@ -235,7 +240,8 @@
 		F9A664DE1C74CB5B00DC7B59 /* views */ = {
 			isa = PBXGroup;
 			children = (
-				F92A75141D05BC6300AC8A74 /* TasksViewController.xib */,
+				F90B18851D07C12C0007706B /* UserTasksCellTableViewCell.swift */,
+				F90B18861D07C12C0007706B /* UserTasksCellTableViewCell.xib */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -384,8 +390,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F96593101CB2956C0031495E /* FontAwesome.otf in Resources */,
+				F90B18881D07C12C0007706B /* UserTasksCellTableViewCell.xib in Resources */,
 				F9A664AA1C720E7B00DC7B59 /* Assets.xcassets in Resources */,
-				F92A75161D05BC6300AC8A74 /* TasksViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -538,7 +544,9 @@
 				F9A704BA1CB283B100934B8E /* NSString+FontAwesome.m in Sources */,
 				F92A75151D05BC6300AC8A74 /* TasksViewController.swift in Sources */,
 				F9678B0E1CFDE9660071AF24 /* Project+CoreDataProperties.swift in Sources */,
+				F90B188A1D082B350007706B /* ProjectDataSource.swift in Sources */,
 				F9678B0C1CFDE9660071AF24 /* User+CoreDataProperties.swift in Sources */,
+				F90B18871D07C12C0007706B /* UserTasksCellTableViewCell.swift in Sources */,
 				F9678B111CFDE9660071AF24 /* Task.swift in Sources */,
 				F96593151CB2AF340031495E /* M13Checkbox.m in Sources */,
 				F92A75191D0714E500AC8A74 /* TaskDataSource.swift in Sources */,
