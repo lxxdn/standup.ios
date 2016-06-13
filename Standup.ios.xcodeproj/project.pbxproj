@@ -12,10 +12,10 @@
 		DB914DDA04CFDD9B39D2E35D /* Pods_Standup_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 681090AC32F2ED6FC9E9EF05 /* Pods_Standup_ios.framework */; };
 		F90B18871D07C12C0007706B /* UserTasksCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90B18851D07C12C0007706B /* UserTasksCellTableViewCell.swift */; };
 		F90B18881D07C12C0007706B /* UserTasksCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F90B18861D07C12C0007706B /* UserTasksCellTableViewCell.xib */; };
-		F90B188A1D082B350007706B /* ProjectDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90B18891D082B350007706B /* ProjectDataSource.swift */; };
+		F90B188E1D0E5E030007706B /* ArrayDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90B188D1D0E5E030007706B /* ArrayDataSource.swift */; };
 		F91A6E3B1D032DDC003FA436 /* DataLayer+FetchDataFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91A6E3A1D032DDC003FA436 /* DataLayer+FetchDataFunctions.swift */; };
 		F92A75151D05BC6300AC8A74 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92A75131D05BC6300AC8A74 /* TasksViewController.swift */; };
-		F92A75191D0714E500AC8A74 /* TaskDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92A75181D0714E500AC8A74 /* TaskDataSource.swift */; };
+		F92A75191D0714E500AC8A74 /* UserDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92A75181D0714E500AC8A74 /* UserDataSource.swift */; };
 		F96593101CB2956C0031495E /* FontAwesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = F965930F1CB2956C0031495E /* FontAwesome.otf */; };
 		F96593151CB2AF340031495E /* M13Checkbox.m in Sources */ = {isa = PBXBuildFile; fileRef = F96593141CB2AF340031495E /* M13Checkbox.m */; };
 		F9678B051CFDE0EB0071AF24 /* Standup.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F9678B031CFDE0EB0071AF24 /* Standup.xcdatamodeld */; };
@@ -26,6 +26,9 @@
 		F9678B101CFDE9660071AF24 /* Task+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9678B0A1CFDE9660071AF24 /* Task+CoreDataProperties.swift */; };
 		F9678B111CFDE9660071AF24 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9678B0B1CFDE9660071AF24 /* Task.swift */; };
 		F9678B131CFDE98F0071AF24 /* DataLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9678B121CFDE98F0071AF24 /* DataLayer.swift */; };
+		F9891F401D0E709D00DF8C8B /* CellConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9891F3F1D0E709D00DF8C8B /* CellConfigurable.swift */; };
+		F9891F431D0EA90600DF8C8B /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9891F411D0EA90600DF8C8B /* TaskCell.swift */; };
+		F9891F441D0EA90600DF8C8B /* TaskCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9891F421D0EA90600DF8C8B /* TaskCell.xib */; };
 		F9A664A31C720E7B00DC7B59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A664A21C720E7B00DC7B59 /* AppDelegate.swift */; };
 		F9A664AA1C720E7B00DC7B59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9A664A91C720E7B00DC7B59 /* Assets.xcassets */; };
 		F9A664B81C720E7B00DC7B59 /* Standup_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A664B71C720E7B00DC7B59 /* Standup_iosTests.swift */; };
@@ -64,11 +67,11 @@
 		F389E3D2EEFC45E648ED934D /* Pods_Standup_iosUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Standup_iosUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F90B18851D07C12C0007706B /* UserTasksCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTasksCellTableViewCell.swift; sourceTree = "<group>"; };
 		F90B18861D07C12C0007706B /* UserTasksCellTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserTasksCellTableViewCell.xib; sourceTree = "<group>"; };
-		F90B18891D082B350007706B /* ProjectDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectDataSource.swift; sourceTree = "<group>"; };
+		F90B188D1D0E5E030007706B /* ArrayDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayDataSource.swift; sourceTree = "<group>"; };
 		F91682751C9843FB00DF681E /* Standup.ios-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Standup.ios-Bridging-Header.h"; sourceTree = "<group>"; };
 		F91A6E3A1D032DDC003FA436 /* DataLayer+FetchDataFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataLayer+FetchDataFunctions.swift"; sourceTree = "<group>"; };
 		F92A75131D05BC6300AC8A74 /* TasksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
-		F92A75181D0714E500AC8A74 /* TaskDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDataSource.swift; sourceTree = "<group>"; };
+		F92A75181D0714E500AC8A74 /* UserDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDataSource.swift; sourceTree = "<group>"; };
 		F965930F1CB2956C0031495E /* FontAwesome.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.otf; sourceTree = "<group>"; };
 		F96593131CB2AF340031495E /* M13Checkbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M13Checkbox.h; sourceTree = "<group>"; };
 		F96593141CB2AF340031495E /* M13Checkbox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M13Checkbox.m; sourceTree = "<group>"; };
@@ -80,6 +83,9 @@
 		F9678B0A1CFDE9660071AF24 /* Task+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F9678B0B1CFDE9660071AF24 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		F9678B121CFDE98F0071AF24 /* DataLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataLayer.swift; sourceTree = "<group>"; };
+		F9891F3F1D0E709D00DF8C8B /* CellConfigurable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellConfigurable.swift; sourceTree = "<group>"; };
+		F9891F411D0EA90600DF8C8B /* TaskCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
+		F9891F421D0EA90600DF8C8B /* TaskCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskCell.xib; sourceTree = "<group>"; };
 		F9A6649F1C720E7B00DC7B59 /* Standup.ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Standup.ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9A664A21C720E7B00DC7B59 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9A664A91C720E7B00DC7B59 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -174,10 +180,18 @@
 		F92A75171D0714A900AC8A74 /* datas_source */ = {
 			isa = PBXGroup;
 			children = (
-				F92A75181D0714E500AC8A74 /* TaskDataSource.swift */,
-				F90B18891D082B350007706B /* ProjectDataSource.swift */,
+				F92A75181D0714E500AC8A74 /* UserDataSource.swift */,
+				F90B188D1D0E5E030007706B /* ArrayDataSource.swift */,
 			);
 			name = datas_source;
+			sourceTree = "<group>";
+		};
+		F9891F3E1D0E705F00DF8C8B /* protocol */ = {
+			isa = PBXGroup;
+			children = (
+				F9891F3F1D0E709D00DF8C8B /* CellConfigurable.swift */,
+			);
+			name = protocol;
 			sourceTree = "<group>";
 		};
 		F9A664961C720E7B00DC7B59 = {
@@ -205,6 +219,7 @@
 		F9A664A11C720E7B00DC7B59 /* Standup.ios */ = {
 			isa = PBXGroup;
 			children = (
+				F9891F3E1D0E705F00DF8C8B /* protocol */,
 				F92A75171D0714A900AC8A74 /* datas_source */,
 				F91A6E391D032D9D003FA436 /* DDP */,
 				F9A704B51CB2762200934B8E /* resources */,
@@ -242,6 +257,8 @@
 			children = (
 				F90B18851D07C12C0007706B /* UserTasksCellTableViewCell.swift */,
 				F90B18861D07C12C0007706B /* UserTasksCellTableViewCell.xib */,
+				F9891F411D0EA90600DF8C8B /* TaskCell.swift */,
+				F9891F421D0EA90600DF8C8B /* TaskCell.xib */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -389,6 +406,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9891F441D0EA90600DF8C8B /* TaskCell.xib in Resources */,
 				F96593101CB2956C0031495E /* FontAwesome.otf in Resources */,
 				F90B18881D07C12C0007706B /* UserTasksCellTableViewCell.xib in Resources */,
 				F9A664AA1C720E7B00DC7B59 /* Assets.xcassets in Resources */,
@@ -541,15 +559,17 @@
 			files = (
 				F9A664A31C720E7B00DC7B59 /* AppDelegate.swift in Sources */,
 				F9678B131CFDE98F0071AF24 /* DataLayer.swift in Sources */,
+				F9891F431D0EA90600DF8C8B /* TaskCell.swift in Sources */,
 				F9A704BA1CB283B100934B8E /* NSString+FontAwesome.m in Sources */,
 				F92A75151D05BC6300AC8A74 /* TasksViewController.swift in Sources */,
+				F9891F401D0E709D00DF8C8B /* CellConfigurable.swift in Sources */,
+				F90B188E1D0E5E030007706B /* ArrayDataSource.swift in Sources */,
 				F9678B0E1CFDE9660071AF24 /* Project+CoreDataProperties.swift in Sources */,
-				F90B188A1D082B350007706B /* ProjectDataSource.swift in Sources */,
 				F9678B0C1CFDE9660071AF24 /* User+CoreDataProperties.swift in Sources */,
 				F90B18871D07C12C0007706B /* UserTasksCellTableViewCell.swift in Sources */,
 				F9678B111CFDE9660071AF24 /* Task.swift in Sources */,
 				F96593151CB2AF340031495E /* M13Checkbox.m in Sources */,
-				F92A75191D0714E500AC8A74 /* TaskDataSource.swift in Sources */,
+				F92A75191D0714E500AC8A74 /* UserDataSource.swift in Sources */,
 				F9FDB1961C9847AD005E6E7C /* UITextView+Placeholder.m in Sources */,
 				F9678B051CFDE0EB0071AF24 /* Standup.xcdatamodeld in Sources */,
 				F9678B0D1CFDE9660071AF24 /* User.swift in Sources */,

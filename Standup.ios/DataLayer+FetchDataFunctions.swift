@@ -10,20 +10,36 @@ import Foundation
 import CoreData
 
 
-struct ParsedProject{
+class ParsedProject{
+    init(project_id: String, project_name: String, tasks: [Task]){
+        self.project_id = project_id
+        self.project_name = project_name
+        self.tasks = tasks
+    }
     let project_id: String
     let project_name: String
     var tasks: [Task]
 }
 
-struct ParsedUser{
+class ParsedUser{
+    init(user_id: String, user_name: String, avatar: String, tasks: [Task]){
+        self.user_id = user_id
+        self.user_name = user_name
+        self.avatar = avatar
+        self.tasks = tasks
+    }
     let user_id: String
     let user_name: String
     let avatar: String
     var tasks: [Task]
 }
 
-struct ParsedTask{
+class ParsedTask{
+    init(project_id: String, project_name: String, users: [ParsedUser]){
+        self.project_id = project_id
+        self.project_name = project_name
+        self.users = users
+    }
     let project_id: String
     let project_name: String
     var users: [ParsedUser]

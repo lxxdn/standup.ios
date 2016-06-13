@@ -2,26 +2,29 @@
 //  TaskDataSource.swift
 //  Standup.ios
 //
-//  Created by julien on 6/7/16.
+//  Created by julien on 6/13/16.
 //  Copyright © 2016 julien. All rights reserved.
 //
 
 import Foundation
 
-class TaskDataSource: NSObject, UITableViewDataSource{
+class ArrayDataSource: NSObject, UITableViewDataSource{
     private let tableView: UITableView
-
-    var data: [ParsedTask]? = nil {
+    private let cellIdentifier: String
+    
+    var data: [AnyObject]? = nil {
         didSet{
             self.tableView.reloadData()
         }
     }
     
-    init(tableView: UITableView){
+    init(tableView: UITableView, nibName: String, cellIdentifier: String){
         self.tableView = tableView
+        self.cellIdentifier = cellIdentifier
+        let nib = UINib(nibName: nibName, bundle: nil)
+        tableView.registerNib(nib, forCellReuseIdentifier: cellIdentifier)
         super.init()
     }
-    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         var result = 0
         if let data = data{
@@ -31,11 +34,12 @@ class TaskDataSource: NSObject, UITableViewDataSource{
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
-        var cell: UserTasksCellTableViewCell? = tableView.dequeueReusableCellWithIdentifier("UserTaskCell") as? UserTasksCellTableViewCell
-        if cell == nil{
-            cell = NSBundle.mainBundle().loadNibNamed("UserTasksCellTableViewCell", owner: nil, options: nil)[0] as? UserTasksCellTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier)
+        if let cell = cell as? CellConfigurable{
+            cell.configWithData(data!)
         }
-        cell?.configWithData(data![indexPath.row])
         return cell!
     }
+    
+    
 }

@@ -9,15 +9,16 @@
 import UIKit
 
 class TasksViewController: UIViewController {
-    private weak var tableView: UITableView?
-    private var taskDataSource: TaskDataSource?
+    private weak var tableView: UITableView!
+    private var taskDataSource: UserDataSource?
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "Standup"
         
-        tableView = UITableView(frame: UIScreen.mainScreen().bounds, style: UITableViewStyle.Grouped)
-        taskDataSource = TaskDataSource(tableView: tableView!)
-        tableView!.dataSource = taskDataSource
+        let myTableView = UITableView(frame: UIScreen.mainScreen().bounds, style: UITableViewStyle.Grouped)
+        tableView = myTableView
+        taskDataSource = UserDataSource(tableView: tableView)
+        tableView.dataSource = taskDataSource
         
         self.view.addSubview(tableView!)
         
