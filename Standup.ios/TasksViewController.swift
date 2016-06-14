@@ -11,6 +11,7 @@ import UIKit
 class TasksViewController: UIViewController {
     private weak var tableView: UITableView!
     private var taskDataSource: UserDataSource?
+    private var dataDelegate: UserTasksTableDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "Standup"
@@ -19,12 +20,17 @@ class TasksViewController: UIViewController {
         tableView = myTableView
         taskDataSource = UserDataSource(tableView: tableView)
         tableView.dataSource = taskDataSource
+        dataDelegate = UserTasksTableDelegate()
+        tableView.delegate = dataDelegate
         
         self.view.addSubview(tableView!)
         
         DataLayer.getInstance().fetchTasks({ [unowned self] data in
             if let dataSource = self.taskDataSource{
                 dataSource.data = data
+            }
+            if let dataDelegate = self.dataDelegate{
+                dataDelegate.data = data
             }
         })
     }
@@ -33,4 +39,5 @@ class TasksViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
 }

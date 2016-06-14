@@ -36,7 +36,7 @@ class ArrayDataSource: NSObject, UITableViewDataSource{
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier)
         if let cell = cell as? CellConfigurable{
-            cell.configWithData(data!)
+            cell.configWithData(data![indexPath.row])
         }
         return cell!
     }

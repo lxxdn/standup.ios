@@ -29,6 +29,7 @@
 		F9891F401D0E709D00DF8C8B /* CellConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9891F3F1D0E709D00DF8C8B /* CellConfigurable.swift */; };
 		F9891F431D0EA90600DF8C8B /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9891F411D0EA90600DF8C8B /* TaskCell.swift */; };
 		F9891F441D0EA90600DF8C8B /* TaskCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9891F421D0EA90600DF8C8B /* TaskCell.xib */; };
+		F9891F491D0F99F200DF8C8B /* UserTasksTableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9891F481D0F99F200DF8C8B /* UserTasksTableDelegate.swift */; };
 		F9A664A31C720E7B00DC7B59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A664A21C720E7B00DC7B59 /* AppDelegate.swift */; };
 		F9A664AA1C720E7B00DC7B59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9A664A91C720E7B00DC7B59 /* Assets.xcassets */; };
 		F9A664B81C720E7B00DC7B59 /* Standup_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A664B71C720E7B00DC7B59 /* Standup_iosTests.swift */; };
@@ -86,6 +87,7 @@
 		F9891F3F1D0E709D00DF8C8B /* CellConfigurable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellConfigurable.swift; sourceTree = "<group>"; };
 		F9891F411D0EA90600DF8C8B /* TaskCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 		F9891F421D0EA90600DF8C8B /* TaskCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskCell.xib; sourceTree = "<group>"; };
+		F9891F481D0F99F200DF8C8B /* UserTasksTableDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserTasksTableDelegate.swift; path = ../UserTasksTableDelegate.swift; sourceTree = "<group>"; };
 		F9A6649F1C720E7B00DC7B59 /* Standup.ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Standup.ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9A664A21C720E7B00DC7B59 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9A664A91C720E7B00DC7B59 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -194,6 +196,14 @@
 			name = protocol;
 			sourceTree = "<group>";
 		};
+		F9891F451D0F97AA00DF8C8B /* delegate */ = {
+			isa = PBXGroup;
+			children = (
+				F9891F481D0F99F200DF8C8B /* UserTasksTableDelegate.swift */,
+			);
+			name = delegate;
+			sourceTree = "<group>";
+		};
 		F9A664961C720E7B00DC7B59 = {
 			isa = PBXGroup;
 			children = (
@@ -219,6 +229,7 @@
 		F9A664A11C720E7B00DC7B59 /* Standup.ios */ = {
 			isa = PBXGroup;
 			children = (
+				F9891F451D0F97AA00DF8C8B /* delegate */,
 				F9891F3E1D0E705F00DF8C8B /* protocol */,
 				F92A75171D0714A900AC8A74 /* datas_source */,
 				F91A6E391D032D9D003FA436 /* DDP */,
@@ -569,6 +580,7 @@
 				F90B18871D07C12C0007706B /* UserTasksCellTableViewCell.swift in Sources */,
 				F9678B111CFDE9660071AF24 /* Task.swift in Sources */,
 				F96593151CB2AF340031495E /* M13Checkbox.m in Sources */,
+				F9891F491D0F99F200DF8C8B /* UserTasksTableDelegate.swift in Sources */,
 				F92A75191D0714E500AC8A74 /* UserDataSource.swift in Sources */,
 				F9FDB1961C9847AD005E6E7C /* UITextView+Placeholder.m in Sources */,
 				F9678B051CFDE0EB0071AF24 /* Standup.xcdatamodeld in Sources */,

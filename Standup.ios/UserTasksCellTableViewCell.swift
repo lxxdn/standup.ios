@@ -12,7 +12,8 @@ class UserTasksCellTableViewCell: UITableViewCell, CellConfigurable {
 
     @IBOutlet weak var avatar: UIImageView!
     @IBOutlet weak var name: UILabel!
-    @IBOutlet weak var tasks: UITableView!
+    @IBOutlet weak var tasksTable: UITableView!
+    private var tasksDataSource: ArrayDataSource?
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -27,9 +28,9 @@ class UserTasksCellTableViewCell: UITableViewCell, CellConfigurable {
             self.avatar.sd_setImageWithURL(NSURL.init(string: "http://localhost:3000\(data.avatar)"), placeholderImage: nil)
             self.name.text = data.user_name
             
-//            let tasksDataSource = ArrayDataSource(tableView: tasks, nibName: "TaskCell", cellIdentifier: "TaskCell")
-//            tasksDataSource.data = data.tasks
-//            tasks.dataSource = tasksDataSource
+            tasksDataSource = ArrayDataSource(tableView: tasksTable, nibName: "TaskCell", cellIdentifier: "TaskCell")
+            tasksTable.dataSource = tasksDataSource!
+            tasksDataSource!.data = data.tasks
         }
     }
     
