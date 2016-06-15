@@ -11,11 +11,8 @@ import Foundation
 class UserDataSource: NSObject, UITableViewDataSource{
     private let tableView: UITableView
 
-    var data: [ParsedTask]? = nil {
-        didSet{
-            self.tableView.reloadData()
-        }
-    }
+    var data: [ParsedTask]? = nil
+   
     
     init(tableView: UITableView){
         self.tableView = tableView
@@ -39,8 +36,6 @@ class UserDataSource: NSObject, UITableViewDataSource{
         }
         return result
     }
-
-    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         let cell: UserTasksCellTableViewCell? = (tableView.dequeueReusableCellWithIdentifier("UserTasksCell") as! UserTasksCellTableViewCell)
         

@@ -12,11 +12,7 @@ class ArrayDataSource: NSObject, UITableViewDataSource{
     private let tableView: UITableView
     private let cellIdentifier: String
     
-    var data: [AnyObject]? = nil {
-        didSet{
-            self.tableView.reloadData()
-        }
-    }
+    var data: [AnyObject]? = nil
     
     init(tableView: UITableView, nibName: String, cellIdentifier: String){
         self.tableView = tableView

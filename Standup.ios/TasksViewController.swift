@@ -18,6 +18,7 @@ class TasksViewController: UIViewController {
         
         let myTableView = UITableView(frame: UIScreen.mainScreen().bounds, style: UITableViewStyle.Grouped)
         tableView = myTableView
+        tableView.translatesAutoresizingMaskIntoConstraints = true
         taskDataSource = UserDataSource(tableView: tableView)
         tableView.dataSource = taskDataSource
         dataDelegate = UserTasksTableDelegate()
@@ -25,13 +26,16 @@ class TasksViewController: UIViewController {
         
         self.view.addSubview(tableView!)
         
-        DataLayer.getInstance().fetchTasks({ [unowned self] data in
-            if let dataSource = self.taskDataSource{
+        DataLayer.getInstance().fetchTasks({ [weak self] data in
+            if let dataSource = self?.taskDataSource{
                 dataSource.data = data
             }
-            if let dataDelegate = self.dataDelegate{
+            if let dataDelegate = self?.dataDelegate{
                 dataDelegate.data = data
             }
+            dispatch_async(dispatch_get_main_queue(), {
+                self?.tableView.reloadData()
+            })
         })
     }
 

@@ -16,6 +16,8 @@ class UserTasksCellTableViewCell: UITableViewCell, CellConfigurable {
     private var tasksDataSource: ArrayDataSource?
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        tasksTable.scrollEnabled = false
         // Initialization code
     }
 
